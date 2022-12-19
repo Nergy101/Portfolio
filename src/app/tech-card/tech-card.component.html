@@ -1,0 +1,18 @@
+<mat-card (click)="open()" class="tech-card">
+  <mat-card-title-group>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <img
+      mat-card-image
+      src="assets/techs/{{ imagePath }}.svg"
+      alt="Tech icon"
+      style="height: 200px"
+    />
+    <p align="center">
+      {{ description }}
+    </p>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+</mat-card>

@@ -1,0 +1,180 @@
+<div class="container mat-drawer-container">
+  <mat-card>
+    <mat-card-title>
+      <h1>Well, hello there!</h1>
+    </mat-card-title>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+      inventore praesentium? Dolorum ea, non tempora perspiciatis natus iusto
+      fuga rerum culpa asperiores odio adipisci earum! Repellat reprehenderit
+      aspernatur sed hic.<br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+      ducimus soluta, reiciendis culpa cum et officia, accusantium harum enim
+      accusamus, eligendi facere quisquam quam consequuntur ab error! Dolorum,
+      itaque eius.
+    </mat-card-content>
+    <mat-card-subtitle
+      ><h2>
+        This is my portfolio using Digital Ocean resources.
+      </h2></mat-card-subtitle
+    >
+    <img mat-card-image />
+    <mat-card-actions>
+      <button mat-stroked-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >person</mat-icon
+        >&nbsp;My GitHub profile
+      </button>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >polyline</mat-icon
+        >&nbsp;Other projects
+      </button>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >volunteer_activism</mat-icon
+        >&nbsp;Buy me a
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >coffee</mat-icon
+        >
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="weather">
+    <div class="section-title">
+      <div>
+        <h2>Digital Ocean Serverless Weather Function</h2>
+      </div>
+
+      <mat-form-field
+        appearance="fill"
+        floatLabel="always"
+        style="min-width: 25vw"
+      >
+        <mat-label>parameters</mat-label>
+        <input
+          matInput
+          type="text"
+          class="example-right-align"
+          [(ngModel)]="query"
+        />
+        <span matPrefix>/getWeather&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span matSuffix matRipple matRippleColor="primary" (click)="doCall()">
+          <ng-container>
+            <mat-icon aria-hidden="false" aria-label="Example home icon"
+              >sync</mat-icon
+            ></ng-container
+          ></span
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="weather-cards">
+      <ng-container *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </ng-container>
+      <ng-container *ngIf="!loading && (weatherResult?.length ?? 0) > 0">
+        <app-weather-card
+          *ngFor="let result of this.weatherResult"
+          [weatherInfo]="result"
+        ></app-weather-card>
+      </ng-container>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('chevron2')">
+        <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="catpouch">
+    <div class="section-title">
+      <h2>
+        <a href="https://github.com/Nergy101/catpouch">Catpouch</a>: Pouchdb
+        try-out
+      </h2>
+    </div>
+
+    <div class="tech-cards">
+      <div class="group">
+        <app-tech-card
+          title="Pouchdb"
+          subtitle="Add your random cat to the list"
+          description="PouchDB is an offline first, syncing database"
+          imagePath="pouchdb"
+          url=""
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Vite"
+          subtitle="Frontend tool"
+          description="Frontend tooling with a focus on Quality of Life"
+          imagePath="vite"
+          url="https://vitejs.dev"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Docker"
+          subtitle="Containerization"
+          description="Website Dockerfile and Docker compose"
+          imagePath="docker"
+          url="https://www.docker.com/"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+    <div
+      id="chevron2"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('footer')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="hydroponics">
+    <div class="section-title">
+      <h2>Building hydroponics software</h2>
+    </div>
+
+    <div class="tech-cards">
+      <app-tech-card
+        title="Python"
+        subtitle="Backend API & Machine Program"
+        description="Hydroponics software using Python 3, MongoDB and Hardware"
+        imagePath="python"
+        url=""
+      >
+      </app-tech-card>
+    </div>
+
+    <div
+      id="chevron2"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('footer')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

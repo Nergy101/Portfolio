@@ -1,0 +1,29 @@
+<mat-card class="footer">
+  <div class="icons">
+    <button
+      mat-button
+      (click)="navigateTo('https://www.digitalocean.com/')"
+      matTooltip="Digital Ocean"
+    >
+      <fa-icon [icon]="faDigitalOcean" size="3x"></fa-icon>
+    </button>
+
+    <button
+      mat-button
+      (click)="navigateTo('https://github.com/Nergy101')"
+      matTooltip="Visit my Github"
+    >
+      <fa-icon [icon]="faGithub" size="3x"></fa-icon>
+    </button>
+
+    <button
+      mat-button
+      (click)="
+        navigateTo('https://www.linkedin.com/in/christian-van-dijk-657069134/')
+      "
+      matTooltip="Visit my LinkedIn"
+    >
+      <fa-icon [icon]="faLinkedin" size="3x"></fa-icon>
+    </button>
+  </div>
+</mat-card>
