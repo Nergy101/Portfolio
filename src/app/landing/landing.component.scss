@@ -30,6 +30,20 @@
   align-items: center;
   justify-content: center;
 
+  &.pcnotes {
+    a {
+      &:visited {
+        color: #9415ff;
+      }
+      &:link {
+        color: #9415ff;
+      }
+      &:hover {
+        color: #6e14ef;
+      }
+    }
+  }
+
   a {
     &:visited {
       color: #6dcb94;

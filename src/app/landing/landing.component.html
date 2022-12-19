@@ -147,6 +147,49 @@
     </div>
   </div>
 
+  <div class="pcnotes">
+    <div class="section-title pcnotes">
+      <h2>
+        <a href="https://github.com/Nergy101/PCNotes">PCNotes</a> -
+        <a href="http://64.225.65.151:5001/">Site on Droplet</a>
+      </h2>
+    </div>
+
+    <div class="tech-cards">
+      <div class="group">
+        <app-tech-card
+          title="MongoDB"
+          subtitle="Create and cooperate on open notes"
+          description="MongoDB is the most used NoSQL database"
+          imagePath="mongodb"
+          url=""
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Blazor"
+          subtitle="WebAssembly framework in C#"
+          description="Blazor WebAssembly client application, using MudBlazor"
+          imagePath="blazor"
+          url="https://vitejs.dev"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+    <div
+      id="chevron2"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('footer')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
   <div class="hydroponics">
     <div class="section-title">
       <h2>Building hydroponics software</h2>
