@@ -1,0 +1,317 @@
+<div class="container mat-drawer-container">
+  <mat-card>
+    <mat-card-title>
+      <h1>Well, hello there!</h1>
+    </mat-card-title>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+      inventore praesentium? Dolorum ea, non tempora perspiciatis natus iusto
+      fuga rerum culpa asperiores odio adipisci earum! Repellat reprehenderit
+      aspernatur sed hic.<br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+      ducimus soluta, reiciendis culpa cum et officia, accusantium harum enim
+      accusamus, eligendi facere quisquam quam consequuntur ab error! Dolorum,
+      itaque eius.
+    </mat-card-content>
+    <mat-card-subtitle
+      ><h2>
+        This is my portfolio using Digital Ocean resources.
+      </h2></mat-card-subtitle
+    >
+    <img mat-card-image />
+    <mat-card-actions>
+      <button
+        mat-stroked-button
+        (click)="navigateTo('https://github.com/Nergy101')"
+      >
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >person</mat-icon
+        >&nbsp;My GitHub profile
+      </button>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >polyline</mat-icon
+        >&nbsp;Other projects
+      </button>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >volunteer_activism</mat-icon
+        >&nbsp;Buy me a
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >coffee</mat-icon
+        >
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="weather">
+    <div class="section-title">
+      <div>
+        <h2>Digital Ocean Serverless Weather Function</h2>
+      </div>
+
+      <mat-form-field
+        appearance="fill"
+        floatLabel="always"
+        style="min-width: 25vw"
+      >
+        <mat-label>parameters</mat-label>
+        <input
+          matInput
+          type="text"
+          class="example-right-align"
+          [(ngModel)]="query"
+        />
+        <span matPrefix>/getWeather&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span matSuffix matRipple matRippleColor="primary" (click)="doCall()">
+          <ng-container>
+            <mat-icon aria-hidden="false" aria-label="Example home icon"
+              >sync</mat-icon
+            ></ng-container
+          ></span
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="weather-cards">
+      <ng-container *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </ng-container>
+      <ng-container *ngIf="!loading && (weatherResult?.length ?? 0) > 0">
+        <app-weather-card
+          *ngFor="let result of this.weatherResult"
+          [weatherInfo]="result"
+        ></app-weather-card>
+      </ng-container>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('chevron2')">
+        <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="catpouch">
+    <div class="section-title">
+      <h2>
+        <a href="https://github.com/Nergy101/catpouch">Catpouch</a>
+      </h2>
+      <h3>Add your random cat to the list</h3>
+    </div>
+
+    <div class="tech-cards group">
+      <div class="group">
+        <app-tech-card
+          title="Pouchdb"
+          subtitle="Database"
+          description="PouchDB is an offline first, syncing database"
+          imagePath="pouchdb"
+          url="https://pouchdb.com/"
+          rippleColor="#6dcb9420"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Vite"
+          subtitle="Frontend tooling"
+          description="Vite is frontend-tooling with a focus on Quality of Life"
+          imagePath="vite"
+          url="https://vitejs.dev"
+          rippleColor="#ffcb2320"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Docker"
+          subtitle="Containerization / Other"
+          description="Created a Dockerfile and Docker compose"
+          imagePath="docker"
+          url="https://www.docker.com/"
+          rippleColor="#0db7ed20"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+    <div
+      id="chevron2"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('chevron3')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="pcnotes">
+    <div class="section-title pcnotes">
+      <h2>
+        <a href="https://github.com/Nergy101/PCNotes">PCNotes</a> -
+        <a href="http://64.225.65.151:5001/">Site on Droplet</a>
+      </h2>
+      <h3>Create and cooperate on open notes</h3>
+    </div>
+
+    <div class="tech-cards">
+      <div class="group">
+        <app-tech-card
+          title="MongoDB"
+          subtitle="Database / NoSQL"
+          description="MongoDB is the most used NoSQL database"
+          imagePath="mongodb"
+          url="https://www.mongodb.com/home"
+          rippleColor="#6CAC4820"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="C-Sharp"
+          subtitle="My primary programming language"
+          description=".NET, ASP.NET"
+          imagePath="c-sharp"
+          url="https://dotnet.microsoft.com/en-us/languages/csharp"
+          rippleColor="#a179dc20"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Blazor"
+          subtitle="WebAssembly framework in C#"
+          description="Blazor WebAssembly client application, using MudBlazor"
+          imagePath="blazor"
+          url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
+          rippleColor="#702af720"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+    <div
+      id="chevron3"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('chevron4')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="hydroponics">
+    <div class="section-title">
+      <h2>Building hydroponics software</h2>
+      <h3>Building a greener & cleaner future</h3>
+    </div>
+
+    <div class="tech-cards">
+      <div class="group">
+        <app-tech-card
+          title="MongoDB"
+          subtitle=""
+          description="MongoDB is the most used NoSQL database"
+          imagePath="mongodb"
+          url="https://www.mongodb.com/home"
+          rippleColor="#6CAC4820"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Python"
+          subtitle="Backend API & Machine Program"
+          description="Hydroponics software using Python"
+          imagePath="python"
+          url="https://www.python.org/about/"
+          rippleColor="#3571a320"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Raspberry Pi"
+          subtitle="On-location machine / hardware"
+          description="Small computer that controls the hydroponics installation"
+          imagePath="raspberry-pi"
+          url="https://www.raspberrypi.com/"
+          rippleColor="#bc114220"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+
+    <div
+      id="chevron4"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('footer')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="Portfolio">
+    <div class="section-title">
+      <h2>
+        <a href="https://github.com/Nergy101/catpouch">Catpouch</a>
+      </h2>
+      <h3>Add your random cat to the list</h3>
+    </div>
+
+    <div class="tech-cards group">
+      <div class="group">
+        <app-tech-card
+          title="Pouchdb"
+          subtitle="Database"
+          description="PouchDB is an offline first, syncing database"
+          imagePath="pouchdb"
+          url="https://pouchdb.com/"
+          rippleColor="#6dcb9420"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Vite"
+          subtitle="Frontend tooling"
+          description="Vite is frontend-tooling with a focus on Quality of Life"
+          imagePath="vite"
+          url="https://vitejs.dev"
+          rippleColor="#ffcb2320"
+        >
+        </app-tech-card>
+        <app-tech-card
+          title="Docker"
+          subtitle="Containerization / Other"
+          description="Created a Dockerfile and Docker compose"
+          imagePath="docker"
+          url="https://www.docker.com/"
+          rippleColor="#0db7ed20"
+        >
+        </app-tech-card>
+      </div>
+    </div>
+    <div
+      id="chevron2"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      "
+    >
+      <button mat-button (click)="moveTo('chevron3')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

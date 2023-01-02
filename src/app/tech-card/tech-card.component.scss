@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.tech-card {
+  cursor: pointer;
+  max-width: 15em;
+  min-width: 15em;
+  margin-bottom: 8px;
+  height: 25em;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}

@@ -1,0 +1,21 @@
+<mat-card class="weather-card">
+  <mat-card-title-group>
+    <mat-card-title>{{ dayName }}</mat-card-title>
+    <mat-card-subtitle>{{ weatherInfo.datetime }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <img
+      mat-card-image
+      src="assets/weather-icons/{{ weatherInfo.icon }}.svg"
+      alt="Weather icon {{ weatherInfo.icon }} {{ dayName }}"
+      style="height: 72px"
+    />
+    <p align="center">
+      {{ weatherInfo.sunrise }} - {{ weatherInfo.sunset }} <br />
+      {{ weatherInfo.tempmin }} C - {{ weatherInfo.tempmax }} C <br />
+      {{ weatherInfo.cloudcover }}% cloudy <br />
+      {{ weatherInfo.moonphase }}% moon
+    </p>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+</mat-card>

@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Nergy</span>
+    
+    <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    >logo_dev</mat-icon
+  >
+    <span class="spacer"></span>
+    <app-menu
+      [options]="options$ | async"
+      (themeChange)="themeChangeHandler($event)"
+    >
+    </app-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,12 @@
+:host {
+  .weather-card {
+    min-width: 15em;
+    min-height: 15em;
+
+    display: flex;
+    flex-flow: column nowrap;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}

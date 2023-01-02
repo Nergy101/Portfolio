@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tech-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .group {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.section-title {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.pcnotes {
+    a {
+      &:visited {
+        color: #9415ff;
+      }
+      &:link {
+        color: #9415ff;
+      }
+      &:hover {
+        color: #6e14ef;
+      }
+    }
+  }
+
+  a {
+    &:visited {
+      color: #6dcb94;
+    }
+    &:link {
+      color: #6dcb94;
+    }
+    &:hover {
+      color: #59b981;
+    }
+  }
+}
