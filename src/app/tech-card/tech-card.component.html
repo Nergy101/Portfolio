@@ -1,4 +1,12 @@
-<mat-card (click)="open()" class="tech-card">
+<mat-card
+  (click)="open()"
+  class="tech-card"
+  matRipple
+  [matRippleCentered]="true"
+  [matRippleColor]="rippleColor ?? ''"
+  matTooltip="Go to {{ title }}'s website"
+  matTooltipPosition="below"
+>
   <mat-card-title-group>
     <mat-card-title>{{ title }}</mat-card-title>
     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
@@ -14,5 +22,6 @@
       {{ description }}
     </p>
   </mat-card-content>
+  <div class="spacer"></div>
   <mat-divider inset></mat-divider>
 </mat-card>

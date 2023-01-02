@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { Tile } from './tile.model';
 
 @Component({
   selector: 'app-landing',
@@ -45,13 +46,12 @@ export class LandingComponent implements OnInit {
   }
 
   moveTo(divId: string) {
-    document!.getElementById(divId)!.scrollIntoView({ behavior: 'smooth' });
+    document!
+      .getElementById(divId)!
+      .scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
-}
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
+  navigateTo(url: string) {
+    window.open(url, 'blank');
+  }
 }

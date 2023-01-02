@@ -21,6 +21,9 @@ export class TechCardComponent implements OnInit {
   @Input()
   url?: string;
 
+  @Input()
+  rippleColor?: string;
+
   constructor() {}
 
   ngOnInit(): void {}
