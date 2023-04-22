@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Choose your login provider</h1>
+<span>These will open a pop-up to the chosen provider... <br />
+  If nothing happens, make sure you allow pop-ups on this site!</span>
+<div mat-dialog-content>
+  <div class="options">
+    <app-tech-card (click)="choose('github')" description="GitHub" imagePath="logins/github"
+      rippleColor="#00000020"></app-tech-card>
+
+    <app-tech-card (click)="choose('google')" description="Google" imagePath="logins/google"
+      rippleColor="#3f7de780"></app-tech-card>
+  </div>
+</div>
+<div mat-dialog-actions class="center">
+  <button mat-button mat-dialog-close>Return</button>
+</div>

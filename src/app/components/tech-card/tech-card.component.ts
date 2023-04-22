@@ -24,11 +24,20 @@ export class TechCardComponent implements OnInit {
   @Input()
   rippleColor?: string;
 
-  constructor() {}
+  @Input()
+  stopOpen: boolean = false;
 
-  ngOnInit(): void {}
+  constructor() { }
 
-  open() {
-    window.open(this.url, 'blank');
+  ngOnInit(): void { }
+
+  async open(): Promise<void> {
+    if (this.url) {
+      window.open(this.url, 'blank');
+    }
+  }
+
+  get tooltip(): string {
+    return this.url ? `Go to ${this.title}'s website` : '';
   }
 }
