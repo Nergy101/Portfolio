@@ -13,4 +13,7 @@ COPY --from=build /usr/src/app/dist/portfolio /usr/share/nginx/html
 EXPOSE 80
 
 # docker build -t nergy101/portfolio:v1 .
-# docker run --name portfolio --restart unless-stopped -p 80:80 -d nergy101/portfolio:v1
+# docker login
+# docker push nergy101/portfolio:v1
+# docker pull nergy101/portfolio:v1
+# docker run --restart unless-stopped -p 8080:80 -d nergy101/portfolio:v1
