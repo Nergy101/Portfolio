@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  buildDockerImage:
+  BuildPushAndDeployDockerImage:
     runs-on: ubuntu-latest
 
     steps:
