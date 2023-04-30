@@ -11,21 +11,28 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Build the Docker image
       run: docker build -t nergy101/portfolio:v1 .
 
-  pullAndRunDockerImageOnVM:
-    runs-on: ubuntu-latest
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    steps:
+    - name: Push the Docker image
+      run: docker push nergy101/portfolio:v1
+
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
     - name: Connect to Droplet
       run:  |
-            doctl compute ssh nergy --ssh-command docker pull nergy101/portfolio:v1 \
-            docker stop portfolio \
-            docker rm portfolio \
-            docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1
+            doctl compute ssh nergy --ssh-command 'docker pull nergy101/portfolio:v1'
+            doctl compute ssh nergy --ssh-command 'docker stop portfolio'
+            doctl compute ssh nergy --ssh-command 'docker rm portfolio'
+            doctl compute ssh nergy --ssh-command 'docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1'
 
