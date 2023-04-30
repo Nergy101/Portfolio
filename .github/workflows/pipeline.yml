@@ -24,15 +24,32 @@ jobs:
     - name: Push the Docker image
       run: docker push nergy101/portfolio:v1
 
-    - name: Install doctl
-      uses: digitalocean/action-doctl@v2
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2
       with:
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        key: '{%- raw -%} ${{ secrets.SSH_PRIVATE_KEY }}'
+        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
-    - name: Connect to Droplet
-      run:  |
-            doctl compute ssh nergy --ssh-command 'docker pull nergy101/portfolio:v1'
-            doctl compute ssh nergy --ssh-command 'docker stop portfolio'
-            doctl compute ssh nergy --ssh-command 'docker rm portfolio'
-            doctl compute ssh nergy --ssh-command 'docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1'
+    - name: Adding Known Hosts
+      run: ssh-keyscan -H ${{ secrets.SSH_HOST }}{% endraw%} >> ~/.ssh/known_hosts
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: whoami
+
+    # - name: Install doctl
+    #   uses: digitalocean/action-doctl@v2
+    #   with:
+    #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+    # - name: Connect to Droplet
+    #   run:  |
+    #         doctl compute ssh nergy --ssh-command 'docker pull nergy101/portfolio:v1'
+    #         doctl compute ssh nergy --ssh-command 'docker stop portfolio'
+    #         doctl compute ssh nergy --ssh-command 'docker rm portfolio'
+    #         doctl compute ssh nergy --ssh-command 'docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1'
 
