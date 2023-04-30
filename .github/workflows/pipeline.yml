@@ -1,4 +1,4 @@
-name: Docker Image Push
+name: Deploy new Docker Image version
 
 on:
   workflow_dispatch:
@@ -12,19 +12,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # - name: Build the Docker image
-    #   run: docker build -t nergy101/portfolio:v1 .
+    - name: Build the Docker image
+      run: docker build -t nergy101/portfolio:v1 .
 
-    # - name: Login to Docker Hub
-    #   uses: docker/login-action@v2
-    #   with:
-    #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-    #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    # - name: Push the Docker image
-    #   run: docker push nergy101/portfolio:v1
+    - name: Push the Docker image
+      run: docker push nergy101/portfolio:v1
 
-    - name: Adding Known Hosts
+    - name: Get Known Hosts value
       run: echo "KNOWN_HOSTS=$(ssh-keyscan -H ${{ secrets.SSH_HOST }})" >> $GITHUB_ENV
 
     - name: Install SSH Key
@@ -35,23 +35,15 @@ jobs:
         known_hosts: ${{ env.KNOWN_HOSTS }}
         if_key_exists: replace
 
-    # - name: Adding Known Hosts
-    #   run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
-    - name: executing remote ssh commands using password
+    - name: Pull and start docker image on VM
       uses: appleboy/ssh-action@v0.1.10
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          whoami
-          ls -al
-
-    # - name: Connect to Droplet
-    #   run:  |
-    #         doctl compute ssh nergy --ssh-command 'docker pull nergy101/portfolio:v1'
-    #         doctl compute ssh nergy --ssh-command 'docker stop portfolio'
-    #         doctl compute ssh nergy --ssh-command 'docker rm portfolio'
-    #         doctl compute ssh nergy --ssh-command 'docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1'
+          docker pull nergy101/portfolio:v1
+          docker stop portfolio
+          docker rm portfolio
+          docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1
 
