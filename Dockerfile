@@ -16,4 +16,4 @@ EXPOSE 80
 # docker login
 # docker push nergy101/portfolio:v1
 # docker pull nergy101/portfolio:v1
-# docker run --restart unless-stopped -p 8080:80 -d nergy101/portfolio:v1
+# docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1
