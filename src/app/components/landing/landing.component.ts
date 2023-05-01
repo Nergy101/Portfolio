@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-landing',
@@ -24,7 +25,7 @@ export class LandingComponent implements OnInit {
 
   faChevronDown = faChevronDown;
 
-  constructor() { }
+  constructor(private readonly dialog: MatDialog) { }
 
   async ngOnInit(): Promise<void> {
     await this.doCall();

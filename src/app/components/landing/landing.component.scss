@@ -3,6 +3,14 @@
   flex-direction: column;
 }
 
+.header-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  button {
+    margin-right: 1em;
+  }
+}
+
 .weather-cards {
   display: flex;
   flex-flow: row wrap;
@@ -11,16 +19,25 @@
 }
 
 .tech-cards {
+  flex-basis: 50%;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
+  gap: 1rem;
 
   .group {
-    flex-basis: 50%;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     gap: 1rem;
   }
+}
+
+.section {
+  display: flex;
+  width: 100vw;
+  flex-flow:  column wrap;
+  justify-content: space-around;
 }
 
 .section-title {

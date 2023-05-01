@@ -48,11 +48,7 @@ export class MenuComponent {
 
   async login(): Promise<void> {
 
-    this.dialog.open(LoginChoiceDialogComponent, {
-      width: "50vw",
-      minWidth: "20em",
-      maxWidth: "75vw",
-    })
+    this.dialog.open(LoginChoiceDialogComponent)
       .afterClosed()
       .subscribe(async (chosenOption): Promise<void> => {
 

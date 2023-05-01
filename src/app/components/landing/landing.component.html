@@ -16,18 +16,18 @@
       </h2>
     </mat-card-subtitle>
     <img mat-card-image />
-    <mat-card-actions>
+    <div class="header-buttons">
       <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101')">
-        <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>&nbsp;My GitHub profile
+        <mat-icon aria-hidden="false" aria-label="See my gh profile">contact_page</mat-icon>&nbsp;My GitHub profile
       </button>
-      <button mat-button>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">polyline</mat-icon>&nbsp;Other projects
+      <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101?tab=repositories')">
+        <mat-icon aria-hidden="false" aria-label="See my gh repos">polyline</mat-icon>&nbsp;Other projects
       </button>
-      <button mat-button>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">volunteer_activism</mat-icon>&nbsp;Buy me a
-        <mat-icon aria-hidden="false" aria-label="Example home icon">coffee</mat-icon>
+      <button mat-stroked-button (click)="navigateTo('https://donate.stripe.com/fZefZr21T3NudlSdQQ')">
+        <mat-icon aria-hidden="false" aria-label="donate">volunteer_activism</mat-icon>&nbsp;Buy me a
+        <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
       </button>
-    </mat-card-actions>
+    </div>
   </mat-card>
 
   <div class="weather">
@@ -67,13 +67,13 @@
     </div>
   </div>
 
-  <div class="pcnotes">
+  <div class="pcnotes section">
     <div class="section-title pcnotes">
       <h2>
-        <a href="https://github.com/Nergy101/PCNotes">PCNotes</a> -
-        <a href="https://pcnotes.nergy.space/">Visit the site.</a>
+        <a href="https://github.com/Nergy101/PCNotes" target="_blank">PCNotes</a> -
+        <a href="https://pcnotes.nergy.space/" target="_blank">Visit the site</a>
       </h2>
-      <h3>Create and cooperate on open notes</h3>
+      <h3>Create and co-operate on open notes</h3>
     </div>
 
     <div class="tech-cards">
@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <div class="hydroponics">
+  <div class="hydroponics section">
     <div class="section-title">
       <h2>Building hydroponics software</h2>
       <h3>Building a greener & cleaner future</h3>
@@ -136,13 +136,13 @@
     </div>
   </div>
 
-  <div class="Portfolio">
+  <div class="rechat section">
     <div class="section-title">
       <h2>
-        <a href="https://github.com/Nergy101/rechat">ReChat</a> -
-        <a href="https://rechat.nergy.space/">Visit the site.</a>
+        <a href="https://github.com/Nergy101/rechat" target="_blank">ReChat</a>
+        <!-- <a href="https://rechat.nergy.space/">Visit the site.</a> -->
       </h2>
-      <h3>Add to the chat!</h3>
+      <h3>Add to the chat! (wip)</h3>
     </div>
 
     <div class="tech-cards group">
@@ -151,16 +151,12 @@
           imagePath="rethinkdb" url="https://rethinkdb.com/" rippleColor="#20495620">
         </app-tech-card>
         <app-tech-card title="Svelte" subtitle="Cybernetically Enhanced Web App"
-          description="Svelte is a radical new approach to building user interfaces" imagePath="svelte"
-          url="https://svelte.dev" rippleColor="#ff3e0020">
+          description="Svelte is a radical new approach to building UIs" imagePath="svelte" url="https://svelte.dev"
+          rippleColor="#ff3e0020">
         </app-tech-card>
         <app-tech-card title="SvelteKit" subtitle="Frontend tooling"
           description="Powered by Svelte and Vite, speed is baked into every crevice" imagePath="sveltekit"
           url="https://kit.svelte.dev" rippleColor="#ff3e0020">
-        </app-tech-card>
-        <app-tech-card title="Docker" subtitle="Containerization / Other"
-          description="Created a Dockerfile and Docker compose" imagePath="docker" url="https://www.docker.com/"
-          rippleColor="#0db7ed20">
         </app-tech-card>
       </div>
     </div>
@@ -174,5 +170,24 @@
         <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
       </button>
     </div>
-  </div>
-</div>
+    <div class="others section">
+      <div class="section-title">
+        <h2>
+          Others
+        </h2>
+        <h3>Other tools I use for this Portfolio</h3>
+      </div>
+      <div class="tech-cards group">
+        <div class="group">
+          <app-tech-card title="Docker" subtitle="Containerization / Other"
+            description="Creating Dockerfile and Docker compose files" imagePath="docker" url="https://www.docker.com/"
+            rippleColor="#0db7ed40">
+          </app-tech-card>
+          <app-tech-card title="Digital Ocean" subtitle="PaaS" description="Hosting the server, functions, etc."
+            imagePath="DO" url="https://www.digitalocean.com" rippleColor="#0169ff40">
+          </app-tech-card>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
