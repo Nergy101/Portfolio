@@ -1,21 +1,20 @@
 <div class="container mat-drawer-container">
-  <mat-card id="top-text">
-    <mat-card-title>
+  <mat-card id="top-text" class="top-text">
+    <mat-card-title class="pad top">
       <h1>Well, hello there!</h1>
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content class="pad">
       My name is Christian van Dijk, a Software Engineer based in Utrecht, the Netherlands. <br>
       Welcome to my Portfolio, showcasing some of my capabilities as a Software Engineer. <br>
       Everything you see is run for $5/month on Digital Ocean. <br>
       In order to do this, I am using a bunch of Docker images, a Digital Ocean Droplet and Digital Ocean functions.
 
     </mat-card-content>
-    <mat-card-subtitle>
+    <mat-card-subtitle class="pad">
       <h2>
         This is my portfolio using Digital Ocean resources.
       </h2>
     </mat-card-subtitle>
-    <img mat-card-image />
     <div class="header-buttons">
       <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101')">
         <mat-icon aria-hidden="false" aria-label="See my gh profile">contact_page</mat-icon>&nbsp;My GitHub profile
@@ -145,7 +144,7 @@
       <h3>Add to the chat! (wip)</h3>
     </div>
 
-    <div class="tech-cards group">
+    <div class="tech-cards">
       <div class="group">
         <app-tech-card title="RethinkDB" subtitle="Database" description="The open-source database for the realtime web"
           imagePath="rethinkdb" url="https://rethinkdb.com/" rippleColor="#20495620">
@@ -177,7 +176,7 @@
         </h2>
         <h3>Other tools I use for this Portfolio</h3>
       </div>
-      <div class="tech-cards group">
+      <div class="tech-cards">
         <div class="group">
           <app-tech-card title="Docker" subtitle="Containerization / Other"
             description="Creating Dockerfile and Docker compose files" imagePath="docker" url="https://www.docker.com/"
