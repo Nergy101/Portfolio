@@ -130,7 +130,7 @@
         align-items: center;
         min-height: 5em;
       ">
-      <button mat-button (click)="moveTo('footer')">
+      <button mat-button (click)="moveTo('chevron4')">
         <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
       </button>
     </div>
@@ -160,13 +160,13 @@
         </app-tech-card>
       </div>
     </div>
-    <div id="chevron2" style="
+    <div id="chevron4" style="
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 5em;
       ">
-      <button mat-button (click)="moveTo('top-text')">
+      <button mat-button (click)="moveTo('footer')">
         <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
       </button>
     </div>
@@ -188,6 +188,16 @@
           </app-tech-card>
         </div>
       </div>
+      <div id="chevron3" style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      min-height: 5em;
+                    ">
+        <button mat-button (click)="moveTo('top-text')">
+          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
+        </button>
+      </div>
     </div>
-    </div>
-    </div>
+  </div>
+  </div>

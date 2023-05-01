@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -24,6 +24,7 @@ export class LandingComponent implements OnInit {
   query?= '?city=Utrecht';
 
   faChevronDown = faChevronDown;
+  faChevronUp = faChevronUp;
 
   constructor(private readonly dialog: MatDialog) { }
 
