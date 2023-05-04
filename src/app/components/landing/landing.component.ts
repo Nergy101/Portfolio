@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
 import { MatDialog } from '@angular/material/dialog';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-landing',
@@ -27,6 +28,11 @@ export class LandingComponent implements OnInit {
   faChevronUp = faChevronUp;
 
   constructor(private readonly dialog: MatDialog) { }
+
+
+  get enableTodo(): boolean {
+    return environment.enableTodo;
+  }
 
   async ngOnInit(): Promise<void> {
     await this.doCall();

@@ -29,6 +29,7 @@
     </div>
   </mat-card>
 
+
   <div class="weather">
     <div class="section-title">
       <div>
@@ -66,137 +67,150 @@
     </div>
   </div>
 
-  <div class="pcnotes section">
-    <div class="section-title pcnotes">
-      <h2>
-        <a href="https://github.com/Nergy101/PCNotes" target="_blank">PCNotes</a> -
-        <a href="https://pcnotes.nergy.space/" target="_blank">Visit the site</a>
-      </h2>
-      <h3>Create and co-operate on open notes</h3>
-    </div>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Projects">
+      <div>
+        <div class="pcnotes section">
+          <div class="section-title pcnotes">
+            <h2>
+              <a href="https://github.com/Nergy101/PCNotes" target="_blank">PCNotes</a> -
+              <a href="https://pcnotes.nergy.space/" target="_blank">Visit the site</a>
+            </h2>
+            <h3>Create and co-operate on open notes</h3>
+          </div>
 
-    <div class="tech-cards">
-      <div class="group">
-        <app-tech-card title="MongoDB" subtitle="Database / NoSQL" description="MongoDB is the most used NoSQL database"
-          imagePath="mongodb" url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
-        </app-tech-card>
-        <app-tech-card title="C-Sharp" subtitle="My primary programming language" description=".NET, ASP.NET"
-          imagePath="c-sharp" url="https://dotnet.microsoft.com/en-us/languages/csharp" rippleColor="#a179dc20">
-        </app-tech-card>
-        <app-tech-card title="Blazor" subtitle="WebAssembly framework in C#"
-          description="Blazor WebAssembly client application, using MudBlazor" imagePath="blazor"
-          url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" rippleColor="#702af720">
-        </app-tech-card>
-      </div>
-    </div>
-    <div id="chevron2" style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 5em;
-      ">
-      <button mat-button (click)="moveTo('chevron3')">
-        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-      </button>
-    </div>
-  </div>
+          <div class="tech-cards">
+            <div class="group">
+              <app-tech-card title="MongoDB" subtitle="Database / NoSQL" description="MongoDB is the most used NoSQL database"
+                imagePath="mongodb" url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
+              </app-tech-card>
+              <app-tech-card title="C-Sharp" subtitle="My primary programming language" description=".NET, ASP.NET"
+                imagePath="c-sharp" url="https://dotnet.microsoft.com/en-us/languages/csharp" rippleColor="#a179dc20">
+              </app-tech-card>
+              <app-tech-card title="Blazor" subtitle="WebAssembly framework in C#"
+                description="Blazor WebAssembly client application, using MudBlazor" imagePath="blazor"
+                url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" rippleColor="#702af720">
+              </app-tech-card>
+            </div>
+          </div>
+          <div id="chevron2" style="
+                                                                                                                          display: flex;
+                                                                                                                          justify-content: center;
+                                                                                                                          align-items: center;
+                                                                                                                          min-height: 5em;
+                                                                                                                        ">
+            <button mat-button (click)="moveTo('chevron3')">
+              <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+            </button>
+          </div>
+          </div>
 
-  <div class="hydroponics section">
-    <div class="section-title">
-      <h2>Building hydroponics software</h2>
-      <h3>Building a greener & cleaner future</h3>
-    </div>
+        <div class="hydroponics section">
+          <div class="section-title">
+            <h2>Building hydroponics software</h2>
+            <h3>Building a greener & cleaner future</h3>
+          </div>
 
-    <div class="tech-cards">
-      <div class="group">
-        <app-tech-card title="MongoDB" subtitle="" description="MongoDB is the most used NoSQL database"
-          imagePath="mongodb" url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
-        </app-tech-card>
-        <app-tech-card title="Python" subtitle="Backend API & Machine Program"
-          description="Hydroponics software using Python" imagePath="python" url="https://www.python.org/about/"
-          rippleColor="#3571a320">
-        </app-tech-card>
-        <app-tech-card title="Raspberry Pi" subtitle="On-location machine / hardware"
-          description="Small computer that controls the hydroponics installation" imagePath="raspberry-pi"
-          url="https://www.raspberrypi.com/" rippleColor="#bc114220">
-        </app-tech-card>
-      </div>
-    </div>
+          <div class="tech-cards">
+            <div class="group">
+              <app-tech-card title="MongoDB" subtitle="" description="MongoDB is the most used NoSQL database" imagePath="mongodb"
+                url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
+              </app-tech-card>
+              <app-tech-card title="Python" subtitle="Backend API & Machine Program" description="Hydroponics software using Python"
+                imagePath="python" url="https://www.python.org/about/" rippleColor="#3571a320">
+              </app-tech-card>
+              <app-tech-card title="Raspberry Pi" subtitle="On-location machine / hardware"
+                description="Small computer that controls the hydroponics installation" imagePath="raspberry-pi"
+                url="https://www.raspberrypi.com/" rippleColor="#bc114220">
+              </app-tech-card>
+              </div>
+              </div>
 
-    <div id="chevron3" style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 5em;
-      ">
-      <button mat-button (click)="moveTo('chevron4')">
-        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-      </button>
-    </div>
-  </div>
+          <div id="chevron3" style="
+                                                                                                              display: flex;
+                                                                                                              justify-content: center;
+                                                                                                              align-items: center;
+                                                                                                              min-height: 5em;
+                                                                                                            ">
+            <button mat-button (click)="moveTo('chevron4')">
+              <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+            </button>
+          </div>
+          </div>
 
-  <div class="rechat section">
-    <div class="section-title">
-      <h2>
-        <a href="https://github.com/Nergy101/rechat" target="_blank">ReChat</a>
-        <!-- <a href="https://rechat.nergy.space/">Visit the site.</a> -->
-      </h2>
-      <h3>Add to the chat! (wip)</h3>
-    </div>
+        <div class="rechat section">
+          <div class="section-title">
+            <h2>
+              <a href="https://github.com/Nergy101/rechat" target="_blank">ReChat</a>
+              <!-- <a href="https://rechat.nergy.space/">Visit the site.</a> -->
+            </h2>
+            <h3>Add to the chat! (wip)</h3>
+          </div>
 
-    <div class="tech-cards">
-      <div class="group">
-        <app-tech-card title="RethinkDB" subtitle="Database" description="The open-source database for the realtime web"
-          imagePath="rethinkdb" url="https://rethinkdb.com/" rippleColor="#20495620">
-        </app-tech-card>
-        <app-tech-card title="Svelte" subtitle="Cybernetically Enhanced Web App"
-          description="Svelte is a radical new approach to building UIs" imagePath="svelte" url="https://svelte.dev"
-          rippleColor="#ff3e0020">
-        </app-tech-card>
-        <app-tech-card title="SvelteKit" subtitle="Frontend tooling"
-          description="Powered by Svelte and Vite, speed is baked into every crevice" imagePath="sveltekit"
-          url="https://kit.svelte.dev" rippleColor="#ff3e0020">
-        </app-tech-card>
-      </div>
-    </div>
-    <div id="chevron4" style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 5em;
-      ">
-      <button mat-button (click)="moveTo('footer')">
-        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-      </button>
-    </div>
-    <div class="others section">
-      <div class="section-title">
-        <h2>
-          Others
-        </h2>
-        <h3>Other tools I use for this Portfolio</h3>
-      </div>
-      <div class="tech-cards">
-        <div class="group">
-          <app-tech-card title="Docker" subtitle="Containerization / Other"
-            description="Creating Dockerfile and Docker compose files" imagePath="docker" url="https://www.docker.com/"
-            rippleColor="#0db7ed40">
-          </app-tech-card>
-          <app-tech-card title="Digital Ocean" subtitle="PaaS" description="Hosting the server, functions, etc."
-            imagePath="DO" url="https://www.digitalocean.com" rippleColor="#0169ff40">
-          </app-tech-card>
+          <div class="tech-cards">
+            <div class="group">
+              <app-tech-card title="RethinkDB" subtitle="Database" description="The open-source database for the realtime web"
+                imagePath="rethinkdb" url="https://rethinkdb.com/" rippleColor="#20495620">
+              </app-tech-card>
+              <app-tech-card title="Svelte" subtitle="Cybernetically Enhanced Web App"
+                description="Svelte is a radical new approach to building UIs" imagePath="svelte"
+                url="https://svelte.dev" rippleColor="#ff3e0020">
+              </app-tech-card>
+              <app-tech-card title="SvelteKit" subtitle="Frontend tooling"
+                description="Powered by Svelte and Vite, speed is baked into every crevice" imagePath="sveltekit"
+                url="https://kit.svelte.dev" rippleColor="#ff3e0020">
+              </app-tech-card>
+            </div>
+          </div>
+          <div id="chevron4" style="
+                                                                display: flex;
+                                                                justify-content: center;
+                                                                align-items: center;
+                                                                min-height: 5em;
+                                                              ">
+            <button mat-button (click)="moveTo('footer')">
+              <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+            </button>
+          </div>
+          <div class="others section">
+            <div class="section-title">
+              <h2>
+                Tools
+                </h2>
+              <h3>Tools I use for this Portfolio</h3>
+              </div>
+              <div class="tech-cards">
+                <div class="group">
+                  <app-tech-card title="Docker" subtitle="Containerization / Other"
+                  description="Creating Dockerfile and Docker compose files" imagePath="docker"
+                  url="https://www.docker.com/" rippleColor="#0db7ed40">
+                </app-tech-card>
+                <app-tech-card title="Digital Ocean" subtitle="PaaS" description="Hosting the server, functions, etc."
+                  imagePath="DO" url="https://www.digitalocean.com" rippleColor="#0169ff40">
+                </app-tech-card>
+              </div>
+            </div>
+            <div id="chevron3" style="
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          min-height: 5em;
+                        ">
+              <button mat-button (click)="moveTo('top-text')">
+                <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="chevron3" style="
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      min-height: 5em;
-                    ">
-        <button mat-button (click)="moveTo('top-text')">
-          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
-        </button>
+    </mat-tab>
+    <mat-tab label="Yet Another ToDo App" *ngIf="enableTodo">
+      <div class="tab-content">
+        <h1>
+          Pocketbase-component here
+        </h1>
       </div>
+    </mat-tab>
+    </mat-tab-group>
+    
     </div>
-  </div>
-  </div>
