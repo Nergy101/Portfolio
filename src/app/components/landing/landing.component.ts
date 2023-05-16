@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { environment } from 'src/environments/environment';
 
 @Component({

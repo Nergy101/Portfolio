@@ -18,7 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TechCardComponent } from './components/tech-card/tech-card.component';
 import { PocketbaseService } from './services/pocketbase.service';
-import { MatDialogConfig, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatLegacyDialogConfig as MatDialogConfig, MatLegacyDialogModule as MatDialogModule, MAT_LEGACY_DIALOG_DEFAULT_OPTIONS as MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/legacy-dialog';
 import { LoginChoiceDialogComponent } from './components/dialogs/login-choice-dialog/login-choice-dialog.component';
 
 @NgModule({

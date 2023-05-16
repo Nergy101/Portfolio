@@ -3,9 +3,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Option } from '../material/option.model';
 import { StyleManagerService } from '../../services/style-manager.service';
 import { PocketbaseService } from 'src/app/services/pocketbase.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login-choice-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 
 @Component({
   selector: 'app-menu',
