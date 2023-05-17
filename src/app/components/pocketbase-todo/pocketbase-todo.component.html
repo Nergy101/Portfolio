@@ -1,0 +1,43 @@
+<div class="container">
+  <form class="todo-form">
+    <mat-form-field type="text" appearance="fill">
+      <mat-label>Todo title</mat-label>
+      <input matInput [(ngModel)]="newTodoTitle" name="newTodoTitle" placeholder="Task description" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="addTodo()">
+      Add
+    </button>
+  </form>
+
+  <mat-card *ngFor="let todo of todos">
+    <mat-card-header>
+      <h1 title="{{todo.id}}">{{todo.title}}</h1>
+      <button mat-icon-button color="warn" (click)="removeTodoById(todo.id)"><mat-icon>delete</mat-icon></button>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Task description</mat-label>
+          <input matInput [(ngModel)]="newTaskDescription" name="newTaskDescription"
+            placeholder="When I was, a young boy, my father, took me into the city, to see a marching band..." required>
+        </mat-form-field>
+        <button mat-stroked-button color="primary" type="submit" (click)="addTask(todo.id)">
+          Add
+        </button>
+      </form>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let task of todo.tasks" [value]="task" [(selected)]="task.finished">
+          <div class="task-description">
+            {{task.description}}
+            <button mat-icon-button color="warn"
+              (click)="removeTaskById(todo.id, task.id)"><mat-icon>delete</mat-icon></button>
+          </div>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-progress-bar mode="determinate" value="{{finishedTasksPercentage(todo)}}"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+  <mat-divider></mat-divider>
+</div>

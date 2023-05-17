@@ -4,16 +4,16 @@
       <h1>Well, hello there!</h1>
     </mat-card-title>
     <mat-card-content class="pad">
-      My name is Christian van Dijk, a Software Engineer based in Utrecht, the Netherlands. <br>
-      Welcome to my Portfolio, showcasing some of my capabilities as a Software Engineer. <br>
-      Everything you see is run for $5/month on Digital Ocean. <br>
-      In order to do this, I am using a bunch of Docker images, a Digital Ocean Droplet and Digital Ocean functions.
-
+      My name is Christian van Dijk, a Software Engineer based in Utrecht, the
+      Netherlands. <br />
+      Welcome to my Portfolio, showcasing some of my capabilities as a Software
+      Engineer. <br />
+      Everything you see is run for $5/month on Digital Ocean. <br />
+      In order to do this, I am using a bunch of Docker images, a Digital Ocean
+      Droplet and Digital Ocean functions.
     </mat-card-content>
     <mat-card-subtitle class="pad">
-      <h2>
-        This is my portfolio using Digital Ocean resources.
-      </h2>
+      <h2>This is my portfolio using Digital Ocean resources.</h2>
     </mat-card-subtitle>
     <div class="header-buttons">
       <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101')">
@@ -28,7 +28,6 @@
       </button>
     </div>
   </mat-card>
-
 
   <div class="weather">
     <div class="section-title">
@@ -73,16 +72,20 @@
         <div class="pcnotes section">
           <div class="section-title pcnotes">
             <h2>
-              <a href="https://github.com/Nergy101/PCNotes" target="_blank">PCNotes</a> -
-              <a href="https://pcnotes.nergy.space/" target="_blank">Visit the site</a>
+              <a href="https://github.com/Nergy101/PCNotes" data-tooltip="Go to pcnotes github"
+                target="_blank">PCNotes</a>
+              -
+              <a href="https://pcnotes.nergy.space/" data-tooltip="Go to pcnotes website" target="_blank">Visit the
+                site</a>
             </h2>
             <h3>Create and co-operate on open notes</h3>
           </div>
 
           <div class="tech-cards">
             <div class="group">
-              <app-tech-card title="MongoDB" subtitle="Database / NoSQL" description="MongoDB is the most used NoSQL database"
-                imagePath="mongodb" url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
+              <app-tech-card title="MongoDB" subtitle="Database / NoSQL"
+                description="MongoDB is the most used NoSQL database" imagePath="mongodb"
+                url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
               </app-tech-card>
               <app-tech-card title="C-Sharp" subtitle="My primary programming language" description=".NET, ASP.NET"
                 imagePath="c-sharp" url="https://dotnet.microsoft.com/en-us/languages/csharp" rippleColor="#a179dc20">
@@ -94,63 +97,65 @@
             </div>
           </div>
           <div id="chevron2" style="
-                                                                                                                          display: flex;
-                                                                                                                          justify-content: center;
-                                                                                                                          align-items: center;
-                                                                                                                          min-height: 5em;
-                                                                                                                        ">
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 5em;
+            ">
             <button mat-button (click)="moveTo('chevron3')">
               <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
             </button>
           </div>
-          </div>
+        </div>
 
         <div class="hydroponics section">
           <div class="section-title">
-            <h2>Building hydroponics software</h2>
+            <h2>Building hydroponics software (@<a href="www.nemic-hydroponics.com">nemic-hydroponics</a>)</h2>
             <h3>Building a greener & cleaner future</h3>
           </div>
 
           <div class="tech-cards">
             <div class="group">
-              <app-tech-card title="MongoDB" subtitle="" description="MongoDB is the most used NoSQL database" imagePath="mongodb"
+              <app-tech-card title="MongoDB" subtitle="Database / NoSQL"
+                description="MongoDB is the most used NoSQL database" imagePath="mongodb"
                 url="https://www.mongodb.com/home" rippleColor="#6CAC4820">
               </app-tech-card>
-              <app-tech-card title="Python" subtitle="Backend API & Machine Program" description="Hydroponics software using Python"
-                imagePath="python" url="https://www.python.org/about/" rippleColor="#3571a320">
+              <app-tech-card title="Python" subtitle="Backend API & Machine Program"
+                description="Hydroponics software using Python" imagePath="python" url="https://www.python.org/about/"
+                rippleColor="#3571a320">
               </app-tech-card>
               <app-tech-card title="Raspberry Pi" subtitle="On-location machine / hardware"
                 description="Small computer that controls the hydroponics installation" imagePath="raspberry-pi"
                 url="https://www.raspberrypi.com/" rippleColor="#bc114220">
               </app-tech-card>
-              </div>
-              </div>
+            </div>
+          </div>
 
           <div id="chevron3" style="
-                                                                                                              display: flex;
-                                                                                                              justify-content: center;
-                                                                                                              align-items: center;
-                                                                                                              min-height: 5em;
-                                                                                                            ">
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 5em;
+            ">
             <button mat-button (click)="moveTo('chevron4')">
               <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
             </button>
           </div>
-          </div>
+        </div>
 
         <div class="rechat section">
           <div class="section-title">
             <h2>
               <a href="https://github.com/Nergy101/rechat" target="_blank">ReChat</a>
-              <!-- <a href="https://rechat.nergy.space/">Visit the site.</a> -->
             </h2>
-            <h3>Add to the chat! (wip)</h3>
+            <h3>A simple chatroom-app</h3>
           </div>
 
           <div class="tech-cards">
             <div class="group">
-              <app-tech-card title="RethinkDB" subtitle="Database" description="The open-source database for the realtime web"
-                imagePath="rethinkdb" url="https://rethinkdb.com/" rippleColor="#20495620">
+              <app-tech-card title="RethinkDB" subtitle="Database / Change-feeds"
+                description="The open-source database for the realtime web" imagePath="rethinkdb"
+                url="https://rethinkdb.com/" rippleColor="#20495620">
               </app-tech-card>
               <app-tech-card title="Svelte" subtitle="Cybernetically Enhanced Web App"
                 description="Svelte is a radical new approach to building UIs" imagePath="svelte"
@@ -163,25 +168,23 @@
             </div>
           </div>
           <div id="chevron4" style="
-                                                                display: flex;
-                                                                justify-content: center;
-                                                                align-items: center;
-                                                                min-height: 5em;
-                                                              ">
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 5em;
+            ">
             <button mat-button (click)="moveTo('footer')">
               <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
             </button>
           </div>
           <div class="others section">
             <div class="section-title">
-              <h2>
-                Tools
-                </h2>
+              <h2>Tools</h2>
               <h3>Tools I use for this Portfolio</h3>
-              </div>
-              <div class="tech-cards">
-                <div class="group">
-                  <app-tech-card title="Docker" subtitle="Containerization / Other"
+            </div>
+            <div class="tech-cards">
+              <div class="group">
+                <app-tech-card title="Docker" subtitle="Containerization"
                   description="Creating Dockerfile and Docker compose files" imagePath="docker"
                   url="https://www.docker.com/" rippleColor="#0db7ed40">
                 </app-tech-card>
@@ -191,11 +194,11 @@
               </div>
             </div>
             <div id="chevron3" style="
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                          min-height: 5em;
-                        ">
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 5em;
+              ">
               <button mat-button (click)="moveTo('top-text')">
                 <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
               </button>
@@ -204,13 +207,10 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Yet Another ToDo App" *ngIf="enableTodo">
+    <mat-tab label="Yet Another ToDo App (WIP)" *ngIf="enableTodo">
       <div class="tab-content">
-        <h1>
-          Pocketbase-component here
-        </h1>
+        <app-pocketbase-todo></app-pocketbase-todo>
       </div>
     </mat-tab>
-    </mat-tab-group>
-    
-    </div>
+  </mat-tab-group>
+</div>

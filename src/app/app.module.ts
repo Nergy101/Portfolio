@@ -20,9 +20,10 @@ import { TechCardComponent } from './components/tech-card/tech-card.component';
 import { PocketbaseService } from './services/pocketbase.service';
 import { MatLegacyDialogConfig as MatDialogConfig, MatLegacyDialogModule as MatDialogModule, MAT_LEGACY_DIALOG_DEFAULT_OPTIONS as MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/legacy-dialog';
 import { LoginChoiceDialogComponent } from './components/dialogs/login-choice-dialog/login-choice-dialog.component';
+import { PocketbaseTodoComponent } from './components/pocketbase-todo/pocketbase-todo.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, HeaderComponent, LandingComponent, FooterComponent, WeatherCardComponent, TechCardComponent, LoginChoiceDialogComponent],
+  declarations: [AppComponent, MenuComponent, HeaderComponent, LandingComponent, FooterComponent, WeatherCardComponent, TechCardComponent, LoginChoiceDialogComponent, PocketbaseTodoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
