@@ -11,12 +11,17 @@
 }
 
 .container {
+  padding: 1em;
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   padding-top: 1em;
+
+  @media screen and (max-width: 1024px) {
+    flex-basis: 90%;
+  }
 }
 
 mat-card {

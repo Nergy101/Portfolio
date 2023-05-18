@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { environment } from 'src/environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-landing',
@@ -27,8 +28,7 @@ export class LandingComponent implements OnInit {
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;
 
-  constructor(private readonly dialog: MatDialog) { }
-
+  constructor(private readonly snackBar: MatSnackBar) { }
 
   get enableTodo(): boolean {
     return environment.enableTodo;
@@ -48,6 +48,7 @@ export class LandingComponent implements OnInit {
       }
     } catch (e) {
       console.error(e);
+      this.snackBar.open('Error while fetching weather data', 'Close', { duration: 3000 });
     } finally {
       this.loading = false;
     }

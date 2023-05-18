@@ -26,7 +26,7 @@
 }
 
 .weather-cards {
-  padding: 0 1em 0 1em;
+  padding: 1em 1em 0 1em;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -57,11 +57,12 @@
 }
 
 .section-title {
-  margin-top: 2rem;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   &.pcnotes {
     a {

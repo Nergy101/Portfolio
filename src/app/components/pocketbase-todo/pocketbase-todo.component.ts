@@ -27,7 +27,8 @@ export class PocketbaseTodoComponent {
   }]
 
   finishedTasksPercentage(todo: any): number {
-    return todo.tasks.filter((t: any) => t.finished).length / todo.tasks.length * 100;
+    const finishedTasksPercentage = todo.tasks.filter((t: any) => t.finished).length / todo.tasks.length * 100
+    return Math.round(todo.tasks.length ? (finishedTasksPercentage || 0) : (finishedTasksPercentage || 100));
   }
 
   addTodo(): void {

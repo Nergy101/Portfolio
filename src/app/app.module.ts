@@ -18,9 +18,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TechCardComponent } from './components/tech-card/tech-card.component';
 import { PocketbaseService } from './services/pocketbase.service';
-import { MatLegacyDialogConfig as MatDialogConfig, MatLegacyDialogModule as MatDialogModule, MAT_LEGACY_DIALOG_DEFAULT_OPTIONS as MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/legacy-dialog';
 import { LoginChoiceDialogComponent } from './components/dialogs/login-choice-dialog/login-choice-dialog.component';
 import { PocketbaseTodoComponent } from './components/pocketbase-todo/pocketbase-todo.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent, HeaderComponent, LandingComponent, FooterComponent, WeatherCardComponent, TechCardComponent, LoginChoiceDialogComponent, PocketbaseTodoComponent],
@@ -32,6 +33,7 @@ import { PocketbaseTodoComponent } from './components/pocketbase-todo/pocketbase
     FontAwesomeModule,
     FormsModule,
     MatDialogModule,
+    MatSnackBarModule,
     HttpClientModule,
   ],
   providers: [StyleManagerService, ThemeService, PocketbaseService,
