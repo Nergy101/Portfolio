@@ -69,3 +69,15 @@ $dark-app-theme: mat.define-dark-theme(
 }
 
 // global custom styles
+
+.snackbar-error {
+  background-color: #f44336;
+  color: white;
+  border-radius: 1em;
+}
+
+.mat-mdc-snack-bar-actions {
+  background-color: #ca372d;
+  border-radius: 1em;
+  margin: 3px;
+}

@@ -13,7 +13,7 @@
     <mat-expansion-panel hideToggle *ngFor="let todo of todos">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ todo.title }} ({{ todo.tasks.length }})
+          {{ todo.title }} ({{ todo?.tasks?.length ?? 0 }})
         </mat-panel-title>
         <mat-panel-description>
           {{ finishedTasksPercentage(todo)}}% finished
@@ -36,8 +36,8 @@
               Add
             </button>
           </form>
-          <mat-selection-list>
-            <mat-list-option *ngFor="let task of todo.tasks" [value]="task" [(selected)]="task.finished">
+          <mat-selection-list (selectionChange)="finishedChanged($event)">
+            <mat-list-option *ngFor="let task of todo.tasks" [value]="task" [selected]="task.finished">
               <div class="task-description">
                 {{task.description}}
                 <button mat-icon-button color="warn"

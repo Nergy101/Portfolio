@@ -68,7 +68,6 @@ export class MenuComponent {
             .subscribe(async () => await this.login())
         }
 
-
         console.info(`Logged in using ${chosenOption}`, authData)
       })
   }
