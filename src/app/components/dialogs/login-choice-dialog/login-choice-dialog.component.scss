@@ -1,11 +1,14 @@
-.options {
-  padding: 3em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
+:host {
+  .options {
+    padding: 3em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 2em;
+  }
 
-.center {
-  display: flex;
-  justify-content: center;
+  .center {
+    display: flex;
+    justify-content: center;
+  }
 }

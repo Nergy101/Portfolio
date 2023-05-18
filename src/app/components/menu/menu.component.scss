@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: space-around;
 }
+
+::ng-deep {
+  .mat-dialog-container {
+    background-color: #2e2e2e !important;
+  }
+}
