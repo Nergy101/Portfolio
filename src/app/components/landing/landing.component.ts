@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
-import { environment } from 'src/environments/environment';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -29,10 +27,6 @@ export class LandingComponent implements OnInit {
   faChevronUp = faChevronUp;
 
   constructor(private readonly snackBar: MatSnackBar) { }
-
-  get enableTodo(): boolean {
-    return environment.enableTodo;
-  }
 
   async ngOnInit(): Promise<void> {
     await this.doCall();
