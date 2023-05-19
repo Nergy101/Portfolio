@@ -21,6 +21,13 @@
 
   @media screen and (max-width: 1024px) {
     flex-basis: 90%;
+    max-width: 90vw; // prevent overgrowing
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .add-button {
+    width: 100%;
   }
 }
 
@@ -30,6 +37,9 @@ mat-card {
   mat-card-header {
     display: flex;
     justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -50,8 +60,22 @@ form {
   }
 }
 
+mat-panel-description {
+  flex-grow: 1;
+}
+
+mat-panel-title {
+  flex-grow: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .task-description {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  button {
+    margin-left: auto;
+  }
 }
