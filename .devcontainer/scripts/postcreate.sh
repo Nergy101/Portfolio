@@ -9,7 +9,9 @@ sudo chown -R node:node package.json README.md node_modules src tsconfig.app.jso
 sudo chmod -R 755 node_modules
 
 echo -e "${BLUE}Configure Git Repository...${NC}"
+
+# Mark git repository as safe for VS-Code
 git config --global --add safe.directory '*'
 
-echo -e "${BLUE}npm install...${NC}"
+echo -e "${BLUE}Run npm install...${NC}"
 npm install
