@@ -8,8 +8,7 @@ NC='\033[0m' # No Color
 sudo chown -R node:node package.json README.md node_modules src tsconfig.app.json tsconfig.json
 sudo chmod -R 755 node_modules
 
-echo -e "${BLUE}Configure Git Repository...${NC}"
-
+echo -e "${BLUE}Configuring Git Repository...${NC}"
 # Mark git repository as safe for VS-Code
 git config --global --add safe.directory '*'
 
