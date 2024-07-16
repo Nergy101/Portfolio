@@ -1,16 +1,3 @@
-<div *ngIf="isLoggedIn">
-  <span>{{loggedInAs?.email}}</span>
-  <button mat-icon-button (click)="logout()" matTooltip="Logout" matTooltipPosition="below">
-    <mat-icon>logout</mat-icon>
-  </button>
-</div>
-
-<div *ngIf="!isLoggedIn">
-  <button mat-icon-button (click)="login()" matTooltip="Login" matTooltipPosition="below">
-    <mat-icon>login</mat-icon>
-  </button>
-</div>
-
 <!-- <button mat-icon-button matTooltip="Change Theme Palette" matTooltipPosition="below">
   <mat-icon [matMenuTriggerFor]="menu"> palette </mat-icon>
 </button> -->
@@ -40,3 +27,15 @@
     <span>{{ option.label }}</span>
   </button>
 </mat-menu>
+<div *ngIf="isLoggedIn">
+  <span>{{loggedInAs?.email}}</span>
+  <button mat-icon-button (click)="logout()" matTooltip="Logout" matTooltipPosition="below">
+    <mat-icon>logout</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="!isLoggedIn">
+  <button mat-icon-button (click)="login()" matTooltip="Login" matTooltipPosition="below">
+    <mat-icon>login</mat-icon>
+  </button>
+</div>
