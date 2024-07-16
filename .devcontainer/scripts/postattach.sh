@@ -6,8 +6,11 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}Configuring Git User...${NC}"
 
-# Check if git authentication status is negative
-if  gh auth status | grep -q "You are not logged into any GitHub hosts."; then
+# Check GitHub authentication status
+auth_status=$(gh auth status -t)
+
+# Check if the auth status command failed
+if [ $? -ne 0 ]; then
     echo -e "${RED}Git authentication status is negative. Performing login...${NC}"
     gh auth login
 else
