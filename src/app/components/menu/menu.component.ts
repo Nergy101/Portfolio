@@ -3,9 +3,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Option } from '../material/option.model';
 import { StyleManagerService } from '../../services/style-manager.service';
 import { PocketbaseService } from 'src/app/services/pocketbase.service';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login-choice-dialog.component';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-menu',
@@ -22,8 +22,8 @@ export class MenuComponent {
     private styleManager: StyleManagerService,
     private readonly pocketbaseService: PocketbaseService,
     private readonly dialog: MatDialog,
-    private readonly snackBar: MatSnackBar
-  ) { }
+    private readonly snackBar: MatSnackBar,
+  ) {}
 
   get isLoggedIn(): boolean {
     return this.pocketbaseService.pocketbase?.authStore?.isValid ?? false;
@@ -47,28 +47,28 @@ export class MenuComponent {
   }
 
   async login(): Promise<void> {
-
-    this.dialog.open(LoginChoiceDialogComponent)
+    this.dialog
+      .open(LoginChoiceDialogComponent)
       .afterClosed()
-      .subscribe(async (chosenOption): Promise<void> => {
-
+      .subscribe(async (chosenOption: any): Promise<void> => {
         let authData;
 
-        if (chosenOption == "google") {
+        if (chosenOption == 'google') {
           authData = await this.pocketbaseService.pocketbase
             .collection('users')
             .authWithOAuth2({ provider: 'google' });
-        } else if (chosenOption == "github") {
+        } else if (chosenOption == 'github') {
           authData = await this.pocketbaseService.pocketbase
             .collection('users')
             .authWithOAuth2({ provider: 'github' });
         } else {
-          this.snackBar.open("Unknown login provider...", "Retry?", { duration: 3000 })
+          this.snackBar
+            .open('Unknown login provider...', 'Retry?', { duration: 3000 })
             .onAction()
-            .subscribe(async () => await this.login())
+            .subscribe(async () => await this.login());
         }
 
-        console.info(`Logged in using ${chosenOption}`, authData)
-      })
+        console.info(`Logged in using ${chosenOption}`, authData);
+      });
   }
 }
