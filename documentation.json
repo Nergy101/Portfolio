@@ -1,0 +1,2934 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Option",
+            "id": "interface-Option-1b518125045876da8a95abdbfce2212a6a37774a6f7afb5ab48cb03ddc3bfcbdab582a4dced80e4d565b3876c3d7f1a322a77371de30d0b7a02004e8607a2dbf",
+            "file": "src/app/components/material/option.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Option {\n  backgroundColor: string;\n  buttonColor: string;\n  headingColor: string;\n  label: string;\n  value: string;\n}\n",
+            "properties": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "buttonColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "headingColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "TaskRecord",
+            "id": "interface-TaskRecord-3b02ab76ff08f2f80585bb52d1ab371f3e8c0d724b09356696173939f7643421e0f33c86194bfedff9a7f9c914b0116bb1a3e22d6def157ae74f40bab4152125",
+            "file": "src/app/components/pocketbase-todo/models/todo.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Record } from \"pocketbase\";\n\nexport interface TodoRecord extends Record {\n  id: string;\n  title: string;\n  tasks: TaskRecord[]\n}\n\nexport interface TaskRecord extends Record {\n  id: string;\n  description: string;\n  finished: boolean;\n}\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "finished",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": [
+                "Record"
+            ]
+        },
+        {
+            "name": "Tile",
+            "id": "interface-Tile-be44d016d62fde48d31683bd265450c5422ae156900c25d615fa08fb0bdbfb4758750da8f92a3c39151b07d374800a73b6f3fb204b82600d9ea8a95e1c856a10",
+            "file": "src/app/components/landing/tile.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Tile {\n  color: string;\n  cols: number;\n  rows: number;\n  text: string;\n}\n",
+            "properties": [
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "cols",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "rows",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "TodoRecord",
+            "id": "interface-TodoRecord-3b02ab76ff08f2f80585bb52d1ab371f3e8c0d724b09356696173939f7643421e0f33c86194bfedff9a7f9c914b0116bb1a3e22d6def157ae74f40bab4152125",
+            "file": "src/app/components/pocketbase-todo/models/todo.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Record } from \"pocketbase\";\n\nexport interface TodoRecord extends Record {\n  id: string;\n  title: string;\n  tasks: TaskRecord[]\n}\n\nexport interface TaskRecord extends Record {\n  id: string;\n  description: string;\n  finished: boolean;\n}\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "tasks",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TaskRecord[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": [
+                "Record"
+            ]
+        },
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "PocketbaseService",
+            "id": "injectable-PocketbaseService-f6d2e75a1e1dc9d73a7896296d93cb4e9ba6c322aaf4b3fff4dc03894a90493539ebb2dc1f73496f08a726dd55da281da13c2d9bb588182cbcb8a66c9003f18e",
+            "file": "src/app/services/pocketbase.service.ts",
+            "properties": [
+                {
+                    "name": "pocketbase",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PocketBase",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport PocketBase from 'pocketbase';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class PocketbaseService {\n  pocketbase: PocketBase;\n\n  constructor() {\n    this.pocketbase = new PocketBase('https://pocketbase.nergy.space');\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "StyleManagerService",
+            "id": "injectable-StyleManagerService-8cf789fddb481f0f84ff790a75619e05af22702f90337986244460e81f2f0c520005c7de78a0ccf1a347b9615987756bb00cb6ba7d710ae5592a253d2dd9d06e",
+            "file": "src/app/services/style-manager.service.ts",
+            "properties": [
+                {
+                    "name": "isLight",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [
+                {
+                    "name": "removeStyle",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nRemove the stylesheet with the specified key.\n",
+                    "description": "<p>Remove the stylesheet with the specified key.</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setStyle",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "href",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nSet the stylesheet with the specified key.\n",
+                    "description": "<p>Set the stylesheet with the specified key.</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "href",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleDarkTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable()\nexport class StyleManagerService {\n  isLight = false;\n\n  /**\n   * Set the stylesheet with the specified key.\n   */\n  setStyle(key: string, href: string) {\n    getLinkElementForKey1(key).setAttribute('href', href);\n  }\n\n  /**\n   * Remove the stylesheet with the specified key.\n   */\n  removeStyle(key: string) {\n    const existingLinkElement = getExistingLinkElementByKey(key);\n    if (existingLinkElement) {\n      document.head.removeChild(existingLinkElement);\n    }\n  }\n\n  toggleDarkTheme() {\n    if (this.isLight) {\n      this.removeStyle('light-theme');\n      document.body.classList.remove('light-theme');\n      this.isLight = false;\n    } else {\n      document.body.classList.add('light-theme');\n      this.isLight = true;\n    }\n  }\n}\n\nfunction getLinkElementForKey1(key: string) {\n  return getExistingLinkElementByKey(key) || createLinkElementWithKey(key);\n}\n\nfunction getExistingLinkElementByKey(key: string) {\n  return document.head.querySelector(\n    `link[rel=\"stylesheet\"].${getClassNameForKey(key)}`\n  );\n}\n\nfunction createLinkElementWithKey(key: string) {\n  const linkEl = document.createElement('link');\n  linkEl.setAttribute('rel', 'stylesheet');\n  linkEl.classList.add(getClassNameForKey(key));\n  document.head.appendChild(linkEl);\n  return linkEl;\n}\n\nfunction getClassNameForKey(key: string) {\n  return `app-${key}`;\n}\n",
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "ThemeService",
+            "id": "injectable-ThemeService-799edb65fdd539bec3e5e0a8d870c2f9b3d48a83631ea0a20e27e0e60ddef7cc3056284bb8def742cce7ce49e39883f5106eb7248976bd11a4cf83d800e993b1",
+            "file": "src/app/services/theme.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getThemeOptions",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<Array<Option>>",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setTheme",
+                    "args": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { Option } from '../components/material/option.model';\nimport { StyleManagerService } from './style-manager.service';\n\n@Injectable()\nexport class ThemeService {\n  constructor(\n    private http: HttpClient,\n    private styleManager: StyleManagerService\n  ) { }\n\n  getThemeOptions(): Observable<Array<Option>> {\n    return this.http.get<Array<Option>>('assets/options.json');\n  }\n\n  setTheme(themeToSet: string) {\n    this.styleManager.setStyle(\n      'theme',\n      `assets/prebuilt-themes/${themeToSet}.css`\n    );\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "styleManager",
+                        "type": "StyleManagerService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "styleManager",
+                        "type": "StyleManagerService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-17e00a5c42e073d8536437db9426d6843121c8a87aeacb68b7e0ad3bcb99f2b4fe15ba712e2598b5d2c13c3e72ef075abb92999cc35630994483d299b7648d26",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Nergy.space'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  title = 'Nergy.space';\n\n  constructor() {}\n\n  async ngOnInit() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\n  flex-flow: column wrap;\n}\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\n  <app-header></app-header>\n  <app-landing></app-landing>\n  <app-footer id=\"footer\"></app-footer>\n</div>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-86e2311c54fbca7431c12e070d0fd5b0ebe343eec0553a392f182ba0e04a8f86613233d26ee47718fd0e7a65078f580c76a1fcc928ce55de81193d6618025bc4",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 798,
+                            "end": 811,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 334,
+                            "tagName": {
+                                "pos": 799,
+                                "end": 807,
+                                "flags": 16842752,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 80,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 43,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 35,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 49,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 51
+                    }
+                }
+            }
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-823ae3e237bfeee309491fa314f4ce762defd0cd7057391f12d5fb8c4af3da02d33fb36177bed9f3e8fd2842430dd4c1b3854552250f7bfd86b203752647a2f5",
+            "file": "src/app/components/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [
+                "./footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faDigitalOcean",
+                    "defaultValue": "faDigitalOcean",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "faGithub",
+                    "defaultValue": "faGithub",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "faLinkedin",
+                    "defaultValue": "faLinkedin",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "faShare",
+                    "defaultValue": "faShare",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "navigateTo",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { faShare } from '@fortawesome/free-solid-svg-icons';\nimport {\n  faGithub,\n  faDigitalOcean,\n  faLinkedin,\n} from '@fortawesome/free-brands-svg-icons';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  faShare = faShare;\n  faLinkedin = faLinkedin;\n  faGithub = faGithub;\n  faDigitalOcean = faDigitalOcean;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  navigateTo(url: string){\n    window.open(url, \"blank\")\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".icons {\n  flex-basis: 25%;\n  display: flex;\n  justify-content: space-between;\n}\n\n.footer {\n  display: flex;\n  justify-content: center;\n  min-height: 5rem;\n  border-radius: 0;\n}\n",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 18
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-card class=\"footer\" id=\"end\">\n  <div class=\"icons\">\n    <button\n      mat-button\n      (click)=\"navigateTo('https://www.digitalocean.com/')\"\n      matTooltip=\"Digital Ocean\" matTooltipPosition=\"left\"\n    >\n      <fa-icon [icon]=\"faDigitalOcean\" size=\"3x\"></fa-icon>\n    </button>\n\n    <button\n      mat-button\n      (click)=\"navigateTo('https://github.com/Nergy101')\"\n      matTooltip=\"Visit my Github\"\n    >\n      <fa-icon [icon]=\"faGithub\" size=\"3x\"></fa-icon>\n    </button>\n\n    <button\n      mat-button\n      (click)=\"\n        navigateTo('https://www.linkedin.com/in/christian-van-dijk-657069134/')\n      \"\n      matTooltip=\"Visit my LinkedIn\" matTooltipPosition=\"right\"\n    >\n      <fa-icon [icon]=\"faLinkedin\" size=\"3x\"></fa-icon>\n    </button>\n  </div>\n</mat-card>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-cad94b233ec8e80ceb541e7972c5f9737e08237b4e137112f3987ca48ee0cce5c0d57798d41daa5d4d24d6bdbb2df1606ab68cca2aa0a1785e38f99f3cac0729",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 78,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-36c846a14044d1f348c9badf0b81a6cb5b0d6f350f80ce01ae31f00c36b1edc9e1d932eeb797586a9153bea3c31ba7b4006152d5e0f7708632bb741f5384024c-1",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "options$",
+                    "defaultValue": "this.themeService.getThemeOptions()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<Array<Option>>",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "themeChangeHandler",
+                    "args": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\n\nimport { Option } from '../material/option.model';\nimport { ThemeService } from '../../services/theme.service';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent implements OnInit {\n  options$: Observable<Array<Option>> = this.themeService.getThemeOptions();\n\n  constructor(private readonly themeService: ThemeService) { }\n\n  ngOnInit() { }\n\n  themeChangeHandler(themeToSet: string) {\n    this.themeService.setTheme(themeToSet);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".spacer {\n  flex: 1 1 auto;\n}\n\nmat-toolbar {\n  height: 5vh;\n}\n",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <span>Nergy</span>\n    \n    <mat-icon\n    aria-hidden=\"false\"\n    aria-label=\"Example home icon\"\n    >logo_dev</mat-icon\n  >\n    <span class=\"spacer\"></span>\n    <app-menu\n      [options]=\"options$ | async\"\n      (themeChange)=\"themeChangeHandler($event)\"\n    >\n    </app-menu>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
+        },
+        {
+            "name": "LandingComponent",
+            "id": "component-LandingComponent-c91248a0d052a7ef13f70f52e247feff980a0232dbbf9aeda129221bc090c68b8829e51a160f46e4e40c5478dd2d1a72cd09e2860eaab1708f3bdcf4e4d57071",
+            "file": "src/app/components/landing/landing.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-landing",
+            "styleUrls": [
+                "./landing.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./landing.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faChevronDown",
+                    "defaultValue": "faChevronDown",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "faChevronUp",
+                    "defaultValue": "faChevronUp",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "query",
+                    "defaultValue": "\"?city=Utrecht\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "tiles",
+                    "defaultValue": "[\n    { text: \"One\", cols: 1, rows: 1, color: \"primary\" },\n    { text: \"Two\", cols: 1, rows: 1, color: \"secondary\" },\n    { text: \"Three\", cols: 2, rows: 1, color: \"accent\" },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Tile[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "weatherResult",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "weatherUrl",
+                    "defaultValue": "\"https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-f15a95c0-61fb-478f-a954-1aa21586e126/cloud/getWeather\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCall",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                },
+                {
+                    "name": "moveTo",
+                    "args": [
+                        {
+                            "name": "divId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 53,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "divId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\nimport { MatSnackBar } from \"@angular/material/snack-bar\";\nimport { faChevronDown, faChevronUp } from \"@fortawesome/free-solid-svg-icons\";\nimport { Tile } from \"./tile.model\";\n\n@Component({\n  selector: \"app-landing\",\n  templateUrl: \"./landing.component.html\",\n  styleUrls: [\"./landing.component.scss\"],\n})\nexport class LandingComponent implements OnInit {\n  tiles: Tile[] = [\n    { text: \"One\", cols: 1, rows: 1, color: \"primary\" },\n    { text: \"Two\", cols: 1, rows: 1, color: \"secondary\" },\n    { text: \"Three\", cols: 2, rows: 1, color: \"accent\" },\n  ];\n  loading = false;\n\n  weatherUrl =\n    \"https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-f15a95c0-61fb-478f-a954-1aa21586e126/cloud/getWeather\";\n\n  weatherResult?: any[];\n\n  query? = \"?city=Utrecht\";\n\n  faChevronDown = faChevronDown;\n  faChevronUp = faChevronUp;\n\n  constructor(private readonly snackBar: MatSnackBar) {}\n\n  async ngOnInit(): Promise<void> {\n    await this.doCall();\n  }\n\n  async doCall(): Promise<void> {\n    this.loading = true;\n    try {\n      const response = await fetch(encodeURI(this.weatherUrl + this.query));\n      const result = await response.json();\n      if (result) {\n        this.weatherResult = result.data.days.slice(0, 7);\n      }\n    } catch (e) {\n      console.error(e);\n      this.snackBar.open(\"Error while fetching weather data\", \"Close\", {\n        duration: 3000,\n      });\n    } finally {\n      this.loading = false;\n    }\n  }\n\n  moveTo(divId: string) {\n    document!\n      .getElementById(divId)!\n      .scrollIntoView({ behavior: \"smooth\", block: \"end\" });\n  }\n\n  navigateTo(url: string) {\n    window.open(url, \"blank\");\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\n  padding-bottom: 3em;\n  display: flex;\n  flex-direction: column;\n}\n\n.top-text {\n  padding: 0;\n}\n\n.pad {\n  padding: 0 1rem;\n  &.top {\n    padding: 1rem 0 0 1rem;\n  }\n}\n\n.header-buttons {\n  padding: 0 1em 1em 1em;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, 15em);\n  column-gap: 1em;\n\n  @media screen and (max-width: 1024px) {\n    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));\n  }\n}\n\n.weather-cards {\n  padding: 1em 1em 0 1em;\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  gap: 1em;\n}\n\n.tech-cards {\n  flex-basis: 50%;\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  gap: 1rem;\n\n  .group {\n    padding: 0 1em 0 1em;\n    display: flex;\n    flex-flow: row wrap;\n    justify-content: center;\n    gap: 1em;\n  }\n}\n\n.section {\n  display: flex;\n  width: 100vw;\n  flex-flow: column wrap;\n  justify-content: space-around;\n}\n\n.section-title {\n  margin-top: 2em;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n\n  &.pcnotes {\n    a {\n      &:visited {\n        color: #9415ff;\n      }\n      &:link {\n        color: #9415ff;\n      }\n      &:hover {\n        color: #6e14ef;\n      }\n    }\n  }\n\n  a {\n    &:visited {\n      color: #6dcb94;\n    }\n    &:link {\n      color: #6dcb94;\n    }\n    &:hover {\n      color: #59b981;\n    }\n  }\n}\n\n.tab-content {\n  min-height: 100vh;\n}\n\n:host {\n  ::ng-deep {\n    .mat-tab-body-content {\n      overflow-x: hidden;\n    }\n  }\n}\n",
+                    "styleUrl": "./landing.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "snackBar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "snackBar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container mat-drawer-container\">\n  <mat-card id=\"top-text\" class=\"top-text\">\n    <mat-card-title class=\"pad top\">\n      <h1>Well, hello there!</h1>\n    </mat-card-title>\n    <mat-card-content class=\"pad\">\n      My name is Christian van Dijk, a Software Engineer based in Utrecht, the\n      Netherlands. <br />\n      Welcome to my Portfolio, showcasing some of my capabilities as a Software\n      Engineer. <br />\n      Everything you see is run for $5/month on Digital Ocean. <br />\n      In order to do this, I am using a bunch of Docker images, a Digital Ocean\n      Droplet and Digital Ocean functions.\n    </mat-card-content>\n    <mat-card-subtitle class=\"pad\">\n      <h2>This is my portfolio using Digital Ocean resources.</h2>\n    </mat-card-subtitle>\n    <div class=\"header-buttons\">\n      <button\n        mat-stroked-button\n        (click)=\"navigateTo('https://github.com/Nergy101')\"\n      >\n        <mat-icon aria-hidden=\"false\" aria-label=\"See my gh profile\"\n          >contact_page</mat-icon\n        >&nbsp;My GitHub profile\n      </button>\n      <button\n        mat-stroked-button\n        (click)=\"navigateTo('https://github.com/Nergy101?tab=repositories')\"\n      >\n        <mat-icon aria-hidden=\"false\" aria-label=\"See my gh repos\"\n          >polyline</mat-icon\n        >&nbsp;Other projects\n      </button>\n      <button\n        mat-stroked-button\n        (click)=\"navigateTo('https://donate.stripe.com/fZefZr21T3NudlSdQQ')\"\n      >\n        <mat-icon aria-hidden=\"false\" aria-label=\"donate\"\n          >volunteer_activism</mat-icon\n        >&nbsp;Buy me a\n        <mat-icon aria-hidden=\"false\" aria-label=\"coffee\">coffee</mat-icon>\n      </button>\n    </div>\n  </mat-card>\n\n  <div class=\"weather\">\n    <div class=\"section-title\">\n      <div>\n        <h2>Serverless Weather Function</h2>\n      </div>\n\n      <mat-form-field\n        appearance=\"fill\"\n        floatLabel=\"always\"\n        style=\"min-width: 25vw\"\n      >\n        <mat-label>parameters</mat-label>\n        <input\n          matInput\n          type=\"text\"\n          class=\"example-right-align\"\n          [(ngModel)]=\"query\"\n        />\n        <mat-hint>Try changing it to your city!</mat-hint>\n        <span matPrefix>/getWeather&nbsp;&nbsp;&nbsp;&nbsp;</span>\n        <span matSuffix matRipple matRippleColor=\"primary\" (click)=\"doCall()\">\n          <ng-container>\n            <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\"\n              >sync</mat-icon\n            ></ng-container\n          ></span\n        >\n      </mat-form-field>\n    </div>\n\n    <div class=\"weather-cards\">\n      <ng-container *ngIf=\"loading\">\n        <mat-spinner></mat-spinner>\n      </ng-container>\n      <ng-container *ngIf=\"!loading && (weatherResult?.length ?? 0) > 0\">\n        <app-weather-card\n          *ngFor=\"let result of this.weatherResult\"\n          [weatherInfo]=\"result\"\n        ></app-weather-card>\n      </ng-container>\n    </div>\n\n    <div\n      style=\"\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        min-height: 5em;\n      \"\n    >\n      <button mat-button (click)=\"moveTo('chevron2')\">\n        <fa-icon id=\"chevron1\" [icon]=\"faChevronDown\" size=\"3x\"></fa-icon>\n      </button>\n    </div>\n  </div>\n\n  <mat-tab-group mat-stretch-tabs>\n    <mat-tab label=\"Projects\">\n      <div>\n        <div class=\"pcnotes section\">\n          <div class=\"section-title pcnotes\">\n            <h2>\n              <a\n                href=\"https://github.com/Nergy101/PCNotes\"\n                data-tooltip=\"Go to pcnotes github\"\n                target=\"_blank\"\n                >PCNotes</a\n              >\n            </h2>\n            <h3>Create and co-operate on open notes</h3>\n          </div>\n\n          <div class=\"tech-cards\">\n            <div class=\"group\">\n              <app-tech-card\n                title=\"MongoDB\"\n                subtitle=\"Database / NoSQL\"\n                description=\"MongoDB is the most used NoSQL database\"\n                imagePath=\"mongodb\"\n                url=\"https://www.mongodb.com/home\"\n                rippleColor=\"#6CAC4820\"\n              >\n              </app-tech-card>\n              <app-tech-card\n                title=\"C-Sharp\"\n                subtitle=\"My primary programming language\"\n                description=\".NET, ASP.NET\"\n                imagePath=\"c-sharp\"\n                url=\"https://dotnet.microsoft.com/en-us/languages/csharp\"\n                rippleColor=\"#a179dc20\"\n              >\n              </app-tech-card>\n              <app-tech-card\n                title=\"Blazor\"\n                subtitle=\"WebAssembly framework in C#\"\n                description=\"Blazor WebAssembly client application, using MudBlazor\"\n                imagePath=\"blazor\"\n                url=\"https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor\"\n                rippleColor=\"#702af720\"\n              >\n              </app-tech-card>\n            </div>\n          </div>\n          <div\n            id=\"chevron2\"\n            style=\"\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              min-height: 5em;\n            \"\n          >\n            <button mat-button (click)=\"moveTo('chevron3')\">\n              <fa-icon [icon]=\"faChevronDown\" size=\"3x\"></fa-icon>\n            </button>\n          </div>\n        </div>\n\n        <div class=\"hydroponics section\">\n          <div class=\"section-title\">\n            <h2>Hydroponics Software</h2>\n            <h3>\n              Building a greener & cleaner future <br />\n              (<a href=\"https://www.nemic-hydroponics.com\" target=\"_blank\"\n                >@nemic-hydroponics</a\n              >)\n            </h3>\n          </div>\n\n          <div class=\"tech-cards\">\n            <div class=\"group\">\n              <app-tech-card\n                title=\"MongoDB\"\n                subtitle=\"Database / NoSQL\"\n                description=\"MongoDB is the most used NoSQL database\"\n                imagePath=\"mongodb\"\n                url=\"https://www.mongodb.com/home\"\n                rippleColor=\"#6CAC4820\"\n              >\n              </app-tech-card>\n              <app-tech-card\n                title=\"Python\"\n                subtitle=\"Backend API & Machine Program\"\n                description=\"Hydroponics software using Python\"\n                imagePath=\"python\"\n                url=\"https://www.python.org/about/\"\n                rippleColor=\"#3571a320\"\n              >\n              </app-tech-card>\n              <app-tech-card\n                title=\"Raspberry Pi\"\n                subtitle=\"On-location machine / hardware\"\n                description=\"Small computer that controls the hydroponics installation\"\n                imagePath=\"raspberry-pi\"\n                url=\"https://www.raspberrypi.com/\"\n                rippleColor=\"#bc114220\"\n              >\n              </app-tech-card>\n            </div>\n          </div>\n\n          <div\n            id=\"chevron3\"\n            style=\"\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              min-height: 5em;\n            \"\n          >\n            <button mat-button (click)=\"moveTo('end')\">\n              <fa-icon [icon]=\"faChevronDown\" size=\"3x\"></fa-icon>\n            </button>\n          </div>\n        </div>\n        <div class=\"tovedem section\">\n          <div class=\"section-title\">\n            <h2> <a\n              href=\"https://github.com/Nergy101/tovedem\"\n              data-tooltip=\"Go to Tovedem github\"\n              target=\"_blank\"\n              >Tovedem</a\n            ></h2>\n            <h3>\n              Local Theater & Play Management Software <br />\n              (<a href=\"http://tovedem.nergy.space\" target=\"_blank\"\n                >@tovedem</a>)\n            </h3>\n          </div>\n\n          <div class=\"tech-cards\">\n            <div class=\"group\">\n              <app-tech-card\n                title=\"PocketBase\"\n                subtitle=\"Backend in 1 file\"\n                description=\"For when you need a quick backend\"\n                imagePath=\"pocketbase\"\n                url=\"https://pocketbase.io/\"\n                rippleColor=\"#FFFFF40\"\n              >\n              </app-tech-card>              \n              <app-tech-card\n                title=\"Angular\"\n                subtitle=\"Angular 17\"\n                description=\"Google's Frontend Framework\"\n                imagePath=\"angular\"\n                url=\"https://www.angular.io/\"\n                rippleColor=\"#bc114220\"\n              >\n              </app-tech-card>\n            </div>\n          </div>\n        </div>\n      </div>\n    </mat-tab>\n  </mat-tab-group>\n</div>\n"
+        },
+        {
+            "name": "LoginChoiceDialogComponent",
+            "id": "component-LoginChoiceDialogComponent-d8721d1a8926497e36cd5156cc6820156783373f1eb3aef4bc598e54670d4bf5a7ecccc075159684adbe1d44dbf1ce456c9bbce0ca21253de130fd48e2559791",
+            "file": "src/app/components/dialogs/login-choice-dialog/login-choice-dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login-choice-dialog",
+            "styleUrls": [
+                "./login-choice-dialog.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login-choice-dialog.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "choose",
+                    "args": [
+                        {
+                            "name": "option",
+                            "type": "\"google\" | \"github\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "option",
+                            "type": "\"google\" | \"github\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';\n\n@Component({\n  selector: 'app-login-choice-dialog',\n  templateUrl: './login-choice-dialog.component.html',\n  styleUrls: ['./login-choice-dialog.component.scss']\n})\nexport class LoginChoiceDialogComponent {\n\n  constructor(private dialogRef: MatDialogRef<LoginChoiceDialogComponent>) { }\n\n  choose(option: \"google\" | \"github\"): void {\n    this.dialogRef.close(option);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  .options {\n    padding: 3em;\n    display: flex;\n    flex-flow: row wrap;\n    justify-content: space-around;\n    gap: 2em;\n  }\n\n  .center {\n    display: flex;\n    justify-content: center;\n  }\n}\n",
+                    "styleUrl": "./login-choice-dialog.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<LoginChoiceDialogComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<LoginChoiceDialogComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"darker\">\n  <h1 mat-dialog-title>Choose your login provider</h1>\n  <span>These will open a pop-up to the chosen provider... <br />\n    If nothing happens, make sure you allow pop-ups on this site!</span>\n  <div mat-dialog-content>\n    <div class=\"options\">\n      <app-tech-card (click)=\"choose('github')\" description=\"GitHub\" imagePath=\"logins/github\"\n        rippleColor=\"#00000020\"></app-tech-card>\n\n      <app-tech-card (click)=\"choose('google')\" description=\"Google\" imagePath=\"logins/google\"\n        rippleColor=\"#3f7de780\"></app-tech-card>\n    </div>\n  </div>\n  <div mat-dialog-actions class=\"center\">\n    <button mat-stroked-button mat-dialog-close>Return</button>\n  </div>\n</div>"
+        },
+        {
+            "name": "MenuComponent",
+            "id": "component-MenuComponent-cff08009b857b5754244633a269648948831b41762f8a1b2a9d22fa63e93187140c6e12c0709e4dfd7ad99988d204aecfe59502e3f20665b3c2de5eb9b17d92e",
+            "file": "src/app/components/menu/menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-menu",
+            "styleUrls": [
+                "./menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./menu.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Array<Option> | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "themeChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "isLight",
+                    "defaultValue": "this.styleManager.isLight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeTheme",
+                    "args": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "themeToSet",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "login",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                },
+                {
+                    "name": "logout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleDarkTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\nimport { Option } from '../material/option.model';\nimport { StyleManagerService } from '../../services/style-manager.service';\nimport { PocketbaseService } from 'src/app/services/pocketbase.service';\nimport { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';\nimport { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login-choice-dialog.component';\nimport { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';\n\n@Component({\n  selector: 'app-menu',\n  templateUrl: './menu.component.html',\n  styleUrls: ['./menu.component.scss'],\n})\nexport class MenuComponent {\n  @Input() options: Array<Option> | null = [];\n  @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();\n\n  isLight = this.styleManager.isLight;\n\n  constructor(\n    private styleManager: StyleManagerService,\n    private readonly pocketbaseService: PocketbaseService,\n    private readonly dialog: MatDialog,\n    private readonly snackBar: MatSnackBar\n  ) { }\n\n  get isLoggedIn(): boolean {\n    return this.pocketbaseService.pocketbase?.authStore?.isValid ?? false;\n  }\n\n  get loggedInAs() {\n    return this.pocketbaseService.pocketbase.authStore.model;\n  }\n\n  toggleDarkTheme(): void {\n    this.styleManager.toggleDarkTheme();\n    this.isLight = !this.isLight;\n  }\n\n  changeTheme(themeToSet: string): void {\n    this.themeChange.emit(themeToSet);\n  }\n\n  logout(): void {\n    this.pocketbaseService.pocketbase.authStore.clear();\n  }\n\n  async login(): Promise<void> {\n\n    this.dialog.open(LoginChoiceDialogComponent)\n      .afterClosed()\n      .subscribe(async (chosenOption): Promise<void> => {\n\n        let authData;\n\n        if (chosenOption == \"google\") {\n          authData = await this.pocketbaseService.pocketbase\n            .collection('users')\n            .authWithOAuth2({ provider: 'google' });\n        } else if (chosenOption == \"github\") {\n          authData = await this.pocketbaseService.pocketbase\n            .collection('users')\n            .authWithOAuth2({ provider: 'github' });\n        } else {\n          this.snackBar.open(\"Unknown login provider...\", \"Retry?\", { duration: 3000 })\n            .onAction()\n            .subscribe(async () => await this.login())\n        }\n\n        console.info(`Logged in using ${chosenOption}`, authData)\n      })\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n\n::ng-deep {\n  .mat-dialog-container {\n    background-color: #2e2e2e !important;\n  }\n}\n",
+                    "styleUrl": "./menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "styleManager",
+                        "type": "StyleManagerService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "pocketbaseService",
+                        "type": "PocketbaseService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "snackBar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "styleManager",
+                        "type": "StyleManagerService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "pocketbaseService",
+                        "type": "PocketbaseService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "snackBar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "accessors": {
+                "isLoggedIn": {
+                    "name": "isLoggedIn",
+                    "getSignature": {
+                        "name": "isLoggedIn",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 28
+                    }
+                },
+                "loggedInAs": {
+                    "name": "loggedInAs",
+                    "getSignature": {
+                        "name": "loggedInAs",
+                        "type": "",
+                        "returnType": "",
+                        "line": 32
+                    }
+                }
+            },
+            "templateData": "<!-- <button mat-icon-button matTooltip=\"Change Theme Palette\" matTooltipPosition=\"below\">\n  <mat-icon [matMenuTriggerFor]=\"menu\"> palette </mat-icon>\n</button> -->\n<button mat-icon-button (click)=\"toggleDarkTheme()\" matTooltip=\"Toggle Dark Theme\" matTooltipPosition=\"below\"\n  aria-label=\"Toggle Dark Theme\">\n  <mat-icon>{{ isLight ? \"dark_mode\" : \"light_mode\" }}</mat-icon>\n</button>\n<mat-menu #menu=\"matMenu\">\n  <button *ngFor=\"let option of options\" mat-menu-item (click)=\"changeTheme(option.value)\">\n    <mat-icon class=\"center\" role=\"img\" svgicon=\"theme-example\" aria-hidden=\"true\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"100%\" height=\"100%\"\n        viewBox=\"0 0 80 80\" fit=\"\" preserveAspectRatio=\"xMidYMid meet\" focusable=\"false\">\n        <defs>\n          <path\n            d=\"M77.87 0C79.05 0 80 .95 80 2.13v75.74c0 1.17-.95 2.13-2.13 2.13H2.13C.96 80 0 79.04 0 77.87V2.13C0 .95.96 0 2.13 0h75.74z\"\n            id=\"a\"></path>\n          <path\n            d=\"M54 40c3.32 0 6 2.69 6 6 0 1.2 0-1.2 0 0 0 3.31-2.68 6-6 6H26c-3.31 0-6-2.69-6-6 0-1.2 0 1.2 0 0 0-3.31 2.69-6 6-6h28z\"\n            id=\"b\"></path>\n          <path d=\"M0 0h80v17.24H0V0z\" id=\"c\"></path>\n        </defs>\n        <use xlink:href=\"#a\" [attr.fill]=\"option.backgroundColor\"></use>\n        <use xlink:href=\"#b\" [attr.fill]=\"option.buttonColor\"></use>\n        <use xlink:href=\"#c\" [attr.fill]=\"option.headingColor\"></use>\n      </svg>\n    </mat-icon>\n    <span>{{ option.label }}</span>\n  </button>\n</mat-menu>\n<div *ngIf=\"isLoggedIn\">\n  <span>{{loggedInAs?.email}}</span>\n  <button mat-icon-button (click)=\"logout()\" matTooltip=\"Logout\" matTooltipPosition=\"below\">\n    <mat-icon>logout</mat-icon>\n  </button>\n</div>\n\n<div *ngIf=\"!isLoggedIn\">\n  <button mat-icon-button (click)=\"login()\" matTooltip=\"Login\" matTooltipPosition=\"below\">\n    <mat-icon>login</mat-icon>\n  </button>\n</div>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-d32b0f19628254ea3fc5526c4d4564ada1cc83cf936759006d90a46f5874b02a3359e331bddda20b22e74a616a6443c660602ba74dd38ebe1160759e0de6f7ba",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\n.storybook-page h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\n.storybook-page ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.storybook-page .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PocketbaseTodoComponent",
+            "id": "component-PocketbaseTodoComponent-980ead46fdb3849675b5c250ea562e4a0ffa75e2a071eec7858de612a2e7b94a9392616580ee9f0585e7b0c186acdbaa72e075c55476fcb15cf74522fbfc27ec",
+            "file": "src/app/components/pocketbase-todo/pocketbase-todo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-pocketbase-todo",
+            "styleUrls": [
+                "./pocketbase-todo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./pocketbase-todo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "newTaskDescription",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "newTodoTitle",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "todos",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TodoRecord[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "addTask",
+                    "args": [
+                        {
+                            "name": "todoId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "todoId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "addTodo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                },
+                {
+                    "name": "finishedChanged",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "finishedTasksPercentage",
+                    "args": [
+                        {
+                            "name": "todo",
+                            "type": "TodoRecord",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "todo",
+                            "type": "TodoRecord",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                },
+                {
+                    "name": "removeTaskById",
+                    "args": [
+                        {
+                            "name": "todoId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "taskId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 98,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "todoId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "taskId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeTodoById",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 87,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { TaskRecord, TodoRecord } from './models/todo.model';\nimport { PocketbaseService } from 'src/app/services/pocketbase.service';\nimport { MatSnackBar } from '@angular/material/snack-bar';\n\n@Component({\n  selector: 'app-pocketbase-todo',\n  templateUrl: './pocketbase-todo.component.html',\n  styleUrls: ['./pocketbase-todo.component.scss']\n})\nexport class PocketbaseTodoComponent implements OnInit {\n  newTodoTitle: string = \"\";\n  newTaskDescription: string = \"\";\n\n  todos: TodoRecord[] = []\n\n  constructor(private readonly pocketbaseService: PocketbaseService, private readonly snackbar: MatSnackBar) { }\n\n  async ngOnInit(): Promise<void> {\n    const response = await this.pocketbaseService.pocketbase.collection('todos').getFullList({ expand: 'tasks' }) as any;\n\n    for (const todo of response) {\n      todo.tasks = todo.expand.tasks;\n    }\n\n    this.todos = response as TodoRecord[];\n  }\n\n  finishedChanged(event: any) {\n    const task = event.options[0].value as TaskRecord;\n\n    task.finished = !task.finished;\n\n    this.pocketbaseService.pocketbase.collection('tasks').update(task.id, task);\n  }\n\n  finishedTasksPercentage(todo: TodoRecord): number {\n    if (!todo.tasks || (todo.tasks?.length === 0)) return 0;\n    const finishedTasksPercentage = todo.tasks.filter((t: any) => t.finished).length / todo.tasks.length * 100\n    return Math.round(todo.tasks?.length ? (finishedTasksPercentage || 0) : (finishedTasksPercentage || 100));\n  }\n\n  async addTodo(): Promise<void> {\n    if (!this.pocketbaseService.pocketbase.authStore.isValid) {\n      this.snackbar.open(\"You need to be logged in to add a todo!\", \"Okay\", { duration: 3000, panelClass: ['snackbar-error'] })\n      return;\n    }\n\n    if (!this.newTodoTitle) return;\n\n    const result = await this.pocketbaseService.pocketbase.collection('todos').create({\n      \"title\": this.newTodoTitle,\n      \"tasks\": []\n    })\n\n    this.todos.push(result as any);\n\n    this.newTodoTitle = \"\";\n  }\n\n  async addTask(todoId: string): Promise<void> {\n\n    if (!this.pocketbaseService.pocketbase.authStore.isValid) {\n      this.snackbar.open(\"You need to be logged in to add a task!\", \"Okay\", { duration: 3000, panelClass: ['snackbar-error'] })\n      return;\n    }\n\n    if (!this.newTaskDescription) return;\n    const todo = this.todos.find(t => t.id == todoId);\n    if (!todo) return;\n\n    const newTask = await this.pocketbaseService.pocketbase.collection('tasks').create({\n      \"description\": this.newTaskDescription,\n      \"finished\": false\n    } as any);\n\n    const todoTaskIds = todo.tasks?.map(t => t.id) ?? [];\n    await this.pocketbaseService.pocketbase.collection('todos').update(todoId, { ...todo, tasks: [...todoTaskIds, newTask.id] } as any);\n\n    if (todo.tasks === undefined) todo.tasks = [];\n\n    todo.tasks.push(newTask as any);\n\n    this.newTaskDescription = \"\";\n  }\n\n  async removeTodoById(id: string): Promise<void> {\n\n    if (!this.pocketbaseService.pocketbase.authStore.isValid) {\n      this.snackbar.open(\"You need to be logged in to remove a todo!\", \"Okay\", { duration: 3000, panelClass: ['snackbar-error'] })\n      return;\n    }\n\n    this.todos = this.todos.filter(t => t.id !== id);\n    await this.pocketbaseService.pocketbase.collection('todos').delete(id);\n  }\n\n  async removeTaskById(todoId: string, taskId: string): Promise<void> {\n\n\n    if (!this.pocketbaseService.pocketbase.authStore.isValid) {\n      this.snackbar.open(\"You need to be logged in to remove a task!\", \"Okay\", { duration: 3000, panelClass: ['snackbar-error'] })\n      return;\n    }\n\n    const todo = this.todos.find(t => t.id === todoId);\n    if (!todo) return;\n\n    todo.tasks = todo.tasks.filter(t => t.id !== taskId);\n    await this.pocketbaseService.pocketbase.collection('tasks').delete(taskId);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n\n  ::ng-deep {\n    .mat-form-field-wrapper {\n      flex: 1;\n    }\n  }\n}\n\n.container {\n  padding: 1em;\n  flex-basis: 50%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n\n  padding-top: 1em;\n\n  @media screen and (max-width: 1024px) {\n    flex-basis: 90%;\n    max-width: 90vw; // prevent overgrowing\n  }\n}\n\n@media screen and (max-width: 426px) {\n  .add-button {\n    width: 100%;\n  }\n}\n\nmat-card {\n  margin: 1em 0;\n\n  mat-card-header {\n    display: flex;\n    justify-content: space-between;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n}\n\nform {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n\n  button {\n    margin: 1em;\n  }\n\n  mat-form-field {\n    display: flex;\n    flex: 1;\n  }\n}\n\nmat-panel-description {\n  flex-grow: 1;\n}\n\nmat-panel-title {\n  flex-grow: 5;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.task-description {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  button {\n    margin-left: auto;\n  }\n}\n",
+                    "styleUrl": "./pocketbase-todo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "pocketbaseService",
+                        "type": "PocketbaseService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "snackbar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "pocketbaseService",
+                        "type": "PocketbaseService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "snackbar",
+                        "type": "MatSnackBar",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\n  <form class=\"todo-form\">\n    <mat-form-field type=\"text\" appearance=\"fill\">\n      <mat-label>Todo title</mat-label>\n      <input matInput [(ngModel)]=\"newTodoTitle\" name=\"newTodoTitle\" placeholder=\"Task description\" required>\n    </mat-form-field>\n    <button class=\"add-button\" mat-raised-button color=\"primary\" type=\"submit\" (click)=\"addTodo()\">\n      Add\n    </button>\n  </form>\n\n  <mat-accordion>\n    <mat-expansion-panel hideToggle *ngFor=\"let todo of todos\">\n      <mat-expansion-panel-header>\n        <mat-panel-title title=\" {{ todo.title }}\">\n          {{ todo.title }}\n        </mat-panel-title>\n        <mat-panel-description>\n          {{ finishedTasksPercentage(todo)}}%\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n      <mat-card class=\"mat-elevation-z5\">\n        <mat-card-header>\n          <h1 title=\"{{todo.id}}\">{{todo.title}}</h1><button mat-icon-button color=\"warn\"\n            (click)=\"removeTodoById(todo.id)\"><mat-icon>delete</mat-icon></button>\n        </mat-card-header>\n        <mat-card-content>\n          <form>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Task description</mat-label>\n              <input matInput [(ngModel)]=\"newTaskDescription\" name=\"newTaskDescription\"\n                placeholder=\"When I was, a young boy, my father, took me into the city, to see a marching band...\"\n                required>\n            </mat-form-field>\n            <button class=\"add-button\" mat-stroked-button color=\"primary\" type=\"submit\" (click)=\"addTask(todo.id)\">\n              Add\n            </button>\n          </form>\n          <mat-selection-list (selectionChange)=\"finishedChanged($event)\">\n            <mat-list-option *ngFor=\"let task of todo.tasks\" [value]=\"task\" [selected]=\"task.finished\">\n              <div class=\"task-description\"><button mat-icon-button color=\"warn\"\n                  (click)=\"removeTaskById(todo.id, task.id)\"><mat-icon>delete</mat-icon></button>\n                {{task.description}}\n              </div>\n            </mat-list-option>\n          </mat-selection-list>\n        </mat-card-content>\n        <mat-card-footer>\n          <mat-progress-bar mode=\"determinate\" value=\"{{finishedTasksPercentage(todo)}}\"></mat-progress-bar>\n        </mat-card-footer>\n      </mat-card>\n    </mat-expansion-panel>\n  </mat-accordion>\n</div>"
+        },
+        {
+            "name": "TechCardComponent",
+            "id": "component-TechCardComponent-73880bf189d31475ac8027fb20b740aecb3c89a720f7ee8b69f7820fc73969d473bfc6441ca6f90bc8d77c4db88757119567588ddb6f66a385aaa1e6240e3736",
+            "file": "src/app/components/tech-card/tech-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tech-card",
+            "styleUrls": [
+                "./tech-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tech-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "imagePath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "rippleColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "stopOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "subtitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "url",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "open",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-tech-card',\n  templateUrl: './tech-card.component.html',\n  styleUrls: ['./tech-card.component.scss'],\n})\nexport class TechCardComponent implements OnInit {\n  @Input()\n  title?: string;\n\n  @Input()\n  subtitle?: string;\n\n  @Input()\n  imagePath?: string;\n\n  @Input()\n  description?: string;\n\n  @Input()\n  url?: string;\n\n  @Input()\n  rippleColor?: string;\n\n  @Input()\n  stopOpen: boolean = false;\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n  async open(): Promise<void> {\n    if (this.url) {\n      window.open(this.url, 'blank');\n    }\n  }\n\n  get tooltip(): string {\n    return this.url ? `Go to ${this.title}'s website` : '';\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n}\n\n.tech-card {\n  cursor: pointer;\n  max-width: 15em;\n  min-width: 15em;\n  margin-bottom: 8px;\n  height: 25em;\n\n  display: flex;\n  flex-flow: column nowrap;\n\n  &:hover {\n    background-color: rgba(0, 0, 0, 0.2);\n  }\n\n  .spacer {\n    flex-grow: 1;\n  }\n}\n\nmat-card-content {\n  display: flex;\n  flex-direction: column;\n  margin: 1rem;\n}\n\n.center {\n  text-align: center;\n}\n",
+                    "styleUrl": "./tech-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 28
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "tooltip": {
+                    "name": "tooltip",
+                    "getSignature": {
+                        "name": "tooltip",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 40
+                    }
+                }
+            },
+            "templateData": "<mat-card (click)=\"open()\" class=\"tech-card\" matRipple [matRippleCentered]=\"true\" [matRippleColor]=\"rippleColor ?? ''\"\n  [matTooltip]=\"tooltip\" matTooltipPosition=\"below\">\n  <mat-card-title class=\"center\"><span>{{ title }}</span></mat-card-title>\n  <mat-card-subtitle class=\"center\">{{ subtitle }}</mat-card-subtitle>\n  <mat-card-content>\n    <img mat-card-image src=\"assets/techs/{{ imagePath }}.svg\" alt=\"Tech icon\" style=\"height: 200px\" />\n    <p align=\"center\">\n      {{ description }}\n    </p>\n  </mat-card-content>\n  <div class=\"spacer\"></div>\n  <mat-divider inset></mat-divider>\n</mat-card>\n"
+        },
+        {
+            "name": "WeatherCardComponent",
+            "id": "component-WeatherCardComponent-160f41cf73c9d02687cca283f23e97e0355d1beab5b05b6cb70b735a5a143c68e22097824120a1fa83c86703acf90d32683021449c076cb56b5e88ca85d0cc64",
+            "file": "src/app/components/weather-card/weather-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-weather-card",
+            "styleUrls": [
+                "./weather-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./weather-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "weatherInfo",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "weekdays",
+                    "defaultValue": "[\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-weather-card',\n  templateUrl: './weather-card.component.html',\n  styleUrls: ['./weather-card.component.scss'],\n})\nexport class WeatherCardComponent implements OnInit {\n  @Input() weatherInfo: any = {};\n\n  weekdays = [\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  get dayName(): string {\n    return this.weekdays[new Date(this.weatherInfo.datetime).getDay()];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  .weather-card {\n    min-width: 15em;\n    min-height: 15em;\n\n    display: flex;\n    flex-flow: column nowrap;\n    &:hover {\n      background-color: rgba(0, 0, 0, 0.2);\n    }\n  }\n}\n",
+                    "styleUrl": "./weather-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 19
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "dayName": {
+                    "name": "dayName",
+                    "getSignature": {
+                        "name": "dayName",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 25
+                    }
+                }
+            },
+            "templateData": "<mat-card class=\"weather-card\">\n  <mat-card-title-group>\n    <mat-card-title>{{ dayName }}</mat-card-title>\n    <mat-card-subtitle>{{ weatherInfo.datetime }}</mat-card-subtitle>\n  </mat-card-title-group>\n  <mat-card-content>\n    <img\n      mat-card-image\n      src=\"assets/weather-icons/{{ weatherInfo.icon }}.svg\"\n      alt=\"Weather icon {{ weatherInfo.icon }} {{ dayName }}\"\n      style=\"height: 72px\"\n    />\n    <p align=\"center\">\n      {{ weatherInfo.sunrise }} - {{ weatherInfo.sunset }} <br />\n      {{ weatherInfo.tempmin }} C - {{ weatherInfo.tempmax }} C <br />\n      {{ weatherInfo.cloudcover }}% cloudy <br />\n      {{ weatherInfo.moonphase }}% moon\n    </p>\n  </mat-card-content>\n  <mat-divider inset></mat-divider>\n</mat-card>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppMaterialModule",
+            "id": "module-AppMaterialModule-44070ed015c50c70f3f11254c584256d69bfb172381823e72ca9545a032b420afb499fce19003728614d418458b91ce8bc00aa981161034df94617ed38e81d87",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/material/app-material.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n// Material Form Controls\nimport { MatLegacyAutocompleteModule as MatAutocompleteModule } from '@angular/material/legacy-autocomplete';\nimport { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';\nimport { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';\nimport { MatLegacyRadioModule as MatRadioModule } from '@angular/material/legacy-radio';\nimport { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';\nimport { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';\nimport { MatLegacySlideToggleModule as MatSlideToggleModule } from '@angular/material/legacy-slide-toggle';\n// Material Navigation\nimport { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatToolbarModule } from '@angular/material/toolbar';\n// Material Layout\nimport { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';\nimport { MatStepperModule } from '@angular/material/stepper';\nimport { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';\nimport { MatTreeModule } from '@angular/material/tree';\n// Material Buttons & Indicators\nimport { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\nimport { MatBadgeModule } from '@angular/material/badge';\nimport { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';\nimport { MatLegacyProgressBarModule as MatProgressBarModule } from '@angular/material/legacy-progress-bar';\nimport { MatRippleModule } from '@angular/material/core';\n// Material Popups & Modals\nimport { MatBottomSheetModule } from '@angular/material/bottom-sheet';\nimport { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';\nimport { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';\nimport { MatLegacyTooltipModule as MatTooltipModule } from '@angular/material/legacy-tooltip';\n// Material Data tables\nimport { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';\n\n\n@NgModule({\n  exports: [\n    MatAutocompleteModule,\n    MatCheckboxModule,\n    MatDatepickerModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatRadioModule,\n    MatSelectModule,\n    MatSliderModule,\n    MatSlideToggleModule,\n    MatMenuModule,\n    MatSidenavModule,\n    MatToolbarModule,\n    MatCardModule,\n    MatDividerModule,\n    MatExpansionModule,\n    MatGridListModule,\n    MatListModule,\n    MatStepperModule,\n    MatTabsModule,\n    MatTreeModule,\n    MatButtonModule,\n    MatButtonToggleModule,\n    MatBadgeModule,\n    MatChipsModule,\n    MatIconModule,\n    MatProgressSpinnerModule,\n    MatProgressBarModule,\n    MatRippleModule,\n    MatBottomSheetModule,\n    MatDialogModule,\n    MatSnackBarModule,\n    MatTooltipModule,\n    MatPaginatorModule,\n    MatSortModule,\n    MatTableModule\n  ]\n})\nexport class AppMaterialModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-54c90475b63ca214af94080dd09d8a8a448d9dc4196d7b9f2315042851287b77dce7b2aff9237dcf91277c3d237b264b7d6be8da9b75b1e3ab78d41d43cb2c9d",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { AppMaterialModule } from './components/material/app-material.module';\nimport { MenuComponent } from './components/menu/menu.component';\nimport { HeaderComponent } from './components/header/header.component';\nimport { StyleManagerService } from './services/style-manager.service';\nimport { ThemeService } from './services/theme.service';\nimport { HttpClientModule } from '@angular/common/http';\nimport { FormsModule } from '@angular/forms';\nimport { LandingComponent } from './components/landing/landing.component';\nimport { WeatherCardComponent } from './components/weather-card/weather-card.component';\nimport { FooterComponent } from './components/footer/footer.component';\n\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { TechCardComponent } from './components/tech-card/tech-card.component';\nimport { PocketbaseService } from './services/pocketbase.service';\nimport { LoginChoiceDialogComponent } from './components/dialogs/login-choice-dialog/login-choice-dialog.component';\nimport { PocketbaseTodoComponent } from './components/pocketbase-todo/pocketbase-todo.component';\nimport { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';\nimport { MatSnackBarModule } from '@angular/material/snack-bar';\n\n@NgModule({\n  declarations: [AppComponent, MenuComponent, HeaderComponent, LandingComponent, FooterComponent, WeatherCardComponent, TechCardComponent, LoginChoiceDialogComponent, PocketbaseTodoComponent],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    AppMaterialModule,\n    FontAwesomeModule,\n    FormsModule,\n    MatDialogModule,\n    MatSnackBarModule,\n    HttpClientModule,\n  ],\n  providers: [StyleManagerService, ThemeService, PocketbaseService,\n    {\n      provide: MAT_DIALOG_DEFAULT_OPTIONS,\n      useValue: {\n        width: \"50vw\",\n        minWidth: \"20em\",\n        maxWidth: \"75vw\",\n      } as MatDialogConfig,\n    }],\n  bootstrap: [AppComponent],\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "PocketbaseService"
+                        },
+                        {
+                            "name": "StyleManagerService"
+                        },
+                        {
+                            "name": "ThemeService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "LandingComponent"
+                        },
+                        {
+                            "name": "LoginChoiceDialogComponent"
+                        },
+                        {
+                            "name": "MenuComponent"
+                        },
+                        {
+                            "name": "PocketbaseTodoComponent"
+                        },
+                        {
+                            "name": "TechCardComponent"
+                        },
+                        {
+                            "name": "WeatherCardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppMaterialModule"
+                        },
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n  enableTodo: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  enableTodo: true\n}"
+            }
+        ],
+        "functions": [
+            {
+                "name": "createLinkElementWithKey",
+                "file": "src/app/services/style-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getClassNameForKey",
+                "file": "src/app/services/style-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getExistingLinkElementByKey",
+                "file": "src/app/services/style-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getLinkElementForKey1",
+                "file": "src/app/services/style-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  enableTodo: false\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  enableTodo: true\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/services/style-manager.service.ts": [
+                {
+                    "name": "createLinkElementWithKey",
+                    "file": "src/app/services/style-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getClassNameForKey",
+                    "file": "src/app/services/style-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getExistingLinkElementByKey",
+                    "file": "src/app/services/style-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getLinkElementForKey1",
+                    "file": "src/app/services/style-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 4,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/dialogs/login-choice-dialog/login-choice-dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginChoiceDialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/landing/landing.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LandingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/landing/tile.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Tile",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/material/option.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Option",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/menu/menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pocketbase-todo/models/todo.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TaskRecord",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pocketbase-todo/models/todo.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TodoRecord",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pocketbase-todo/pocketbase-todo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PocketbaseTodoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/tech-card/tech-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TechCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/weather-card/weather-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WeatherCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/pocketbase.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "PocketbaseService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/style-manager.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "StyleManagerService",
+                "coveragePercent": 40,
+                "coverageCount": "2/5",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/services/style-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "createLinkElementWithKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/style-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getClassNameForKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/style-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getExistingLinkElementByKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/style-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getLinkElementForKey1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/theme.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ThemeService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}
