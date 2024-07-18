@@ -9,6 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run portfolio:storybook",
+    "storybook:devcontainer": "ng run portfolio:storybook --host 0.0.0.0",
     "build-storybook": "ng run portfolio:build-storybook"
   },
   "private": true,

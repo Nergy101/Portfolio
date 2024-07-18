@@ -1,6 +1,6 @@
 <mat-card (click)="open()" class="tech-card" matRipple [matRippleCentered]="true" [matRippleColor]="rippleColor ?? ''"
   [matTooltip]="tooltip" matTooltipPosition="below">
-  <mat-card-title class="center"><span>{{ title }}</span></mat-card-title>
+  <mat-card-title class="title center"><span>{{ title }}</span></mat-card-title>
   <mat-card-subtitle class="center">{{ subtitle }}</mat-card-subtitle>
   <mat-card-content>
     <img mat-card-image src="assets/techs/{{ imagePath }}.svg" alt="Tech icon" style="height: 200px" />
@@ -9,5 +9,4 @@
     </p>
   </mat-card-content>
   <div class="spacer"></div>
-  <mat-divider inset></mat-divider>
 </mat-card>

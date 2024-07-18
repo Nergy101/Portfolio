@@ -5,7 +5,8 @@
 }
 
 .top-text {
-  padding: 0;
+  margin: 1em;
+  background-color: var(--sys-surface-container);
 }
 
 .pad {
@@ -16,7 +17,7 @@
 }
 
 .header-buttons {
-  padding: 0 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, 15em);
   column-gap: 1em;

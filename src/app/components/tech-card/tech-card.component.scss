@@ -5,6 +5,7 @@
 }
 
 .tech-card {
+  background-color: var(--sys-surface-container);
   cursor: pointer;
   max-width: 15em;
   min-width: 15em;
@@ -15,7 +16,7 @@
   flex-flow: column nowrap;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--sys-surface-container-high);
   }
 
   .spacer {
@@ -27,6 +28,10 @@ mat-card-content {
   display: flex;
   flex-direction: column;
   margin: 1rem;
+}
+
+.title {
+  padding: 1rem;
 }
 
 .center {

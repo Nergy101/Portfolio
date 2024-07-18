@@ -1,12 +1,29 @@
 :host {
+  display:flex;
+
+  mat-card-title-group {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
   .weather-card {
+    background-color: var(--sys-surface-container);
     min-width: 15em;
     min-height: 15em;
 
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+
+
     &:hover {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: var(--sys-surface-container-high);
     }
+  }
+
+  mat-card-title {
+    align-self: center;
   }
 }

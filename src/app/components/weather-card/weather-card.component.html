@@ -10,12 +10,11 @@
       alt="Weather icon {{ weatherInfo.icon }} {{ dayName }}"
       style="height: 72px"
     />
-    <p align="center">
+    <div>
       {{ weatherInfo.sunrise }} - {{ weatherInfo.sunset }} <br />
       {{ weatherInfo.tempmin }} C - {{ weatherInfo.tempmax }} C <br />
       {{ weatherInfo.cloudcover }}% cloudy <br />
       {{ weatherInfo.moonphase }}% moon
-    </p>
+    </div>
   </mat-card-content>
-  <mat-divider inset></mat-divider>
 </mat-card>
