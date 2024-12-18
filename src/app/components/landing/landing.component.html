@@ -114,6 +114,7 @@
               >&#64;tovedem</a
             >)
           </h3>
+
         </div>
 
         <div class="tech-cards">
@@ -139,7 +140,7 @@
           </div>
         </div>
         <div
-        id="chevron4"
+        id="chevron2"
         style="
           display: flex;
           justify-content: center;
@@ -148,9 +149,9 @@
           padding-bottom: 0em;
         "
       >
-        <button mat-button (click)="moveTo('top-text')">
-          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
-        </button>
+      <button mat-button (click)="moveTo('chevron3')">
+        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
         </div>
       </div>
 
@@ -199,7 +200,7 @@
           </div>
         </div>
         <div
-          id="chevron2"
+          id="chevron3"
           style="
             display: flex;
             justify-content: center;
@@ -207,7 +208,7 @@
             min-height: 5em;
           "
         >
-          <button mat-button (click)="moveTo('chevron3')">
+          <button mat-button (click)="moveTo('end')">
             <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
           </button>
         </div>
@@ -256,8 +257,9 @@
           </div>
         </div>
 
+        
         <div
-          id="chevron3"
+          id="chevron4"
           style="
             display: flex;
             justify-content: center;
@@ -265,9 +267,10 @@
             min-height: 5em;
           "
         >
-          <button mat-button (click)="moveTo('end')">
-            <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-          </button>
+
+        <button mat-button (click)="moveTo('top-text')">
+          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
+        </button>
         </div>
       </div>
     </div>
