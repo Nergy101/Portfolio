@@ -16,20 +16,28 @@
       >
         <mat-icon aria-hidden="false" aria-label="See my gh profile"
           >contact_page</mat-icon
-        >&nbsp;My GitHub profile
+        >Visit my Github profile
       </button>
+      <button
+      mat-stroked-button
+      (click)="navigateTo('https://blog.nergy.space')"
+    >
+      <mat-icon aria-hidden="false" aria-label="See my gh profile"
+        >library_books</mat-icon
+      >Visit my blog
+    </button>
       <button
         mat-stroked-button
         (click)="navigateTo('https://github.com/Nergy101?tab=repositories')"
       >
-        <mat-icon aria-hidden="false" aria-label="See my gh repos"
-          >polyline</mat-icon
-        >&nbsp;Other projects
+        <mat-icon aria-hidden="false" aria-label="See my github repos"
+          >code</mat-icon
+        >Other projects
       </button>
       <button mat-stroked-button (click)="openKofiDialog()">
         <mat-icon matSuffix aria-hidden="false" aria-label="donate"
           >volunteer_activism</mat-icon
-        >&nbsp;Buy me a coffee
+        >Buy me a coffee (Ko-fi)
         <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
       </button>
     </mat-card-actions>
@@ -90,6 +98,62 @@
   </div>
   
     <div>
+      <div class="tovedem section">
+        <div class="section-title">
+          <h2>
+            <a
+              href="https://github.com/Nergy101/tovedem"
+              data-tooltip="Go to Tovedem github"
+              target="_blank"
+              >Tovedem</a
+            >
+          </h2>
+          <h3>
+            Local Theater & Play Management Software <br />
+            (<a href="http://tovedem.nergy.space" target="_blank"
+              >&#64;tovedem</a
+            >)
+          </h3>
+        </div>
+
+        <div class="tech-cards">
+          <div class="group">
+            <app-tech-card
+              title="PocketBase"
+              subtitle="Backend in 1 file"
+              description="For when you need a quick backend"
+              imagePath="pocketbase"
+              url="https://pocketbase.io/"
+              rippleColor="#FFFFF40"
+            >
+            </app-tech-card>
+            <app-tech-card
+              title="Angular"
+              subtitle="Angular 19"
+              description="Google's Frontend Framework"
+              imagePath="angular"
+              url="https://www.angular.io/"
+              rippleColor="#bc114220"
+            >
+            </app-tech-card>
+          </div>
+        </div>
+        <div
+        id="chevron4"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 2em;
+          padding-bottom: 0em;
+        "
+      >
+        <button mat-button (click)="moveTo('top-text')">
+          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
+        </button>
+        </div>
+      </div>
+
       <div class="pcnotes section">
         <div class="section-title pcnotes">
           <h2>
@@ -204,61 +268,6 @@
           <button mat-button (click)="moveTo('end')">
             <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
           </button>
-        </div>
-      </div>
-      <div class="tovedem section">
-        <div class="section-title">
-          <h2>
-            <a
-              href="https://github.com/Nergy101/tovedem"
-              data-tooltip="Go to Tovedem github"
-              target="_blank"
-              >Tovedem</a
-            >
-          </h2>
-          <h3>
-            Local Theater & Play Management Software <br />
-            (<a href="http://tovedem.nergy.space" target="_blank"
-              >&#64;tovedem</a
-            >)
-          </h3>
-        </div>
-
-        <div class="tech-cards">
-          <div class="group">
-            <app-tech-card
-              title="PocketBase"
-              subtitle="Backend in 1 file"
-              description="For when you need a quick backend"
-              imagePath="pocketbase"
-              url="https://pocketbase.io/"
-              rippleColor="#FFFFF40"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="Angular"
-              subtitle="Angular 17"
-              description="Google's Frontend Framework"
-              imagePath="angular"
-              url="https://www.angular.io/"
-              rippleColor="#bc114220"
-            >
-            </app-tech-card>
-          </div>
-        </div>
-        <div
-        id="chevron4"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-top: 2em;
-          padding-bottom: 0em;
-        "
-      >
-        <button mat-button (click)="moveTo('top-text')">
-          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
-        </button>
         </div>
       </div>
     </div>
