@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Tile } from "./tile.model";
+import { KofiDialogComponent } from "../dialogs/kofi-dialog/kofi-dialog.component";
 
 @Component({
   selector: "app-landing",
@@ -26,7 +28,7 @@ export class LandingComponent implements OnInit {
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;
 
-  constructor(private readonly snackBar: MatSnackBar) {}
+  constructor(private readonly snackBar: MatSnackBar, private readonly dialog: MatDialog) {}
 
   async ngOnInit(): Promise<void> {
     await this.doCall();
@@ -48,6 +50,10 @@ export class LandingComponent implements OnInit {
     } finally {
       this.loading = false;
     }
+  }
+
+  openKofiDialog(): void {
+    this.dialog.open(KofiDialogComponent);
   }
 
   moveTo(divId: string) {

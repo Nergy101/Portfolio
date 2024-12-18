@@ -26,13 +26,10 @@
           >polyline</mat-icon
         >&nbsp;Other projects
       </button>
-      <button
-        mat-stroked-button
-        (click)="navigateTo('https://donate.stripe.com/fZefZr21T3NudlSdQQ')"
-      >
-        <mat-icon aria-hidden="false" aria-label="donate"
+      <button mat-stroked-button (click)="openKofiDialog()">
+        <mat-icon matSuffix aria-hidden="false" aria-label="donate"
           >volunteer_activism</mat-icon
-        >&nbsp;Buy me a
+        >&nbsp;Buy me a coffee
         <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
       </button>
     </mat-card-actions>
