@@ -80,6 +80,21 @@
     }
   }
 
+  &.retroranker {
+    a {
+      color: #e48500;
+      &:hover {
+        color: #e48500;
+      }
+      &:link {
+        color: #e48500;
+      }
+      &:visited {
+        color: #e48500;
+      }
+    }
+  }
+
   a {
     &:visited {
       color: #6dcb94;

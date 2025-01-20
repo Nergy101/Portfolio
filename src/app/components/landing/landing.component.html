@@ -19,13 +19,13 @@
         >Visit my Github profile
       </button>
       <button
-      mat-stroked-button
-      (click)="navigateTo('https://blog.nergy.space')"
-    >
-      <mat-icon aria-hidden="false" aria-label="See my gh profile"
-        >library_books</mat-icon
-      >Visit my blog
-    </button>
+        mat-stroked-button
+        (click)="navigateTo('https://blog.nergy.space')"
+      >
+        <mat-icon aria-hidden="false" aria-label="See my gh profile"
+          >library_books</mat-icon
+        >Visit my blog
+      </button>
       <button
         mat-stroked-button
         (click)="navigateTo('https://github.com/Nergy101?tab=repositories')"
@@ -64,8 +64,7 @@
         <span matPrefix>&nbsp;&nbsp;/getWeather&nbsp;&nbsp;</span>
         <span matSuffix matRipple matRippleColor="primary" (click)="doCall()">
           <ng-container>
-            <mat-icon aria-hidden="false">sync</mat-icon
-            ></ng-container
+            <mat-icon aria-hidden="false">sync</mat-icon></ng-container
           ></span
         >
       </mat-form-field>
@@ -96,50 +95,64 @@
       </button>
     </div>
   </div>
-  
-    <div>
-      <div class="tovedem section">
-        <div class="section-title">
-          <h2>
-            <a
-              href="https://github.com/Nergy101/tovedem"
-              data-tooltip="Go to Tovedem github"
-              target="_blank"
-              >Tovedem</a
-            >
-          </h2>
-          <h3>
-            Local Theater & Play Management Software <br />
-            (<a href="http://tovedem.nergy.space" target="_blank"
-              >&#64;tovedem</a
-            >)
-          </h3>
 
+  <div>
+    <div class="retroranker section">
+      <div class="section-title">
+        <h2><a href="https://retroranker.site" target="_blank">RetroRanker</a></h2>
+        <h3>
+          Find the perfect device for your gaming needs.
+        </h3>
+      </div>
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card title="Deno" subtitle="A secure runtime for JavaScript and TypeScript" imagePath="deno" url="https://deno.com/" rippleColor="#86efac"></app-tech-card>
+          <app-tech-card title="Fresh Deno" subtitle="The next-gen web framework" imagePath="fresh" url="https://fresh.deno.com/" rippleColor="#FFD80D"></app-tech-card>
+          <app-tech-card title="PicoCSS" subtitle="Minimal CSS Framework for semantic HTML" imagePath="pico" url="https://picocss.com/" rippleColor="#FF9502"></app-tech-card>
         </div>
+      </div>
+    </div>
 
-        <div class="tech-cards">
-          <div class="group">
-            <app-tech-card
-              title="PocketBase"
-              subtitle="Backend in 1 file"
-              description="For when you need a quick backend"
-              imagePath="pocketbase"
-              url="https://pocketbase.io/"
-              rippleColor="#FFFFF40"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="Angular"
-              subtitle="Angular 19"
-              description="Google's Frontend Framework"
-              imagePath="angular"
-              url="https://www.angular.io/"
-              rippleColor="#bc114220"
-            >
-            </app-tech-card>
-          </div>
+    <div class="tovedem section">
+      <div class="section-title">
+        <h2>
+          <a
+            href="https://github.com/Nergy101/tovedem"
+            data-tooltip="Go to Tovedem github"
+            target="_blank"
+            >Tovedem</a
+          >
+        </h2>
+        <h3>
+          Local Theater & Play Management Software <br />
+          (<a href="http://tovedem.nergy.space" target="_blank">&#64;tovedem</a
+          >)
+        </h3>
+      </div>
+
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card
+            title="PocketBase"
+            subtitle="Backend in 1 file"
+            description="For when you need a quick backend"
+            imagePath="pocketbase"
+            url="https://pocketbase.io/"
+            rippleColor="#FFFFF40"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="Angular"
+            subtitle="Angular 19"
+            description="Google's Frontend Framework"
+            imagePath="angular"
+            url="https://www.angular.io/"
+            rippleColor="#bc114220"
+          >
+          </app-tech-card>
         </div>
-        <div
+      </div>
+      <div
         id="chevron2"
         style="
           display: flex;
@@ -149,129 +162,127 @@
           padding-bottom: 0em;
         "
       >
-      <button mat-button (click)="moveTo('chevron3')">
-        <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-      </button>
+        <button mat-button (click)="moveTo('chevron3')">
+          <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="pcnotes section">
+      <div class="section-title pcnotes">
+        <h2>
+          <a
+            href="https://github.com/Nergy101/PCNotes"
+            data-tooltip="Go to pcnotes github"
+            target="_blank"
+            >PCNotes</a
+          >
+        </h2>
+        <h3>Create and co-operate on open notes</h3>
+      </div>
+
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card
+            title="MongoDB"
+            subtitle="Database / NoSQL"
+            description="MongoDB is the most used NoSQL database"
+            imagePath="mongodb"
+            url="https://www.mongodb.com/home"
+            rippleColor="#6CAC4820"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="C-Sharp"
+            subtitle="My primary programming language"
+            description=".NET, ASP.NET"
+            imagePath="c-sharp"
+            url="https://dotnet.microsoft.com/en-us/languages/csharp"
+            rippleColor="#a179dc20"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="Blazor"
+            subtitle="WebAssembly framework in C#"
+            description="Blazor WebAssembly client application, using MudBlazor"
+            imagePath="blazor"
+            url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
+            rippleColor="#702af720"
+          >
+          </app-tech-card>
+        </div>
+      </div>
+      <div
+        id="chevron3"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 5em;
+        "
+      >
+        <button mat-button (click)="moveTo('end')">
+          <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="hydroponics section">
+      <div class="section-title">
+        <h2>Hydroponics Software</h2>
+        <h3>
+          Building a greener & cleaner future <br />
+          (<a href="https://www.nemic-hydroponics.com" target="_blank"
+            >&#64;nemic-hydroponics</a
+          >)
+        </h3>
+      </div>
+
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card
+            title="MongoDB"
+            subtitle="Database / NoSQL"
+            description="MongoDB is the most used NoSQL database"
+            imagePath="mongodb"
+            url="https://www.mongodb.com/home"
+            rippleColor="#6CAC4820"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="Python"
+            subtitle="Backend API & Machine Program"
+            description="Hydroponics software using Python"
+            imagePath="python"
+            url="https://www.python.org/about/"
+            rippleColor="#3571a320"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="Raspberry Pi"
+            subtitle="On-location machine / hardware"
+            description="Small computer that controls the hydroponics installation"
+            imagePath="raspberry-pi"
+            url="https://www.raspberrypi.com/"
+            rippleColor="#bc114220"
+          >
+          </app-tech-card>
         </div>
       </div>
 
-      <div class="pcnotes section">
-        <div class="section-title pcnotes">
-          <h2>
-            <a
-              href="https://github.com/Nergy101/PCNotes"
-              data-tooltip="Go to pcnotes github"
-              target="_blank"
-              >PCNotes</a
-            >
-          </h2>
-          <h3>Create and co-operate on open notes</h3>
-        </div>
-
-        <div class="tech-cards">
-          <div class="group">
-            <app-tech-card
-              title="MongoDB"
-              subtitle="Database / NoSQL"
-              description="MongoDB is the most used NoSQL database"
-              imagePath="mongodb"
-              url="https://www.mongodb.com/home"
-              rippleColor="#6CAC4820"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="C-Sharp"
-              subtitle="My primary programming language"
-              description=".NET, ASP.NET"
-              imagePath="c-sharp"
-              url="https://dotnet.microsoft.com/en-us/languages/csharp"
-              rippleColor="#a179dc20"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="Blazor"
-              subtitle="WebAssembly framework in C#"
-              description="Blazor WebAssembly client application, using MudBlazor"
-              imagePath="blazor"
-              url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
-              rippleColor="#702af720"
-            >
-            </app-tech-card>
-          </div>
-        </div>
-        <div
-          id="chevron3"
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 5em;
-          "
-        >
-          <button mat-button (click)="moveTo('end')">
-            <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-          </button>
-        </div>
-      </div>
-
-      <div class="hydroponics section">
-        <div class="section-title">
-          <h2>Hydroponics Software</h2>
-          <h3>
-            Building a greener & cleaner future <br />
-            (<a href="https://www.nemic-hydroponics.com" target="_blank"
-              >&#64;nemic-hydroponics</a
-            >)
-          </h3>
-        </div>
-
-        <div class="tech-cards">
-          <div class="group">
-            <app-tech-card
-              title="MongoDB"
-              subtitle="Database / NoSQL"
-              description="MongoDB is the most used NoSQL database"
-              imagePath="mongodb"
-              url="https://www.mongodb.com/home"
-              rippleColor="#6CAC4820"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="Python"
-              subtitle="Backend API & Machine Program"
-              description="Hydroponics software using Python"
-              imagePath="python"
-              url="https://www.python.org/about/"
-              rippleColor="#3571a320"
-            >
-            </app-tech-card>
-            <app-tech-card
-              title="Raspberry Pi"
-              subtitle="On-location machine / hardware"
-              description="Small computer that controls the hydroponics installation"
-              imagePath="raspberry-pi"
-              url="https://www.raspberrypi.com/"
-              rippleColor="#bc114220"
-            >
-            </app-tech-card>
-          </div>
-        </div>
-
-        
-        <div
-          id="chevron4"
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 5em;
-          "
-        >
-
+      <div
+        id="chevron4"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 5em;
+        "
+      >
         <button mat-button (click)="moveTo('top-text')">
           <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
         </button>
-        </div>
       </div>
     </div>
+  </div>
 </div>
