@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './kofi-dialog.component.html',
-  styleUrl: './kofi-dialog.component.scss'
+  styleUrl: './kofi-dialog.component.scss',
 })
-export class KofiDialogComponent {
-
-}
+export class KofiDialogComponent {}

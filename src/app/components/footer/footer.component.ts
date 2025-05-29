@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faDigitalOcean,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faDigitalOcean, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -21,7 +17,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  navigateTo(url: string){
-    window.open(url, "blank")
+  navigateTo(url: string) {
+    window.open(url, 'blank');
   }
 }

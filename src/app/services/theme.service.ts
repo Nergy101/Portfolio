@@ -9,17 +9,14 @@ import { StyleManagerService } from './style-manager.service';
 export class ThemeService {
   constructor(
     private http: HttpClient,
-    private styleManager: StyleManagerService
-  ) { }
+    private styleManager: StyleManagerService,
+  ) {}
 
   getThemeOptions(): Observable<Array<Option>> {
     return this.http.get<Array<Option>>('assets/options.json');
   }
 
   setTheme(themeToSet: string) {
-    this.styleManager.setStyle(
-      'theme',
-      `assets/prebuilt-themes/${themeToSet}.css`
-    );
+    this.styleManager.setStyle('theme', `assets/prebuilt-themes/${themeToSet}.css`);
   }
 }

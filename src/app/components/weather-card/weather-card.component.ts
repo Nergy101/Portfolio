@@ -8,15 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class WeatherCardComponent implements OnInit {
   @Input() weatherInfo: any = {};
 
-  weekdays = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+  weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   constructor() {}
 

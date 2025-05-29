@@ -1,3 +1,63 @@
 // Generated with https://themes.angular-material.dev/
 // Custom Theming for Angular Material
-:root,:host{--sys-background:#0f1416;--sys-on-background:#dee3e5;--sys-surface:#0f1416;--sys-surface-dim:#0f1416;--sys-surface-bright:#343a3c;--sys-surface-container-lowest:#090f11;--sys-surface-container-low:#171c1e;--sys-surface-container:#1b2122;--sys-surface-container-high:#252b2d;--sys-surface-container-highest:#303637;--sys-on-surface:#dee3e5;--sys-surface-variant:#3f484a;--sys-on-surface-variant:#bfc8ca;--sys-inverse-surface:#dee3e5;--sys-inverse-on-surface:#2c3133;--sys-outline:#899294;--sys-outline-variant:#3f484a;--sys-shadow:#000000;--sys-scrim:#000000;--sys-surface-tint:#83d3e3;--sys-primary:#83d3e3;--sys-on-primary:#00363e;--sys-primary-container:#004e59;--sys-on-primary-container:#a1efff;--sys-inverse-primary:#006876;--sys-secondary:#83d3e3;--sys-on-secondary:#00363e;--sys-secondary-container:#004e59;--sys-on-secondary-container:#a1efff;--sys-tertiary:#b5c4ff;--sys-on-tertiary:#1b2d61;--sys-tertiary-container:#334479;--sys-on-tertiary-container:#dbe1ff;--sys-error:#ffb4ab;--sys-on-error:#561e19;--sys-error-container:#73342d;--sys-on-error-container:#ffdad5;--sys-neutral:#72787a;--sys-neutral-variant:#6f797b;--sys-primary-fixed:#a1efff;--sys-primary-fixed-dim:#83d3e3;--sys-on-primary-fixed:#001f25;--sys-on-primary-fixed-variant:#004e59;--sys-secondary-fixed:#a1efff;--sys-secondary-fixed-dim:#83d3e3;--sys-on-secondary-fixed:#001f25;--sys-on-secondary-fixed-variant:#004e59;--sys-tertiary-fixed:#dbe1ff;--sys-tertiary-fixed-dim:#b5c4ff;--sys-on-tertiary-fixed:#01174b;--sys-on-tertiary-fixed-variant:#334479;--sys-inverse-secondary:#006876;--sys-inverse-tertiary:#4b5c92;--sys-inverse-error:#904a43;--sys-error-fixed:#ffdad5;--sys-error-fixed-dim:#ffb4ab;--sys-on-error-fixed:#3b0907;--sys-on-error-fixed-variant:#73342d;}
+:root,
+:host {
+  --sys-background: #0f1416;
+  --sys-on-background: #dee3e5;
+  --sys-surface: #0f1416;
+  --sys-surface-dim: #0f1416;
+  --sys-surface-bright: #343a3c;
+  --sys-surface-container-lowest: #090f11;
+  --sys-surface-container-low: #171c1e;
+  --sys-surface-container: #1b2122;
+  --sys-surface-container-high: #252b2d;
+  --sys-surface-container-highest: #303637;
+  --sys-on-surface: #dee3e5;
+  --sys-surface-variant: #3f484a;
+  --sys-on-surface-variant: #bfc8ca;
+  --sys-inverse-surface: #dee3e5;
+  --sys-inverse-on-surface: #2c3133;
+  --sys-outline: #899294;
+  --sys-outline-variant: #3f484a;
+  --sys-shadow: #000000;
+  --sys-scrim: #000000;
+  --sys-surface-tint: #83d3e3;
+  --sys-primary: #83d3e3;
+  --sys-on-primary: #00363e;
+  --sys-primary-container: #004e59;
+  --sys-on-primary-container: #a1efff;
+  --sys-inverse-primary: #006876;
+  --sys-secondary: #83d3e3;
+  --sys-on-secondary: #00363e;
+  --sys-secondary-container: #004e59;
+  --sys-on-secondary-container: #a1efff;
+  --sys-tertiary: #b5c4ff;
+  --sys-on-tertiary: #1b2d61;
+  --sys-tertiary-container: #334479;
+  --sys-on-tertiary-container: #dbe1ff;
+  --sys-error: #ffb4ab;
+  --sys-on-error: #561e19;
+  --sys-error-container: #73342d;
+  --sys-on-error-container: #ffdad5;
+  --sys-neutral: #72787a;
+  --sys-neutral-variant: #6f797b;
+  --sys-primary-fixed: #a1efff;
+  --sys-primary-fixed-dim: #83d3e3;
+  --sys-on-primary-fixed: #001f25;
+  --sys-on-primary-fixed-variant: #004e59;
+  --sys-secondary-fixed: #a1efff;
+  --sys-secondary-fixed-dim: #83d3e3;
+  --sys-on-secondary-fixed: #001f25;
+  --sys-on-secondary-fixed-variant: #004e59;
+  --sys-tertiary-fixed: #dbe1ff;
+  --sys-tertiary-fixed-dim: #b5c4ff;
+  --sys-on-tertiary-fixed: #01174b;
+  --sys-on-tertiary-fixed-variant: #334479;
+  --sys-inverse-secondary: #006876;
+  --sys-inverse-tertiary: #4b5c92;
+  --sys-inverse-error: #904a43;
+  --sys-error-fixed: #ffdad5;
+  --sys-error-fixed-dim: #ffb4ab;
+  --sys-on-error-fixed: #3b0907;
+  --sys-on-error-fixed-variant: #73342d;
+}

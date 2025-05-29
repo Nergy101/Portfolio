@@ -19,11 +19,24 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TechCardComponent } from './components/tech-card/tech-card.component';
 import { PocketbaseService } from './services/pocketbase.service';
 import { LoginChoiceDialogComponent } from './components/dialogs/login-choice-dialog/login-choice-dialog.component';
-import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogConfig,
+  MatDialogModule,
+} from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, HeaderComponent, LandingComponent, FooterComponent, WeatherCardComponent, TechCardComponent, LoginChoiceDialogComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    HeaderComponent,
+    LandingComponent,
+    FooterComponent,
+    WeatherCardComponent,
+    TechCardComponent,
+    LoginChoiceDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,15 +48,19 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSnackBarModule,
     HttpClientModule,
   ],
-  providers: [StyleManagerService, ThemeService, PocketbaseService,
+  providers: [
+    StyleManagerService,
+    ThemeService,
+    PocketbaseService,
     {
       provide: MAT_DIALOG_DEFAULT_OPTIONS,
       useValue: {
-        width: "50vw",
-        minWidth: "20em",
-        maxWidth: "75vw",
+        width: '50vw',
+        minWidth: '20em',
+        maxWidth: '75vw',
       } as MatDialogConfig,
-    }],
+    },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,4 +1,5 @@
 # Portfolio
+
 [![Deploy new Docker Image version](https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.

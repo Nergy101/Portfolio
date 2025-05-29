@@ -27,9 +27,9 @@ export class TechCardComponent implements OnInit {
   @Input()
   stopOpen: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   async open(): Promise<void> {
     if (this.url) {

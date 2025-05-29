@@ -4,40 +4,27 @@
       <h1>Well, hello there!</h1>
     </mat-card-title>
     <mat-card-content class="pad">
-      My name is Christian van Dijk, a Software Engineer based in Utrecht, the
-      Netherlands. <br />
-      Welcome to my Portfolio, showcasing some of my capabilities as a Software
-      Engineer.
+      My name is Christian van Dijk, a Software Engineer based in Utrecht, the Netherlands. <br />
+      Welcome to my Portfolio, showcasing some of my capabilities as a Software Engineer.
     </mat-card-content>
     <mat-card-actions class="header-buttons">
-      <button
-        mat-stroked-button
-        (click)="navigateTo('https://github.com/Nergy101')"
-      >
-        <mat-icon aria-hidden="false" aria-label="See my gh profile"
-          >contact_page</mat-icon
-        >Visit my Github profile
+      <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101')">
+        <mat-icon aria-hidden="false" aria-label="See my gh profile">contact_page</mat-icon>Visit my
+        Github profile
       </button>
-      <button
-        mat-stroked-button
-        (click)="navigateTo('https://blog.nergy.space')"
-      >
-        <mat-icon aria-hidden="false" aria-label="See my gh profile"
-          >library_books</mat-icon
-        >Visit my blog
+      <button mat-stroked-button (click)="navigateTo('https://blog.nergy.space')">
+        <mat-icon aria-hidden="false" aria-label="See my gh profile">library_books</mat-icon>Visit
+        my blog
       </button>
       <button
         mat-stroked-button
         (click)="navigateTo('https://github.com/Nergy101?tab=repositories')"
       >
-        <mat-icon aria-hidden="false" aria-label="See my github repos"
-          >code</mat-icon
-        >Other projects
+        <mat-icon aria-hidden="false" aria-label="See my github repos">code</mat-icon>Other projects
       </button>
       <button mat-stroked-button (click)="openKofiDialog()">
-        <mat-icon matSuffix aria-hidden="false" aria-label="donate"
-          >volunteer_activism</mat-icon
-        >Buy me a coffee (Ko-fi)
+        <mat-icon matSuffix aria-hidden="false" aria-label="donate">volunteer_activism</mat-icon>Buy
+        me a coffee (Ko-fi)
         <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
       </button>
     </mat-card-actions>
@@ -49,23 +36,12 @@
         <h2>Serverless Weather Function</h2>
       </div>
 
-      <mat-form-field
-        appearance="fill"
-        floatLabel="always"
-        style="min-width: 25vw"
-      >
-        <input
-          matInput
-          type="text"
-          class="example-right-align"
-          [(ngModel)]="query"
-        />
+      <mat-form-field appearance="fill" floatLabel="always" style="min-width: 25vw">
+        <input matInput type="text" class="example-right-align" [(ngModel)]="query" />
         <mat-hint>Try changing it to your city!</mat-hint>
         <span matPrefix>&nbsp;&nbsp;/getWeather&nbsp;&nbsp;</span>
         <span matSuffix matRipple matRippleColor="primary" (click)="doCall()">
-          <ng-container>
-            <mat-icon aria-hidden="false">sync</mat-icon></ng-container
-          ></span
+          <ng-container> <mat-icon aria-hidden="false">sync</mat-icon></ng-container></span
         >
       </mat-form-field>
     </div>
@@ -82,14 +58,7 @@
       </ng-container>
     </div>
 
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 5em;
-      "
-    >
+    <div style="display: flex; justify-content: center; align-items: center; min-height: 5em">
       <button mat-button (click)="moveTo('chevron2')">
         <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
       </button>
@@ -100,15 +69,31 @@
     <div class="retroranker section">
       <div class="section-title">
         <h2><a href="https://retroranker.site" target="_blank">RetroRanker</a></h2>
-        <h3>
-          Find the perfect device for your gaming needs.
-        </h3>
+        <h3>Find the perfect device for your gaming needs.</h3>
       </div>
       <div class="tech-cards">
         <div class="group">
-          <app-tech-card title="Deno" subtitle="A secure runtime for JavaScript and TypeScript" imagePath="deno" url="https://deno.com/" rippleColor="#86efac"></app-tech-card>
-          <app-tech-card title="Fresh Deno" subtitle="The next-gen web framework" imagePath="fresh" url="https://fresh.deno.com/" rippleColor="#FFD80D"></app-tech-card>
-          <app-tech-card title="PicoCSS" subtitle="Minimal CSS Framework for semantic HTML" imagePath="pico" url="https://picocss.com/" rippleColor="#FF9502"></app-tech-card>
+          <app-tech-card
+            title="Deno"
+            subtitle="A secure runtime for JavaScript and TypeScript"
+            imagePath="deno"
+            url="https://deno.com/"
+            rippleColor="#86efac"
+          ></app-tech-card>
+          <app-tech-card
+            title="Fresh Deno"
+            subtitle="The next-gen web framework"
+            imagePath="fresh"
+            url="https://fresh.deno.com/"
+            rippleColor="#FFD80D"
+          ></app-tech-card>
+          <app-tech-card
+            title="PicoCSS"
+            subtitle="Minimal CSS Framework for semantic HTML"
+            imagePath="pico"
+            url="https://picocss.com/"
+            rippleColor="#FF9502"
+          ></app-tech-card>
         </div>
       </div>
     </div>
@@ -125,8 +110,7 @@
         </h2>
         <h3>
           Local Theater & Play Management Software <br />
-          (<a href="http://tovedem.nergy.space" target="_blank">&#64;tovedem</a
-          >)
+          (<a href="http://tovedem.nergy.space" target="_blank">&#64;tovedem</a>)
         </h3>
       </div>
 
@@ -214,12 +198,7 @@
       </div>
       <div
         id="chevron3"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 5em;
-        "
+        style="display: flex; justify-content: center; align-items: center; min-height: 5em"
       >
         <button mat-button (click)="moveTo('end')">
           <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
@@ -232,9 +211,7 @@
         <h2>Hydroponics Software</h2>
         <h3>
           Building a greener & cleaner future <br />
-          (<a href="https://www.nemic-hydroponics.com" target="_blank"
-            >&#64;nemic-hydroponics</a
-          >)
+          (<a href="https://www.nemic-hydroponics.com" target="_blank">&#64;nemic-hydroponics</a>)
         </h3>
       </div>
 
@@ -272,12 +249,7 @@
 
       <div
         id="chevron4"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 5em;
-        "
+        style="display: flex; justify-content: center; align-items: center; min-height: 5em"
       >
         <button mat-button (click)="moveTo('top-text')">
           <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>

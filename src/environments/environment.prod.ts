@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  enableTodo: false
+  enableTodo: false,
 };

@@ -3,4 +3,4 @@ declare module '*.md' {
   export default content;
 }
 
-declare module '@storybook/angular/demo'
+declare module '@storybook/angular/demo';

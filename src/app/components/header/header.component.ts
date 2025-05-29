@@ -12,9 +12,9 @@ import { ThemeService } from '../../services/theme.service';
 export class HeaderComponent implements OnInit {
   options$: Observable<Array<Option>> = this.themeService.getThemeOptions();
 
-  constructor(private readonly themeService: ThemeService) { }
+  constructor(private readonly themeService: ThemeService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   themeChangeHandler(themeToSet: string) {
     this.themeService.setTheme(themeToSet);
