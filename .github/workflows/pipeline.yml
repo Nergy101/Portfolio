@@ -20,7 +20,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t nergy101/portfolio:v1-arm -f Dockerfile .
+          docker build -t nergy101/portfolio:latest -f Dockerfile .
           docker push nergy101/portfolio:latest
 
       - name: Get Known Hosts value

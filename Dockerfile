@@ -25,6 +25,6 @@ COPY --from=build /usr/src/app/dist/portfolio/browser /usr/share/nginx/html
 EXPOSE 80
 
 # on VM:
-# docker pull nergy101/portfolio:v1-arm
+# docker pull nergy101/portfolio:latest
 # docker stop portfolio && docker rm portfolio
-# docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:v1-arm
+# docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:latest
