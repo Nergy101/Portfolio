@@ -3,3 +3,9 @@
   width: 100%;
   padding: 2em;
 }
+
+:host {
+  ::ng-deep .mat-mdc-dialog-surface {
+    overflow-x: hidden;
+  }
+}

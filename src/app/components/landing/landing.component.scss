@@ -119,3 +119,36 @@
     }
   }
 }
+
+::ng-deep .mat-mdc-dialog-surface {
+  overflow-x: hidden;
+}
+
+.preview {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 50%;
+  height: 50em;
+  padding: 2em;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1em;
+  }
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  .left {
+    width: 50%;
+  }
+  .right {
+    width: 50%;
+  }
+}

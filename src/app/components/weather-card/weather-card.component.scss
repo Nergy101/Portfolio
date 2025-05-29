@@ -9,13 +9,17 @@
 
   .weather-card {
     background-color: var(--sys-surface-container);
-    min-width: 15em;
-    min-height: 15em;
+    min-width: 5em;
+    min-height: 5em;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
+
+    font-size: 0.75rem;
+
+    padding: 1rem;
 
     &:hover {
       background-color: var(--sys-surface-container-high);

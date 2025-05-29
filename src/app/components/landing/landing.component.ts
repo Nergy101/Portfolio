@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Tile } from './tile.model';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
-
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 @Component({
-    selector: 'app-landing',
-    templateUrl: './landing.component.html',
-    styleUrls: ['./landing.component.scss'],
-    standalone: false
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss'],
+  standalone: false
 })
 export class LandingComponent implements OnInit {
+
+  faGithubAlt = faGithubAlt;
+
   tiles: Tile[] = [
     { text: 'One', cols: 1, rows: 1, color: 'primary' },
     { text: 'Two', cols: 1, rows: 1, color: 'secondary' },
@@ -22,7 +25,8 @@ export class LandingComponent implements OnInit {
   weatherUrl =
     'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-f15a95c0-61fb-478f-a954-1aa21586e126/cloud/getWeather';
 
-  weatherResult?: unknown[];
+  weatherResult = signal<Record<string, unknown>[]>([]);
+  weatherResultAsArray = computed(() => Object.values(this.weatherResult()));
 
   query? = '?city=Utrecht';
 
@@ -32,19 +36,19 @@ export class LandingComponent implements OnInit {
   constructor(
     private readonly snackBar: MatSnackBar,
     private readonly dialog: MatDialog,
-  ) {}
+  ) { }
 
   async ngOnInit(): Promise<void> {
-    await this.doCall();
+    await this.doWeatherCall();
   }
 
-  async doCall(): Promise<void> {
+  async doWeatherCall(): Promise<void> {
     this.loading = true;
     try {
       const response = await fetch(encodeURI(this.weatherUrl + this.query));
       const result = await response.json();
       if (result) {
-        this.weatherResult = result.data.days.slice(0, 7);
+        this.weatherResult.set(result.data.days.slice(0, 7) as Record<string, unknown>[]);
       }
     } catch (e) {
       console.error(e);

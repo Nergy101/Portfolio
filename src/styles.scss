@@ -57,3 +57,14 @@ app-root {
   border-radius: 1em;
   margin: 3px;
 }
+
+a {
+  color: var(--sys-primary);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: var(--sys-primary);
+  }
+}

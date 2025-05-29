@@ -26,6 +26,8 @@
     "noImplicitAny": true
   },
   "angularCompilerOptions": {
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

@@ -4,24 +4,55 @@
       <h1>Well, hello there!</h1>
     </mat-card-title>
     <mat-card-content class="pad">
-      My name is Christian van Dijk, a Software Engineer based in Utrecht, the Netherlands. <br />
-      Welcome to my Portfolio, showcasing some of my capabilities as a Software Engineer.
+      <p>
+        Professionally, I've always been invested in <strong>C#</strong> and anything
+        <strong>.NET</strong> related.<br />
+        Every day I work with <strong>Azure</strong>, <strong>DevOps</strong>,
+        <strong>.NET</strong> and <strong>TypeScript</strong>.<br />
+        I like fiddling with different architectures (<em>Clean Architecture</em> /
+        <em>Micro Services</em>), CI/CD (<strong>Azure Pipelines</strong> or
+        <strong>Github Actions</strong>, <strong>Bicep</strong> for Azure), the list goes on.<br />
+        As a hobby, I mostly try out different frameworks, languages, databases and libraries.<br />
+        Check out
+        <a href="https://retroranker.site" target="_blank" rel="noopener">RetroRanker</a> for my
+        latest hobby project.
+      </p>
+
+      <div class="split">
+        <div class="left">
+          <ul class="profile-list">
+            <li>
+              🚀 <strong>Currently working on: </strong>
+              <a href="https://retroranker.site" target="_blank" rel="noopener">RetroRanker</a>
+            </li>
+            <li>
+              💾 <strong> Github: </strong>
+              <a href="https://github.com/Nergy101" target="_blank" rel="noopener">Nergy101</a>
+            </li>
+            <li>
+              📕 <strong>Blog: </strong>
+              <a href="https://blog.nergy.space" target="_blank" rel="noopener">blog.nergy.space</a>
+            </li>
+            <li>
+              🌐 <strong>Service Uptime: </strong>
+              <a href="https://kuma.nergy.space/status/all" target="_blank" rel="noopener">Kuma</a>
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul class="profile-list">
+            <li>🌍 <strong>Based in: </strong> Utrecht, NL</li>
+            <li>
+              ✉️ <strong>Contact: </strong>
+              <a href="mailto:cdijk4@gmail.com">cdijk4&#64;gmail.com</a>
+            </li>
+            <li>🧠 <strong>Learning about: </strong> MassTransit and Nx</li>
+            <li>🎂 <strong>Been here since: </strong> 1999</li>
+          </ul>
+        </div>
+      </div>
     </mat-card-content>
     <mat-card-actions class="header-buttons">
-      <button mat-stroked-button (click)="navigateTo('https://github.com/Nergy101')">
-        <mat-icon aria-hidden="false" aria-label="See my gh profile">contact_page</mat-icon>Visit my
-        Github profile
-      </button>
-      <button mat-stroked-button (click)="navigateTo('https://blog.nergy.space')">
-        <mat-icon aria-hidden="false" aria-label="See my gh profile">library_books</mat-icon>Visit
-        my blog
-      </button>
-      <button
-        mat-stroked-button
-        (click)="navigateTo('https://github.com/Nergy101?tab=repositories')"
-        >
-        <mat-icon aria-hidden="false" aria-label="See my github repos">code</mat-icon>Other projects
-      </button>
       <button mat-stroked-button (click)="openKofiDialog()">
         <mat-icon matSuffix aria-hidden="false" aria-label="donate">volunteer_activism</mat-icon>Buy
         me a coffee (Ko-fi)
@@ -33,229 +64,130 @@
   <div class="weather">
     <div class="section-title">
       <div>
-        <h2>Serverless Weather Function</h2>
+        <h2>The Weather in my city for the next 7 days</h2>
       </div>
 
       <mat-form-field appearance="fill" floatLabel="always" style="min-width: 25vw">
         <input matInput type="text" class="example-right-align" [(ngModel)]="query" />
         <mat-hint>Try changing it to your city!</mat-hint>
         <span matPrefix>&nbsp;&nbsp;/getWeather&nbsp;&nbsp;</span>
-        <span matSuffix matRipple matRippleColor="primary" (click)="doCall()">
+        <span matSuffix matRipple matRippleColor="primary" (click)="doWeatherCall()">
           <ng-container> <mat-icon aria-hidden="false">sync</mat-icon></ng-container></span
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="weather-cards">
+      @if (loading) {
+        <mat-spinner></mat-spinner>
+      }
+      @if (!loading && weatherResultAsArray().length > 0) {
+        @for (result of weatherResultAsArray(); track result) {
+          <app-weather-card [weatherInfo]="result"></app-weather-card>
+        }
+      }
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; min-height: 5em">
+      <button mat-button (click)="moveTo('chevron2')">
+        <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="retroranker section">
+      <div class="section-title">
+        <h2><a href="https://retroranker.site" target="_blank">RetroRanker</a></h2>
+        <sub>Find the perfect device for your gaming needs.</sub>
+      </div>
+      <div class="preview">
+        <iframe src="https://retroranker.site" title="RetroRanker"></iframe>
+      </div>
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card
+            title="Deno"
+            subtitle="A secure runtime for JavaScript and TypeScript"
+            imagePath="deno"
+            url="https://deno.com/"
+            rippleColor="#86efac"
+          ></app-tech-card>
+          <app-tech-card
+            title="Fresh Deno"
+            subtitle="The next-gen web framework"
+            imagePath="fresh"
+            url="https://fresh.deno.com/"
+            rippleColor="#FFD80D"
+          ></app-tech-card>
+          <app-tech-card
+            title="PicoCSS"
+            subtitle="Minimal CSS Framework for semantic HTML"
+            imagePath="pico"
+            url="https://picocss.com/"
+            rippleColor="#FF9502"
+          ></app-tech-card>
+          <app-tech-card
+            title="PocketBase"
+            subtitle="Backend in 1 file, for when you need a quick backend"
+            imagePath="pocketbase"
+            url="https://pocketbase.io/"
+            rippleColor="#FFFFF40"
           >
-        </mat-form-field>
+          </app-tech-card>
+        </div>
       </div>
-
-      <div class="weather-cards">
-        @if (loading) {
-          <mat-spinner></mat-spinner>
-        }
-        @if (!loading && (weatherResult?.length ?? 0) > 0) {
-          @for (result of this.weatherResult; track result) {
-            <app-weather-card
-              [weatherInfo]="result"
-            ></app-weather-card>
-          }
-        }
-      </div>
-
-      <div style="display: flex; justify-content: center; align-items: center; min-height: 5em">
-        <button mat-button (click)="moveTo('chevron2')">
-          <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
+      <div
+        id="chevron2"
+        style="display: flex; justify-content: center; align-items: center; padding: 1em"
+      >
+        <button mat-button (click)="moveTo('chevron3')">
+          <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
         </button>
       </div>
     </div>
 
-    <div>
-      <div class="retroranker section">
-        <div class="section-title">
-          <h2><a href="https://retroranker.site" target="_blank">RetroRanker</a></h2>
-          <h3>Find the perfect device for your gaming needs.</h3>
-        </div>
-        <div class="tech-cards">
-          <div class="group">
-            <app-tech-card
-              title="Deno"
-              subtitle="A secure runtime for JavaScript and TypeScript"
-              imagePath="deno"
-              url="https://deno.com/"
-              rippleColor="#86efac"
-            ></app-tech-card>
-            <app-tech-card
-              title="Fresh Deno"
-              subtitle="The next-gen web framework"
-              imagePath="fresh"
-              url="https://fresh.deno.com/"
-              rippleColor="#FFD80D"
-            ></app-tech-card>
-            <app-tech-card
-              title="PicoCSS"
-              subtitle="Minimal CSS Framework for semantic HTML"
-              imagePath="pico"
-              url="https://picocss.com/"
-              rippleColor="#FF9502"
-            ></app-tech-card>
-          </div>
+    <div class="tovedem section">
+      <div class="section-title">
+        <h2>
+          <a href="https://tovedem.nergy.space" data-tooltip="Go to Tovedem github" target="_blank"
+            >Tovedem</a
+          >
+        </h2>
+        <sub>Local Theater & Play Management Software.</sub>
+      </div>
+      <div class="preview">
+        <iframe src="https://tovedem.nergy.space" title="Tovedem"></iframe>
+      </div>
+      <div class="tech-cards">
+        <div class="group">
+          <app-tech-card
+            title="PocketBase"
+            subtitle="Backend in 1 file, for when you need a quick backend"
+            imagePath="pocketbase"
+            url="https://pocketbase.io/"
+            rippleColor="#FFFFF40"
+          >
+          </app-tech-card>
+          <app-tech-card
+            title="Angular"
+            subtitle="Google's Frontend Framework"
+            imagePath="angular"
+            url="https://www.angular.io/"
+            rippleColor="#bc114220"
+          >
+          </app-tech-card>
         </div>
       </div>
-
-      <div class="tovedem section">
-        <div class="section-title">
-          <h2>
-            <a
-              href="https://github.com/Nergy101/tovedem"
-              data-tooltip="Go to Tovedem github"
-              target="_blank"
-              >Tovedem</a
-              >
-            </h2>
-            <h3>
-              Local Theater & Play Management Software <br />
-              (<a href="http://tovedem.nergy.space" target="_blank">&#64;tovedem</a>)
-            </h3>
-          </div>
-
-          <div class="tech-cards">
-            <div class="group">
-              <app-tech-card
-                title="PocketBase"
-                subtitle="Backend in 1 file"
-                description="For when you need a quick backend"
-                imagePath="pocketbase"
-                url="https://pocketbase.io/"
-                rippleColor="#FFFFF40"
-                >
-              </app-tech-card>
-              <app-tech-card
-                title="Angular"
-                subtitle="Angular 19"
-                description="Google's Frontend Framework"
-                imagePath="angular"
-                url="https://www.angular.io/"
-                rippleColor="#bc114220"
-                >
-              </app-tech-card>
-            </div>
-          </div>
-          <div
-            id="chevron2"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-top: 2em;
-          padding-bottom: 0em;
-        "
-            >
-            <button mat-button (click)="moveTo('chevron3')">
-              <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-            </button>
-          </div>
-        </div>
-
-        <div class="pcnotes section">
-          <div class="section-title pcnotes">
-            <h2>
-              <a
-                href="https://github.com/Nergy101/PCNotes"
-                data-tooltip="Go to pcnotes github"
-                target="_blank"
-                >PCNotes</a
-                >
-              </h2>
-              <h3>Create and co-operate on open notes</h3>
-            </div>
-
-            <div class="tech-cards">
-              <div class="group">
-                <app-tech-card
-                  title="MongoDB"
-                  subtitle="Database / NoSQL"
-                  description="MongoDB is the most used NoSQL database"
-                  imagePath="mongodb"
-                  url="https://www.mongodb.com/home"
-                  rippleColor="#6CAC4820"
-                  >
-                </app-tech-card>
-                <app-tech-card
-                  title="C-Sharp"
-                  subtitle="My primary programming language"
-                  description=".NET, ASP.NET"
-                  imagePath="c-sharp"
-                  url="https://dotnet.microsoft.com/en-us/languages/csharp"
-                  rippleColor="#a179dc20"
-                  >
-                </app-tech-card>
-                <app-tech-card
-                  title="Blazor"
-                  subtitle="WebAssembly framework in C#"
-                  description="Blazor WebAssembly client application, using MudBlazor"
-                  imagePath="blazor"
-                  url="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
-                  rippleColor="#702af720"
-                  >
-                </app-tech-card>
-              </div>
-            </div>
-            <div
-              id="chevron3"
-              style="display: flex; justify-content: center; align-items: center; min-height: 5em"
-              >
-              <button mat-button (click)="moveTo('end')">
-                <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-              </button>
-            </div>
-          </div>
-
-          <div class="hydroponics section">
-            <div class="section-title">
-              <h2>Hydroponics Software</h2>
-              <h3>
-                Building a greener & cleaner future <br />
-                (<a href="https://www.nemic-hydroponics.com" target="_blank">&#64;nemic-hydroponics</a>)
-              </h3>
-            </div>
-
-            <div class="tech-cards">
-              <div class="group">
-                <app-tech-card
-                  title="MongoDB"
-                  subtitle="Database / NoSQL"
-                  description="MongoDB is the most used NoSQL database"
-                  imagePath="mongodb"
-                  url="https://www.mongodb.com/home"
-                  rippleColor="#6CAC4820"
-                  >
-                </app-tech-card>
-                <app-tech-card
-                  title="Python"
-                  subtitle="Backend API & Machine Program"
-                  description="Hydroponics software using Python"
-                  imagePath="python"
-                  url="https://www.python.org/about/"
-                  rippleColor="#3571a320"
-                  >
-                </app-tech-card>
-                <app-tech-card
-                  title="Raspberry Pi"
-                  subtitle="On-location machine / hardware"
-                  description="Small computer that controls the hydroponics installation"
-                  imagePath="raspberry-pi"
-                  url="https://www.raspberrypi.com/"
-                  rippleColor="#bc114220"
-                  >
-                </app-tech-card>
-              </div>
-            </div>
-
-            <div
-              id="chevron4"
-              style="display: flex; justify-content: center; align-items: center; min-height: 5em"
-              >
-              <button mat-button (click)="moveTo('top-text')">
-                <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
-              </button>
-            </div>
-          </div>
-        </div>
+      <div
+        id="chevron3"
+        style="display: flex; justify-content: center; align-items: center; padding: 1em"
+      >
+        <button mat-button (click)="moveTo('top-text')">
+          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
+        </button>
       </div>
+    </div>
+  </div>
+</div>
