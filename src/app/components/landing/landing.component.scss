@@ -138,6 +138,11 @@
     border: none;
     border-radius: 1em;
   }
+
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+    height: 40em;
+  }
 }
 
 .split {
