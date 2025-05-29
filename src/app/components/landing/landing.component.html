@@ -81,23 +81,8 @@
       </button>
     </mat-card-actions>
   </mat-card>
-
-  <div class="weather">
-    <div class="section-title">
-      <div>
-        <h2>The Weather in my city for the next 7 days</h2>
-      </div>
-
-      <mat-form-field appearance="fill" floatLabel="always" style="min-width: 25vw">
-        <input matInput type="text" class="example-right-align" [(ngModel)]="query" />
-        <mat-hint>Try changing it to your city!</mat-hint>
-        <span matPrefix>&nbsp;&nbsp;/getWeather&nbsp;&nbsp;</span>
-        <span matSuffix matRipple matRippleColor="primary" (click)="doWeatherCall()">
-          <ng-container> <mat-icon aria-hidden="false">sync</mat-icon></ng-container></span
-        >
-      </mat-form-field>
-    </div>
-
+  <div class="weather-section">
+    <sub>The weather in Utrecht, NL, for the next 7 days</sub>
     <div class="weather-cards">
       @if (loading) {
         <mat-spinner></mat-spinner>
@@ -108,7 +93,8 @@
         }
       }
     </div>
-
+  </div>
+  <div>
     <div style="display: flex; justify-content: center; align-items: center; min-height: 5em">
       <button mat-button (click)="moveTo('chevron2')">
         <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
