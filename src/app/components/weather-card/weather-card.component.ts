@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-weather-card',
-  templateUrl: './weather-card.component.html',
-  styleUrls: ['./weather-card.component.scss'],
+    selector: 'app-weather-card',
+    templateUrl: './weather-card.component.html',
+    styleUrls: ['./weather-card.component.scss'],
+    standalone: false
 })
 export class WeatherCardComponent {
   @Input() weatherInfo: Record<string, unknown> = {};

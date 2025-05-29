@@ -6,9 +6,10 @@ import { Tile } from './tile.model';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss'],
+    selector: 'app-landing',
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss'],
+    standalone: false
 })
 export class LandingComponent implements OnInit {
   tiles: Tile[] = [

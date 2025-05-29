@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tech-card',
-  templateUrl: './tech-card.component.html',
-  styleUrls: ['./tech-card.component.scss'],
+    selector: 'app-tech-card',
+    templateUrl: './tech-card.component.html',
+    styleUrls: ['./tech-card.component.scss'],
+    standalone: false
 })
 export class TechCardComponent {
   @Input()

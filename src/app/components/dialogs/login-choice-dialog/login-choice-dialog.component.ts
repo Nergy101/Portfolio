@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-login-choice-dialog',
-  templateUrl: './login-choice-dialog.component.html',
-  styleUrls: ['./login-choice-dialog.component.scss'],
+    selector: 'app-login-choice-dialog',
+    templateUrl: './login-choice-dialog.component.html',
+    styleUrls: ['./login-choice-dialog.component.scss'],
+    standalone: false
 })
 export class LoginChoiceDialogComponent {
   constructor(private dialogRef: MatDialogRef<LoginChoiceDialogComponent>) {}

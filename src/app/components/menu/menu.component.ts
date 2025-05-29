@@ -8,9 +8,10 @@ import { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss'],
+    standalone: false
 })
 export class MenuComponent {
   @Input() options: Array<Option> | null = [];
