@@ -51,7 +51,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker pull nergy101/portfolio:latest
-            docker stop portfolio
-            docker rm portfolio
-            docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:latest
+            cd /root/code/portfolio
+            docker compose pull
+            docker compose up -d

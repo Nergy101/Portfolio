@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    image: portfolio:latest
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "4200:4200"

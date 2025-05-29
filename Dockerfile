@@ -24,7 +24,13 @@ COPY --from=build /usr/src/app/dist/portfolio/browser /usr/share/nginx/html
 # Expose port 80
 EXPOSE 80
 
-# on VM:
-# docker pull nergy101/portfolio:latest
-# docker stop portfolio && docker rm portfolio
-# docker run --restart unless-stopped -p 8080:80 -d --name portfolio nergy101/portfolio:latest
+# Usage notes:
+# docker build -t portfolio:latest .
+# docker run -p 4200:4200 portfolio:latest
+
+### tag as ...:portfolio:latest
+### push to docker hub
+
+# docker build -t portfolio:latest .
+# docker tag portfolio:latest nergy101/portfolio:latest
+# docker push nergy101/portfolio:latest
