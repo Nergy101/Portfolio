@@ -21,7 +21,7 @@ export class LandingComponent implements OnInit {
   weatherUrl =
     'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-f15a95c0-61fb-478f-a954-1aa21586e126/cloud/getWeather';
 
-  weatherResult?: any[];
+  weatherResult?: unknown[];
 
   query? = '?city=Utrecht';
 

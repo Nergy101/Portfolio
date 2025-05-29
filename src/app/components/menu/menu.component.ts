@@ -50,7 +50,7 @@ export class MenuComponent {
     this.dialog
       .open(LoginChoiceDialogComponent)
       .afterClosed()
-      .subscribe(async (chosenOption: any): Promise<void> => {
+      .subscribe(async (chosenOption: string): Promise<void> => {
         let authData;
 
         if (chosenOption == 'google') {

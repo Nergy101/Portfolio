@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tech-card',
   templateUrl: './tech-card.component.html',
   styleUrls: ['./tech-card.component.scss'],
 })
-export class TechCardComponent implements OnInit {
+export class TechCardComponent {
   @Input()
   title?: string;
 
@@ -28,8 +28,6 @@ export class TechCardComponent implements OnInit {
   stopOpen: boolean = false;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   async open(): Promise<void> {
     if (this.url) {

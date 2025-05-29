@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 // Material Form Controls
 import { MatAutocompleteModule as MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule as MatCheckboxModule } from '@angular/material/checkbox';
