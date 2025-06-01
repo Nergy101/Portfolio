@@ -170,3 +170,14 @@
 .profile-list {
   list-style: none;
 }
+
+.badge-container {
+  @media screen and (max-width: 425px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 0.5rem;
+  }
+}
