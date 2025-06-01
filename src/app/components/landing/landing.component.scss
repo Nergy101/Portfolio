@@ -13,6 +13,7 @@
   padding: 0 1rem;
   &.top {
     padding: 1rem 0 0 1rem;
+    line-height: normal;
   }
 }
 
@@ -164,4 +165,8 @@
   .right {
     width: 50%;
   }
+}
+
+.profile-list {
+  list-style: none;
 }
