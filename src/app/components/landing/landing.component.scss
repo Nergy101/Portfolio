@@ -157,18 +157,16 @@
 .split {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-
-  .left {
-    width: 50%;
-  }
-  .right {
-    width: 50%;
-  }
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid var(--sys-surface-bright);
+  padding-top: 1em;
 }
 
 .profile-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .badge-container {
