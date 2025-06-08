@@ -13,7 +13,7 @@ export class StyleManagerService {
    * Set the stylesheet with the specified key.
    */
   setStyle(key: string, href: string) {
-    getLinkElementForKey1(key).setAttribute('href', href);
+    getLinkElementForKey(key).setAttribute('href', href);
   }
 
   /**
@@ -38,7 +38,7 @@ export class StyleManagerService {
   }
 }
 
-function getLinkElementForKey1(key: string) {
+function getLinkElementForKey(key: string) {
   return getExistingLinkElementByKey(key) || createLinkElementWithKey(key);
 }
 
