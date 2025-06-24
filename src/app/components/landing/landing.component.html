@@ -1,451 +1,55 @@
 <div class="container mat-drawer-container">
-  <mat-card id="top-text" class="top-text">
-    <mat-card-title
-      class="pad top"
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-      ">
-      <h1>Well, hello there!</h1>
-    </mat-card-title>
-    <mat-card-content class="pad">
-      <div style="line-height: 1.3">
-        Professionally, I've always been invested in
-        <strong>C#</strong>
-        and anything
-        <strong>.NET</strong>
-        related.
-        <br />
-        Every day I work with:
-        <ul>
-          <li>Azure</li>
-          <li>DevOps</li>
-          <li>dotNET</li>
-          <li>TypeScript</li>
-        </ul>
-        I like fiddling with different architectures:
-        <ul>
-          <li>Clean Architecture</li>
-          <li>Micro Services</li>
-        </ul>
-        CI/CD:
-        <ul>
-          <li>Azure Pipelines</li>
-          <li>Github Actions</li>
-          <li>Bicep</li>
-        </ul>
-        and the list goes on.
-        <br />
-        As a hobby, I mostly try out different frameworks, languages, databases
-        and libraries.
-        <br />
-        Check out
-        <a href="https://retroranker.site" target="_blank" rel="noopener">
-          RetroRanker
-        </a>
-        for my latest hobby project.
-      </div>
-
-      <div class="split">
-        <div class="left">
-          <ul class="profile-list">
-            <li>
-              🚀
-              <strong>Currently working on:</strong>
-              <a href="https://retroranker.site" target="_blank" rel="noopener">
-                RetroRanker
-              </a>
-            </li>
-            <li>
-              💾
-              <strong>Github:</strong>
-              <a
-                href="https://github.com/Nergy101"
-                target="_blank"
-                rel="noopener">
-                Nergy101
-              </a>
-            </li>
-            <li>
-              📕
-              <strong>Blog:</strong>
-              <a href="https://blog.nergy.space" target="_blank" rel="noopener">
-                blog.nergy.space
-              </a>
-            </li>
-            <li>
-              🌐
-              <strong>Service Uptime:</strong>
-              <a
-                href="https://kuma.nergy.space/status/all"
-                target="_blank"
-                rel="noopener">
-                Kuma
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="right">
-          <ul class="profile-list">
-            <li>
-              🌍
-              <strong>Based in:</strong>
-              Utrecht, NL
-            </li>
-            <li>
-              ✉️
-              <strong>Contact:&nbsp;</strong>
-              <a href="mailto:cdijk4@gmail.com">cdijk4&#64;gmail.com</a>
-            </li>
-            <li>
-              🧠
-              <strong>Learning about:</strong>
-              MassTransit and Nx
-            </li>
-            <li>
-              🎂
-              <strong>Been here since:</strong>
-              1999
-            </li>
-          </ul>
-        </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions class="header-buttons">
-      <button mat-stroked-button (click)="openKofiDialog()">
-        <mat-icon matSuffix aria-hidden="false" aria-label="donate">
-          volunteer_activism
-        </mat-icon>
-        Buy me a coffee (Ko-fi)
-        <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <app-profile></app-profile>
 
   <div class="all-techs-section">
-    <p
-      class="tech-list-title"
-      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+    <p class="tech-list-title">
       Here's a list of technologies and tools I've worked with in hobby or
       professional projects.
     </p>
 
-    <div style="display: flex; justify-content: center; margin-bottom: 1rem">
-      <button mat-stroked-button (click)="toggleSort()">
-        <mat-icon>sort</mat-icon>
-        Sort by:
-        {{ sortBy() === 'alphabet' ? 'Alphabetical' : 'Custom Order' }}
-      </button>
-    </div>
+    <app-tech-grid
+      title="Professional"
+      [techs]="professionalTechs()"
+      [sortBy]="sortBy"
+      [showSortButton]="true"></app-tech-grid>
 
-    <p
-      class="tech-list-title"
-      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      Professional
-    </p>
-    <div class="tech-icons-container-professional">
-      @for (tech of sortedProfessionalTechs(); track tech.name) {
-        <div
-          class="item"
-          [matBadge]="tech.score"
-          [matBadgeHidden]="tech.isNonBadged"
-          (click)="tech.url && navigateTo(tech.url)"
-          (keydown.enter)="tech.url && navigateTo(tech.url)"
-          (keydown.space)="tech.url && navigateTo(tech.url)"
-          [tabindex]="tech.url ? 0 : -1"
-          [style.cursor]="tech.url ? 'pointer' : 'default'"
-          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
-          matTooltipPosition="below"
-          role="button"
-          [attr.aria-label]="
-            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
-          ">
-          <div class="tech-item">
-            <img
-              [src]="'assets/techs/' + tech.icon + '.svg'"
-              [alt]="tech.name"
-              class="tech-icon" />
-            <span class="tech-label">{{ tech.name }}</span>
-          </div>
-        </div>
-      }
-    </div>
+    <app-tech-grid
+      title="Hobby"
+      [techs]="hobbyTechs()"
+      [sortBy]="sortBy"
+      [showSortButton]="false"></app-tech-grid>
 
-    <p
-      class="tech-list-title"
-      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      Hobby
-    </p>
-    <div class="tech-icons-container">
-      @for (tech of sortedHobbyTechs(); track tech.name) {
-        <div
-          class="item"
-          [matBadge]="tech.score"
-          [matBadgeHidden]="tech.isNonBadged"
-          (click)="tech.url && navigateTo(tech.url)"
-          (keydown.enter)="tech.url && navigateTo(tech.url)"
-          (keydown.space)="tech.url && navigateTo(tech.url)"
-          [tabindex]="tech.url ? 0 : -1"
-          [style.cursor]="tech.url ? 'pointer' : 'default'"
-          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
-          matTooltipPosition="below"
-          role="button"
-          [attr.aria-label]="
-            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
-          ">
-          <div class="tech-item">
-            <img
-              [src]="'assets/techs/' + tech.icon + '.svg'"
-              [alt]="tech.name"
-              class="tech-icon" />
-            <span class="tech-label">{{ tech.name }}</span>
-          </div>
-        </div>
-      }
-    </div>
-    <p
-      class="tech-list-title"
-      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      Tools, Editors, Socials, etc...
-    </p>
-    <div class="non-tech-icons-container">
-      @for (tech of sortedOtherTechs(); track tech.name) {
-        <div
-          class="item"
-          [class.non-badged-item]="tech.isNonBadged"
-          [matBadge]="tech.score"
-          [matBadgeHidden]="tech.isNonBadged"
-          (click)="tech.url && navigateTo(tech.url)"
-          (keydown.enter)="tech.url && navigateTo(tech.url)"
-          (keydown.space)="tech.url && navigateTo(tech.url)"
-          [tabindex]="tech.url ? 0 : -1"
-          [style.cursor]="tech.url ? 'pointer' : 'default'"
-          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
-          matTooltipPosition="below"
-          role="button"
-          [attr.aria-label]="
-            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
-          ">
-          <div class="tech-item">
-            <img
-              [src]="'assets/techs/' + tech.icon + '.svg'"
-              [alt]="tech.name"
-              class="tech-icon" />
-            <span class="tech-label">{{ tech.name }}</span>
-          </div>
-        </div>
-      }
-    </div>
+    <app-tech-grid
+      title="Tools, Editors, Socials, etc..."
+      [techs]="otherTechs()"
+      [sortBy]="sortBy"
+      [showSortButton]="false"></app-tech-grid>
   </div>
 
-  <div class="archive-section">
-    <mat-expansion-panel
-      [expanded]="archiveExpanded"
-      (opened)="archiveExpanded = true"
-      (closed)="archiveExpanded = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>archive</mat-icon>
-          Archive
-        </mat-panel-title>
-        <mat-panel-description>
-          Technologies and tools I've used in the past but are no longer
-          relevant or used by me.
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+  <app-archive-section
+    [archiveTechs]="archiveTechs()"
+    [sortBy]="sortBy"
+    [archiveExpanded]="archiveExpanded"></app-archive-section>
 
-      <p
-        class="tech-list-title"
-        style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-        Archived Technologies
-      </p>
-      <div class="tech-icons-container-archive">
-        @for (tech of sortedArchiveTechs(); track tech.name) {
-          <div
-            class="item non-badged-item"
-            (click)="tech.url && navigateTo(tech.url)"
-            (keydown.enter)="tech.url && navigateTo(tech.url)"
-            (keydown.space)="tech.url && navigateTo(tech.url)"
-            [tabindex]="tech.url ? 0 : -1"
-            [style.cursor]="tech.url ? 'pointer' : 'default'"
-            [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
-            matTooltipPosition="below"
-            role="button"
-            [attr.aria-label]="
-              tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
-            ">
-            <div class="tech-item">
-              <img
-                [src]="'assets/techs/' + tech.icon + '.svg'"
-                [alt]="tech.name"
-                class="tech-icon" />
-              <span class="tech-label">{{ tech.name }}</span>
-            </div>
-          </div>
-        }
-      </div>
-    </mat-expansion-panel>
-  </div>
-
-  <div class="weather-section">
-    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      The weather in Utrecht, NL, for the next 7 days
-    </p>
-    <div class="weather-cards">
-      @if (loading) {
-        <mat-spinner></mat-spinner>
-      }
-      @if (!loading && weatherResultAsArray().length > 0) {
-        @for (result of weatherResultAsArray(); track result) {
-          <app-weather-card [weatherInfo]="result"></app-weather-card>
-        }
-      }
-    </div>
-  </div>
+  <app-weather-section
+    [loading]="loading"
+    [weatherResultAsArray]="weatherResultAsArray"></app-weather-section>
 
   <div>
-    <div class="retroranker section">
-      <div class="section-title">
-        <h2 style="margin: 0; padding: 0">
-          <a href="https://retroranker.site" target="_blank">Retro Ranker</a>
-        </h2>
-        <sub>Find the perfect device for your gaming needs.</sub>
-        <div
-          style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 1em;
-            margin-top: 0.5rem;
-          ">
-          <a
-            href="https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml/badge.svg"
-              alt="Build Check" />
-          </a>
-          <a
-            href="https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml/badge.svg"
-              alt="Deploy new Docker Image version" />
-          </a>
-          <a
-            href="https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg"
-              alt="Refresh Data and Commit" />
-          </a>
-        </div>
-      </div>
-      <div class="preview">
-        <iframe src="https://retroranker.site" title="RetroRanker"></iframe>
-      </div>
-      <div class="tech-cards">
-        <div class="group">
-          <app-tech-card
-            title="Deno"
-            subtitle="A secure runtime for JavaScript and TypeScript"
-            imagePath="deno"
-            url="https://deno.com/"
-            rippleColor="#86efac"></app-tech-card>
-          <app-tech-card
-            title="Fresh Deno"
-            subtitle="The next-gen web framework"
-            imagePath="fresh"
-            url="https://fresh.deno.com/"
-            rippleColor="#FFD80D"></app-tech-card>
-          <app-tech-card
-            title="PicoCSS"
-            subtitle="Minimal CSS Framework for semantic HTML"
-            imagePath="pico"
-            url="https://picocss.com/"
-            rippleColor="#FF9502"></app-tech-card>
-          <app-tech-card
-            title="PocketBase"
-            subtitle="Backend in 1 file, for when you need a quick backend"
-            imagePath="pocketbase"
-            url="https://pocketbase.io/"
-            rippleColor="#FFFFFF40"></app-tech-card>
-        </div>
-      </div>
-    </div>
+    <app-project-showcase
+      title="Retro Ranker"
+      subtitle="Find the perfect device for your gaming needs."
+      url="https://retroranker.site"
+      iframeSrc="https://retroranker.site"
+      [badges]="retrorankerBadges"
+      [techs]="retrorankerTechs"></app-project-showcase>
 
-    <div class="tovedem section">
-      <div class="section-title">
-        <h2>
-          <a
-            href="https://tovedem.nergy.space"
-            data-tooltip="Go to Tovedem github"
-            target="_blank">
-            Tovedem
-          </a>
-        </h2>
-        <sub>Local Theater & Play Management Software.</sub>
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1em;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-          ">
-          <a
-            href="https://github.com/Nergy101/tovedem/actions/workflows/build.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/tovedem/actions/workflows/build.yml/badge.svg"
-              alt="Build Angular WebApp Check Pipeline" />
-          </a>
-          <a
-            href="https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml/badge.svg"
-              alt="Deploy new Docker Image version" />
-          </a>
-
-          <a
-            href="https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml"
-            target="_blank"
-            rel="noopener">
-            <img
-              src="https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml/badge.svg"
-              alt="Replace hooks folder with latest" />
-          </a>
-        </div>
-      </div>
-      <div class="preview">
-        <iframe src="https://tovedem.nergy.space" title="Tovedem"></iframe>
-      </div>
-      <div class="tech-cards">
-        <div class="group">
-          <app-tech-card
-            title="PocketBase"
-            subtitle="Backend in 1 file, for when you need a quick backend"
-            imagePath="pocketbase"
-            url="https://pocketbase.io/"
-            rippleColor="#FFFFFF40"></app-tech-card>
-          <app-tech-card
-            title="Angular"
-            subtitle="Google's Frontend Framework"
-            imagePath="angular"
-            url="https://www.angular.io/"
-            rippleColor="#bc114220"></app-tech-card>
-        </div>
-      </div>
-    </div>
+    <app-project-showcase
+      title="Tovedem"
+      subtitle="Local Theater & Play Management Software."
+      url="https://tovedem.nergy.space"
+      iframeSrc="https://tovedem.nergy.space"
+      [badges]="tovedemBadges"
+      [techs]="tovedemTechs"></app-project-showcase>
   </div>
 </div>

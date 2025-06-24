@@ -1,0 +1,41 @@
+<div class="tech-section">
+  <p class="tech-list-title">{{ title }}</p>
+
+  @if (showSortButton) {
+    <div class="sort-button-container">
+      <button mat-stroked-button (click)="toggleSort()">
+        <mat-icon>sort</mat-icon>
+        Sort by:
+        {{ sortBy() === 'alphabet' ? 'Alphabetical' : 'Custom Order' }}
+      </button>
+    </div>
+  }
+
+  <div class="tech-icons-container">
+    @for (tech of sortedTechs(); track tech.name) {
+      <div
+        class="item"
+        [matBadge]="tech.score"
+        [matBadgeHidden]="tech.isNonBadged"
+        (click)="tech.url && navigateTo(tech.url)"
+        (keydown.enter)="tech.url && navigateTo(tech.url)"
+        (keydown.space)="tech.url && navigateTo(tech.url)"
+        [tabindex]="tech.url ? 0 : -1"
+        [style.cursor]="tech.url ? 'pointer' : 'default'"
+        [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+        matTooltipPosition="below"
+        role="button"
+        [attr.aria-label]="
+          tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+        ">
+        <div class="tech-item">
+          <img
+            [src]="'assets/techs/' + tech.icon + '.svg'"
+            [alt]="tech.name"
+            class="tech-icon" />
+          <span class="tech-label">{{ tech.name }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

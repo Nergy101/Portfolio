@@ -1,375 +1,52 @@
 .container {
-  padding-top: 1em;
-  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  margin: 0 20%;
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 2%;
-    padding: 0.5em;
-  }
-
-  @media screen and (max-width: 480px) {
-    margin: 0 1%;
-    padding: 0.5em;
-  }
-}
-
-.top-text {
-  margin: 1em;
-  background-color: var(--sys-surface-container);
-}
-
-.pad {
-  padding: 0 1rem;
-  &.top {
-    padding: 1rem 0 0 1rem;
-    line-height: normal;
-  }
-}
-
-.header-buttons {
-  padding: 1em 1em 1em 1em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 15em);
-  column-gap: 1em;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-  }
-}
-
-.weather-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.weather-cards {
-  padding: 1em 1em 0 1em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1em;
-}
-
-.tech-cards {
-  flex-basis: 50%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-
-  .group {
-    padding: 0 1em 0 1em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 1em;
-  }
-}
-
-.section {
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  overflow-x: hidden;
-}
-
-.section-title {
-  margin-top: 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  a {
-    &:visited {
-      color: #6dcb94;
-    }
-    &:link {
-      color: #6dcb94;
-    }
-    &:hover {
-      color: #59b981;
-    }
-  }
-}
-
-.retroranker {
-  a {
-    color: #e48500;
-    &:hover {
-      color: #e48500;
-    }
-    &:link {
-      color: #e48500;
-    }
-    &:visited {
-      color: #e48500;
-    }
-  }
-}
-
-.tovedem {
-  a {
-    color: #ae1544;
-    &:hover {
-      color: #ae1544;
-    }
-    &:link {
-      color: #ae1544;
-    }
-    &:visited {
-      color: #ae1544;
-    }
-  }
-}
-
-.tab-content {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   min-height: 100vh;
 }
 
-:host {
-  ::ng-deep {
-    .mat-tab-body-content {
-      overflow-x: hidden;
-    }
-  }
-}
-
-::ng-deep .mat-mdc-dialog-surface {
-  overflow-x: hidden;
-}
-
-.preview {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  max-width: 800px;
-  height: 50em;
-  padding-bottom: 1em;
-
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 1em;
-  }
-
-  @media screen and (max-width: 1024px) {
-    width: 95%;
-    height: 40em;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 98%;
-    height: 30em;
-  }
-}
-
-.split {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  border-top: 1px solid var(--sys-surface-bright);
-  padding-top: 1em;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left,
-  .right {
-    flex: 1;
-    min-width: 250px;
-  }
-}
-
-.profile-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.badge-container {
-  @media screen and (max-width: 425px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    margin-top: 0.5rem;
-  }
-}
-
 .all-techs-section {
-  padding: 1rem 0;
-  margin: 1rem 0;
-  max-width: 100%;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .tech-list-title {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.tech-icons-container {
-  padding: 2em 1em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-  background-color: var(--sys-surface-container);
-  border-radius: 1em;
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 2%;
-    padding: 1em 0.5em;
-  }
-
-  @media screen and (max-width: 480px) {
-    margin: 0 1%;
-    padding: 0.5em;
-  }
-}
-
-.tech-icons-container-professional {
-  padding: 2em 1em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-  background-color: var(--sys-surface-container);
-  border-radius: 1em;
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 2%;
-    padding: 1em 0.5em;
-  }
-
-  @media screen and (max-width: 480px) {
-    margin: 0 1%;
-    padding: 0.5em;
-  }
-}
-
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tech-icon {
-  width: 4rem;
-  height: 4rem;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-.tech-label {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: var(--sys-on-surface);
+  margin: 0;
   text-align: center;
-  max-width: 5rem;
-  word-wrap: break-word;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
 
-  @media screen and (max-width: 480px) {
-    font-size: 0.65rem;
-    max-width: 4rem;
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .tech-list-title {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .all-techs-section {
+    gap: 1.5rem;
   }
 }
 
-.non-tech-icons-container {
-  padding: 2em 1em;
-
-  @media screen and (max-width: 1024px) {
-    margin: 1rem 2%;
+@media (max-width: 480px) {
+  .container {
+    padding: 0.25rem;
+    gap: 1rem;
   }
 
-  @media screen and (max-width: 480px) {
-    margin: 1rem 1%;
+  .tech-list-title {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
   }
-
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-  background-color: var(--sys-surface-container-low);
-  border-radius: 1em;
-}
-
-.archive-section {
-  @media screen and (max-width: 1024px) {
-    margin: 1rem 2%;
-  }
-
-  @media screen and (max-width: 480px) {
-    margin: 1rem 1%;
-  }
-
-  ::ng-deep .mat-expansion-panel {
-    background-color: var(--sys-surface-container);
-    border-radius: 0.5rem;
-
-    .mat-expansion-panel-header {
-      padding: 1rem;
-
-      .mat-expansion-panel-header-title {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 600;
-      }
-
-      .mat-expansion-panel-header-description {
-        color: var(--sys-on-surface-variant);
-      }
-    }
-
-    .mat-expansion-panel-content {
-      .mat-expansion-panel-body {
-        padding: 1rem;
-      }
-    }
-  }
-}
-
-.tech-icons-container-archive {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: var(--sys-surface-container-low);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-.item {
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

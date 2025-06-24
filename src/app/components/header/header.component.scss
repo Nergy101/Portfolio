@@ -6,3 +6,11 @@ mat-toolbar {
   height: 5vh;
   background-color: var(--sys-surface-container-highest);
 }
+
+.header-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: center;
+}

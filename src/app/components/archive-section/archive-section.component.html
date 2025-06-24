@@ -1,0 +1,44 @@
+<div class="archive-section">
+  <mat-expansion-panel
+    [expanded]="archiveExpanded"
+    (opened)="archiveExpanded = true"
+    (closed)="archiveExpanded = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>archive</mat-icon>
+        Archive
+      </mat-panel-title>
+      <mat-panel-description>
+        Technologies and tools I've used in the past but are no longer relevant
+        or used by me.
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p class="tech-list-title">Archived Technologies</p>
+    <div class="tech-icons-container-archive">
+      @for (tech of sortedArchiveTechs(); track tech.name) {
+        <div
+          class="item non-badged-item"
+          (click)="tech.url && navigateTo(tech.url)"
+          (keydown.enter)="tech.url && navigateTo(tech.url)"
+          (keydown.space)="tech.url && navigateTo(tech.url)"
+          [tabindex]="tech.url ? 0 : -1"
+          [style.cursor]="tech.url ? 'pointer' : 'default'"
+          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+          matTooltipPosition="below"
+          role="button"
+          [attr.aria-label]="
+            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+          ">
+          <div class="tech-item">
+            <img
+              [src]="'assets/techs/' + tech.icon + '.svg'"
+              [alt]="tech.name"
+              class="tech-icon" />
+            <span class="tech-label">{{ tech.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </mat-expansion-panel>
+</div>

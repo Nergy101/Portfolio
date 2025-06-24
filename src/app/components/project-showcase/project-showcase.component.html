@@ -1,0 +1,30 @@
+<div class="section">
+  <div class="section-title">
+    <h2 style="margin: 0; padding: 0">
+      <a [href]="url()" target="_blank">{{ title() }}</a>
+    </h2>
+    <sub>{{ subtitle() }}</sub>
+    <div class="badge-container">
+      @for (badge of badges(); track badge.url) {
+        <a [href]="badge.url" target="_blank" rel="noopener">
+          <img [src]="badge.url" [alt]="badge.alt" />
+        </a>
+      }
+    </div>
+  </div>
+  <div class="preview">
+    <iframe [src]="safeIframeSrc" [title]="title()"></iframe>
+  </div>
+  <div class="tech-cards">
+    <div class="group">
+      @for (tech of techs(); track tech.title) {
+        <app-tech-card
+          [title]="tech.title"
+          [subtitle]="tech.subtitle"
+          [imagePath]="tech.imagePath"
+          [url]="tech.url"
+          [rippleColor]="tech.rippleColor"></app-tech-card>
+      }
+    </div>
+  </div>
+</div>

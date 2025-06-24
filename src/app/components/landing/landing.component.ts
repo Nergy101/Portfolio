@@ -11,9 +11,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
+import { ArchiveSectionComponent } from '../archive-section/archive-section.component';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
-import { TechCardComponent } from '../tech-card/tech-card.component';
-import { WeatherCardComponent } from '../weather-card/weather-card.component';
+import { ProfileComponent } from '../profile/profile.component';
+import {
+  ProjectShowcaseComponent,
+  ProjectTech,
+} from '../project-showcase/project-showcase.component';
+import { TechGridComponent } from '../tech-grid/tech-grid.component';
+import { WeatherSectionComponent } from '../weather-section/weather-section.component';
 
 interface TechItem {
   name: string;
@@ -29,6 +35,7 @@ interface TechItem {
   styleUrls: ['./landing.component.scss'],
   standalone: true,
   imports: [
+    ArchiveSectionComponent,
     FontAwesomeModule,
     MatBadgeModule,
     MatButtonModule,
@@ -37,8 +44,10 @@ interface TechItem {
     MatIconModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    TechCardComponent,
-    WeatherCardComponent,
+    ProfileComponent,
+    ProjectShowcaseComponent,
+    TechGridComponent,
+    WeatherSectionComponent,
   ],
 })
 export class LandingComponent implements OnInit {
@@ -496,6 +505,85 @@ export class LandingComponent implements OnInit {
   sortedArchiveTechs = computed(() => this.sortTechs(this.archiveTechs()));
 
   query? = '?city=Utrecht';
+
+  // Project showcase data
+  retrorankerBadges = [
+    {
+      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml/badge.svg',
+      alt: 'Build Check',
+    },
+    {
+      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml/badge.svg',
+      alt: 'Deploy new Docker Image version',
+    },
+    {
+      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg',
+      alt: 'Refresh Data and Commit',
+    },
+  ];
+
+  retrorankerTechs: ProjectTech[] = [
+    {
+      title: 'Deno',
+      subtitle: 'A secure runtime for JavaScript and TypeScript',
+      imagePath: 'deno',
+      url: 'https://deno.com/',
+      rippleColor: '#86efac',
+    },
+    {
+      title: 'Fresh Deno',
+      subtitle: 'The next-gen web framework',
+      imagePath: 'fresh',
+      url: 'https://fresh.deno.com/',
+      rippleColor: '#FFD80D',
+    },
+    {
+      title: 'PicoCSS',
+      subtitle: 'Minimal CSS Framework for semantic HTML',
+      imagePath: 'pico',
+      url: 'https://picocss.com/',
+      rippleColor: '#FF9502',
+    },
+    {
+      title: 'PocketBase',
+      subtitle: 'Backend in 1 file, for when you need a quick backend',
+      imagePath: 'pocketbase',
+      url: 'https://pocketbase.io/',
+      rippleColor: '#FFFFFF40',
+    },
+  ];
+
+  tovedemBadges = [
+    {
+      url: 'https://github.com/Nergy101/tovedem/actions/workflows/build.yml/badge.svg',
+      alt: 'Build Angular WebApp Check Pipeline',
+    },
+    {
+      url: 'https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml/badge.svg',
+      alt: 'Deploy new Docker Image version',
+    },
+    {
+      url: 'https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml/badge.svg',
+      alt: 'Replace hooks folder with latest',
+    },
+  ];
+
+  tovedemTechs: ProjectTech[] = [
+    {
+      title: 'PocketBase',
+      subtitle: 'Backend in 1 file, for when you need a quick backend',
+      imagePath: 'pocketbase',
+      url: 'https://pocketbase.io/',
+      rippleColor: '#FFFFFF40',
+    },
+    {
+      title: 'Angular',
+      subtitle: "Google's Frontend Framework",
+      imagePath: 'angular',
+      url: 'https://www.angular.io/',
+      rippleColor: '#bc114220',
+    },
+  ];
 
   async ngOnInit(): Promise<void> {
     await this.doWeatherCall();

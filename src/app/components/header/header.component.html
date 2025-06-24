@@ -6,16 +6,27 @@
       style="height: 2rem; margin-right: 1rem" />
     <span>Nergy</span>
     <span class="spacer"></span>
-    <div class="badge-container">
-      <a
-        href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
-        target="_blank"
-        rel="noopener">
-        <img
-          src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-          alt="Deploy new Docker Image version" />
-      </a>
+    <div class="header-buttons">
+      <div class="badge-container">
+        <a
+          href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
+          target="_blank"
+          rel="noopener">
+          <img
+            src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
+            alt="Deploy new Docker Image version" />
+        </a>
+      </div>
+
+      <button mat-flat-button (click)="openKofiDialog()">
+        <mat-icon matSuffix aria-hidden="false" aria-label="donate">
+          volunteer_activism
+        </mat-icon>
+        Buy me a coffee (Ko-fi)
+        <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
+      </button>
     </div>
+
     <app-menu></app-menu>
   </mat-toolbar-row>
 </mat-toolbar>
