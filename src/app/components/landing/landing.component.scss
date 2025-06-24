@@ -1,7 +1,20 @@
 .container {
-  padding-bottom: 3em;
+  padding-top: 1em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  margin: 0 20%;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 2%;
+    padding: 0.5em;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 0 1%;
+    padding: 0.5em;
+  }
 }
 
 .top-text {
@@ -61,9 +74,11 @@
 
 .section {
   display: flex;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   flex-flow: column wrap;
   justify-content: space-around;
+  overflow-x: hidden;
 }
 
 .section-title {
@@ -136,8 +151,8 @@
 .preview {
   margin-left: auto;
   margin-right: auto;
-
-  width: 50%;
+  width: 90%;
+  max-width: 800px;
   height: 50em;
   padding-bottom: 1em;
 
@@ -149,8 +164,13 @@
   }
 
   @media screen and (max-width: 1024px) {
-    width: 80%;
+    width: 95%;
     height: 40em;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 98%;
+    height: 30em;
   }
 }
 
@@ -158,9 +178,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   border-top: 1px solid var(--sys-surface-bright);
   padding-top: 1em;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+    min-width: 250px;
+  }
 }
 
 .profile-list {
@@ -183,6 +216,8 @@
 .all-techs-section {
   padding: 1rem 0;
   margin: 1rem 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .tech-list-title {
@@ -191,24 +226,43 @@
 }
 
 .tech-icons-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2em;
-  margin: 0 20%;
-}
-
-.tech-icons-container-professional {
-  padding: 2em;
-  margin: 0 20%;
-
+  padding: 2em 1em;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
   background-color: var(--sys-surface-container);
   border-radius: 1em;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 2%;
+    padding: 1em 0.5em;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 0 1%;
+    padding: 0.5em;
+  }
+}
+
+.tech-icons-container-professional {
+  padding: 2em 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--sys-surface-container);
+  border-radius: 1em;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 2%;
+    padding: 1em 0.5em;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 0 1%;
+    padding: 0.5em;
+  }
 }
 
 .tech-item {
@@ -218,26 +272,62 @@
   gap: 0.5rem;
 }
 
+.tech-icon {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
 .tech-label {
   font-size: 0.75rem;
   color: var(--sys-on-surface);
   text-align: center;
   max-width: 5rem;
   word-wrap: break-word;
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.65rem;
+    max-width: 4rem;
+  }
 }
 
 .non-tech-icons-container {
-  padding: 1rem 0;
-  margin: 0 20%;
+  padding: 2em 1em;
+
+  @media screen and (max-width: 1024px) {
+    margin: 1rem 2%;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 1rem 1%;
+  }
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
   background-color: var(--sys-surface-container-low);
+  border-radius: 1em;
 }
 
 .archive-section {
-  margin: 1rem 2rem;
+  @media screen and (max-width: 1024px) {
+    margin: 1rem 2%;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 1rem 1%;
+  }
 
   ::ng-deep .mat-expansion-panel {
     background-color: var(--sys-surface-container);
@@ -282,15 +372,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.tech-icon {
-  width: 4rem;
-  height: 4rem;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }

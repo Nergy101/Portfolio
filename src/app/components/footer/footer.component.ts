@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -16,6 +17,7 @@ import {
     FontAwesomeModule,
     MatCardModule,
     MatTooltipModule,
+    MatButton
   ],
 })
 export class FooterComponent {

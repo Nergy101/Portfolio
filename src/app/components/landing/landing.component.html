@@ -1,47 +1,42 @@
 <div class="container mat-drawer-container">
   <mat-card id="top-text" class="top-text">
-    <mat-card-title class="pad top">
+    <mat-card-title
+      class="pad top"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      ">
       <h1>Well, hello there!</h1>
     </mat-card-title>
     <mat-card-content class="pad">
-      <div class="badge-container">
-        <a
-          href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
-          target="_blank"
-          rel="noopener">
-          <img
-            src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="Deploy new Docker Image version" />
-        </a>
-      </div>
-      <p style="line-height: 1.3">
+      <div style="line-height: 1.3">
         Professionally, I've always been invested in
         <strong>C#</strong>
         and anything
         <strong>.NET</strong>
         related.
         <br />
-        Every day I work with
-        <strong>Azure</strong>
-        ,
-        <strong>DevOps</strong>
-        ,
-        <strong>.NET</strong>
-        and
-        <strong>TypeScript</strong>
-        .
-        <br />
-        I like fiddling with different architectures (
-        <em>Clean Architecture</em>
-        /
-        <em>Micro Services</em>
-        ), CI/CD (
-        <strong>Azure Pipelines</strong>
-        or
-        <strong>Github Actions</strong>
-        ,
-        <strong>Bicep</strong>
-        for Azure), the list goes on.
+        Every day I work with:
+        <ul>
+          <li>Azure</li>
+          <li>DevOps</li>
+          <li>dotNET</li>
+          <li>TypeScript</li>
+        </ul>
+        I like fiddling with different architectures:
+        <ul>
+          <li>Clean Architecture</li>
+          <li>Micro Services</li>
+        </ul>
+        CI/CD:
+        <ul>
+          <li>Azure Pipelines</li>
+          <li>Github Actions</li>
+          <li>Bicep</li>
+        </ul>
+        and the list goes on.
         <br />
         As a hobby, I mostly try out different frameworks, languages, databases
         and libraries.
@@ -51,7 +46,7 @@
           RetroRanker
         </a>
         for my latest hobby project.
-      </p>
+      </div>
 
       <div class="split">
         <div class="left">
@@ -101,7 +96,7 @@
             </li>
             <li>
               ✉️
-              <strong>Contact:</strong>
+              <strong>Contact:&nbsp;</strong>
               <a href="mailto:cdijk4@gmail.com">cdijk4&#64;gmail.com</a>
             </li>
             <li>
@@ -295,7 +290,9 @@
   </div>
 
   <div class="weather-section">
-    <sub>The weather in Utrecht, NL, for the next 7 days</sub>
+    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+      The weather in Utrecht, NL, for the next 7 days
+    </p>
     <div class="weather-cards">
       @if (loading) {
         <mat-spinner></mat-spinner>
@@ -307,21 +304,7 @@
       }
     </div>
   </div>
-  <div>
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 5em;
-      ">
-      <button mat-button (click)="moveTo('chevron2')">
-        <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
-      </button>
-    </div>
-  </div>
-</div>
-<div>
+
   <div>
     <div class="retroranker section">
       <div class="section-title">
@@ -395,18 +378,6 @@
             rippleColor="#FFFFFF40"></app-tech-card>
         </div>
       </div>
-      <div
-        id="chevron2"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 1em;
-        ">
-        <button mat-button (click)="moveTo('chevron3')">
-          <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
-        </button>
-      </div>
     </div>
 
     <div class="tovedem section">
@@ -474,18 +445,6 @@
             url="https://www.angular.io/"
             rippleColor="#bc114220"></app-tech-card>
         </div>
-      </div>
-      <div
-        id="chevron3"
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 1em;
-        ">
-        <button mat-button (click)="moveTo('top-text')">
-          <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
-        </button>
       </div>
     </div>
   </div>

@@ -10,7 +10,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 import { TechCardComponent } from '../tech-card/tech-card.component';
@@ -163,9 +162,6 @@ export class LandingComponent implements OnInit {
 
   query? = '?city=Utrecht';
 
-  faChevronDown = faChevronDown;
-  faChevronUp = faChevronUp;
-
   async ngOnInit(): Promise<void> {
     await this.doWeatherCall();
   }
@@ -206,12 +202,6 @@ export class LandingComponent implements OnInit {
 
   openKofiDialog(): void {
     this.dialog.open(KofiDialogComponent);
-  }
-
-  moveTo(divId: string) {
-    document!
-      .getElementById(divId)!
-      .scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
   navigateTo(url: string) {
