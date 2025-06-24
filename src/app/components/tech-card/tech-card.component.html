@@ -5,19 +5,17 @@
   [matRippleCentered]="true"
   [matRippleColor]="rippleColor ?? ''"
   [matTooltip]="tooltip"
-  matTooltipPosition="below"
->
-  <mat-card-title class="title center"
-    ><span>{{ title }}</span></mat-card-title
-  >
+  matTooltipPosition="below">
+  <mat-card-title class="title center">
+    <span>{{ title }}</span>
+  </mat-card-title>
   <mat-card-subtitle class="center">{{ subtitle }}</mat-card-subtitle>
   <mat-card-content>
     <img
       class="tech-image"
       mat-card-image
       src="assets/techs/{{ imagePath }}.svg"
-      alt="Tech icon"
-    />
+      alt="Tech icon" />
     <p align="center">
       {{ description }}
     </p>

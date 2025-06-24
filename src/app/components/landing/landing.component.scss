@@ -195,17 +195,20 @@
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
-  margin: 0 2rem;
+  padding: 2em;
+  margin: 0 20%;
 }
 
 .tech-icons-container-professional {
-  padding: 1rem 0;
+  padding: 2em;
+  margin: 0 20%;
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
   background-color: var(--sys-surface-container);
+  border-radius: 1em;
 }
 
 .tech-item {
@@ -225,11 +228,53 @@
 
 .non-tech-icons-container {
   padding: 1rem 0;
+  margin: 0 20%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1rem;
   background-color: var(--sys-surface-container-low);
+}
+
+.archive-section {
+  margin: 1rem 2rem;
+
+  ::ng-deep .mat-expansion-panel {
+    background-color: var(--sys-surface-container);
+    border-radius: 0.5rem;
+
+    .mat-expansion-panel-header {
+      padding: 1rem;
+
+      .mat-expansion-panel-header-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+      }
+
+      .mat-expansion-panel-header-description {
+        color: var(--sys-on-surface-variant);
+      }
+    }
+
+    .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.tech-icons-container-archive {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--sys-surface-container-low);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 .item {
@@ -244,7 +289,7 @@
   height: 4rem;
   object-fit: contain;
   transition: transform 0.2s ease;
-  
+
   &:hover {
     transform: scale(1.1);
   }

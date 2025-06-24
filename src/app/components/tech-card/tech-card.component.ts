@@ -1,10 +1,18 @@
 import { Component, Input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'app-tech-card',
-    templateUrl: './tech-card.component.html',
-    styleUrls: ['./tech-card.component.scss'],
-    standalone: false
+  selector: 'app-tech-card',
+  templateUrl: './tech-card.component.html',
+  styleUrls: ['./tech-card.component.scss'],
+  standalone: true,
+  imports: [
+    MatCardModule,
+    MatRippleModule,
+    MatTooltipModule,
+  ],
 })
 export class TechCardComponent {
   @Input()
@@ -27,8 +35,6 @@ export class TechCardComponent {
 
   @Input()
   stopOpen: boolean = false;
-
-  constructor() {}
 
   async open(): Promise<void> {
     if (this.url) {

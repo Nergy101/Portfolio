@@ -1,8 +1,11 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <img src="/assets/nemic-logos/Logo_Nemic-40.png" alt="Logo" style="height: 2rem; margin-right: 1rem" />
+    <img
+      src="/assets/nemic-logos/Logo_Nemic-40.png"
+      alt="Logo"
+      style="height: 2rem; margin-right: 1rem" />
     <span>Nergy</span>
     <span class="spacer"></span>
-    <app-menu [options]="options$ | async" (themeChange)="themeChangeHandler($event)"> </app-menu>
+    <app-menu></app-menu>
   </mat-toolbar-row>
 </mat-toolbar>

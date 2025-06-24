@@ -10,11 +10,11 @@ $my-material-app-theme: mat.define-theme(
     color: (
       theme-type: dark,
       use-system-variables: true,
-    system-variables-prefix: sys,
+      system-variables-prefix: sys,
     ),
     typography: (
       use-system-variables: true,
-    system-variables-prefix: sys,
+      system-variables-prefix: sys,
     ),
     density: (
       scale: 0,

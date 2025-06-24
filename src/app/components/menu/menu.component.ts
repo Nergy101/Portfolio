@@ -1,30 +1,28 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-import { Option } from '../material/option.model';
-import { StyleManagerService } from '../../services/style-manager.service';
-import { PocketbaseService } from 'src/app/services/pocketbase.service';
+import { Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { PocketbaseService } from 'src/app/services/pocketbase.service';
+
 import { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login-choice-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-    selector: 'app-menu',
-    templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss'],
-    standalone: false
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
+  standalone: true,
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule
+  ],
 })
 export class MenuComponent {
-  @Input() options: Array<Option> | null = [];
-  @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
-
-  isLight = this.styleManager.isLight;
-
-  constructor(
-    private styleManager: StyleManagerService,
-    private readonly pocketbaseService: PocketbaseService,
-    private readonly dialog: MatDialog,
-    private readonly snackBar: MatSnackBar,
-  ) {}
+  private readonly pocketbaseService = inject(PocketbaseService);
+  private readonly dialog = inject(MatDialog);
 
   get isLoggedIn(): boolean {
     return this.pocketbaseService.pocketbase?.authStore?.isValid ?? false;
@@ -32,15 +30,6 @@ export class MenuComponent {
 
   get loggedInAs() {
     return this.pocketbaseService.pocketbase.authStore.model;
-  }
-
-  toggleDarkTheme(): void {
-    this.styleManager.toggleDarkTheme();
-    this.isLight = !this.isLight;
-  }
-
-  changeTheme(themeToSet: string): void {
-    this.themeChange.emit(themeToSet);
   }
 
   logout(): void {
@@ -63,10 +52,7 @@ export class MenuComponent {
             .collection('users')
             .authWithOAuth2({ provider: 'github' });
         } else {
-          this.snackBar
-            .open('Unknown login provider...', 'Retry?', { duration: 3000 })
-            .onAction()
-            .subscribe(async () => await this.login());
+          console.error('Unknown login provider:', chosenOption);
         }
 
         console.info(`Logged in using ${chosenOption}`, authData);

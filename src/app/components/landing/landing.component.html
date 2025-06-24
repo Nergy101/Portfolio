@@ -8,398 +8,290 @@
         <a
           href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
           <img
             src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="Deploy new Docker Image version"
-          />
+            alt="Deploy new Docker Image version" />
         </a>
       </div>
       <p style="line-height: 1.3">
-        Professionally, I've always been invested in <strong>C#</strong> and anything
-        <strong>.NET</strong> related.<br />
-        Every day I work with <strong>Azure</strong>, <strong>DevOps</strong>,
-        <strong>.NET</strong> and <strong>TypeScript</strong>.<br />
-        I like fiddling with different architectures (<em>Clean Architecture</em> /
-        <em>Micro Services</em>), CI/CD (<strong>Azure Pipelines</strong> or
-        <strong>Github Actions</strong>, <strong>Bicep</strong> for Azure), the list goes on.<br />
-        As a hobby, I mostly try out different frameworks, languages, databases and libraries.<br />
+        Professionally, I've always been invested in
+        <strong>C#</strong>
+        and anything
+        <strong>.NET</strong>
+        related.
+        <br />
+        Every day I work with
+        <strong>Azure</strong>
+        ,
+        <strong>DevOps</strong>
+        ,
+        <strong>.NET</strong>
+        and
+        <strong>TypeScript</strong>
+        .
+        <br />
+        I like fiddling with different architectures (
+        <em>Clean Architecture</em>
+        /
+        <em>Micro Services</em>
+        ), CI/CD (
+        <strong>Azure Pipelines</strong>
+        or
+        <strong>Github Actions</strong>
+        ,
+        <strong>Bicep</strong>
+        for Azure), the list goes on.
+        <br />
+        As a hobby, I mostly try out different frameworks, languages, databases
+        and libraries.
+        <br />
         Check out
-        <a href="https://retroranker.site" target="_blank" rel="noopener">RetroRanker</a> for my
-        latest hobby project.
+        <a href="https://retroranker.site" target="_blank" rel="noopener">
+          RetroRanker
+        </a>
+        for my latest hobby project.
       </p>
 
       <div class="split">
         <div class="left">
           <ul class="profile-list">
             <li>
-              🚀 <strong>Currently working on: </strong>
-              <a href="https://retroranker.site" target="_blank" rel="noopener">RetroRanker</a>
+              🚀
+              <strong>Currently working on:</strong>
+              <a href="https://retroranker.site" target="_blank" rel="noopener">
+                RetroRanker
+              </a>
             </li>
             <li>
-              💾 <strong> Github: </strong>
-              <a href="https://github.com/Nergy101" target="_blank" rel="noopener">Nergy101</a>
+              💾
+              <strong>Github:</strong>
+              <a
+                href="https://github.com/Nergy101"
+                target="_blank"
+                rel="noopener">
+                Nergy101
+              </a>
             </li>
             <li>
-              📕 <strong>Blog: </strong>
-              <a href="https://blog.nergy.space" target="_blank" rel="noopener">blog.nergy.space</a>
+              📕
+              <strong>Blog:</strong>
+              <a href="https://blog.nergy.space" target="_blank" rel="noopener">
+                blog.nergy.space
+              </a>
             </li>
             <li>
-              🌐 <strong>Service Uptime: </strong>
-              <a href="https://kuma.nergy.space/status/all" target="_blank" rel="noopener">Kuma</a>
+              🌐
+              <strong>Service Uptime:</strong>
+              <a
+                href="https://kuma.nergy.space/status/all"
+                target="_blank"
+                rel="noopener">
+                Kuma
+              </a>
             </li>
           </ul>
         </div>
         <div class="right">
           <ul class="profile-list">
-            <li>🌍 <strong>Based in: </strong> Utrecht, NL</li>
             <li>
-              ✉️ <strong>Contact: </strong>
+              🌍
+              <strong>Based in:</strong>
+              Utrecht, NL
+            </li>
+            <li>
+              ✉️
+              <strong>Contact:</strong>
               <a href="mailto:cdijk4@gmail.com">cdijk4&#64;gmail.com</a>
             </li>
-            <li>🧠 <strong>Learning about: </strong> MassTransit and Nx</li>
-            <li>🎂 <strong>Been here since: </strong> 1999</li>
+            <li>
+              🧠
+              <strong>Learning about:</strong>
+              MassTransit and Nx
+            </li>
+            <li>
+              🎂
+              <strong>Been here since:</strong>
+              1999
+            </li>
           </ul>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions class="header-buttons">
       <button mat-stroked-button (click)="openKofiDialog()">
-        <mat-icon matSuffix aria-hidden="false" aria-label="donate">volunteer_activism</mat-icon>Buy
-        me a coffee (Ko-fi)
+        <mat-icon matSuffix aria-hidden="false" aria-label="donate">
+          volunteer_activism
+        </mat-icon>
+        Buy me a coffee (Ko-fi)
         <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
 
   <div class="all-techs-section">
-    <p class="tech-list-title" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      Here's a list of technologies and tools I've worked with in hobby or professional projects.
-      The badge shows my affinity with the technology from 1 to 5.
+    <p
+      class="tech-list-title"
+      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+      Here's a list of technologies and tools I've worked with in hobby or
+      professional projects.
     </p>
 
-    <p class="tech-list-title" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+    <div style="display: flex; justify-content: center; margin-bottom: 1rem">
+      <button mat-stroked-button (click)="toggleSort()">
+        <mat-icon>sort</mat-icon>
+        Sort by:
+        {{ sortBy() === 'alphabet' ? 'Alphabetical' : 'Custom Order' }}
+      </button>
+    </div>
+
+    <p
+      class="tech-list-title"
+      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
       Professional
     </p>
     <div class="tech-icons-container-professional">
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/csharp.svg" alt="C#" class="tech-icon" matTooltip="C#" />
-          <span class="tech-label">C#</span>
+      @for (tech of sortedProfessionalTechs(); track tech.name) {
+        <div
+          class="item"
+          [matBadge]="tech.score"
+          [matBadgeHidden]="tech.isNonBadged"
+          (click)="tech.url && navigateTo(tech.url)"
+          (keydown.enter)="tech.url && navigateTo(tech.url)"
+          (keydown.space)="tech.url && navigateTo(tech.url)"
+          [tabindex]="tech.url ? 0 : -1"
+          [style.cursor]="tech.url ? 'pointer' : 'default'"
+          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+          matTooltipPosition="below"
+          role="button"
+          [attr.aria-label]="
+            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+          ">
+          <div class="tech-item">
+            <img
+              [src]="'assets/techs/' + tech.icon + '.svg'"
+              [alt]="tech.name"
+              class="tech-icon" />
+            <span class="tech-label">{{ tech.name }}</span>
+          </div>
         </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/typescript.svg" alt="TypeScript" class="tech-icon" matTooltip="TypeScript" />
-          <span class="tech-label">TypeScript</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/angular.svg" alt="Angular" class="tech-icon" matTooltip="Angular" />
-          <span class="tech-label">Angular</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/azure.svg" alt="Azure" class="tech-icon" matTooltip="Azure" />
-          <span class="tech-label">Azure</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/docker.svg" alt="Docker" class="tech-icon" matTooltip="Docker" />
-          <span class="tech-label">Docker</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/git.svg" alt="Git" class="tech-icon" matTooltip="Git" />
-          <span class="tech-label">Git</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/sqlite.svg" alt="SQLite" class="tech-icon" matTooltip="SQLite" />
-          <span class="tech-label">SQLite</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/nx_dark.svg" alt="Nx" class="tech-icon" matTooltip="Nx" />
-          <span class="tech-label">Nx</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/prettier_dark.svg" alt="Prettier" class="tech-icon" matTooltip="Prettier" />
-          <span class="tech-label">Prettier</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/rxjs.svg" alt="RxJS" class="tech-icon" matTooltip="RxJS" />
-          <span class="tech-label">RxJS</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/npm.svg" alt="npm" class="tech-icon" matTooltip="npm" />
-          <span class="tech-label">npm</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/nuget.svg" alt="NuGet" class="tech-icon" matTooltip="NuGet" />
-          <span class="tech-label">NuGet</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/visual-studio.svg" alt="Visual Studio" class="tech-icon" matTooltip="Visual Studio" />
-          <span class="tech-label">Visual Studio</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/zed_dark.svg" alt="Zed" class="tech-icon" matTooltip="Zed" />
-          <span class="tech-label">Zed</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/rider.svg" alt="Rider" class="tech-icon" matTooltip="Rider" />
-          <span class="tech-label">Rider</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/vscode.svg" alt="VS Code" class="tech-icon" matTooltip="VS Code" />
-          <span class="tech-label">VS Code</span>
-        </div>
-      </div>
-      
+      }
     </div>
 
-    <p class="tech-list-title" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+    <p
+      class="tech-list-title"
+      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
       Hobby
     </p>
     <div class="tech-icons-container">
-      <!-- Programming Languages & Runtimes -->
-
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/deno_dark.svg" alt="Deno" class="tech-icon" matTooltip="Deno" />
-          <span class="tech-label">Deno</span>
+      @for (tech of sortedHobbyTechs(); track tech.name) {
+        <div
+          class="item"
+          [matBadge]="tech.score"
+          [matBadgeHidden]="tech.isNonBadged"
+          (click)="tech.url && navigateTo(tech.url)"
+          (keydown.enter)="tech.url && navigateTo(tech.url)"
+          (keydown.space)="tech.url && navigateTo(tech.url)"
+          [tabindex]="tech.url ? 0 : -1"
+          [style.cursor]="tech.url ? 'pointer' : 'default'"
+          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+          matTooltipPosition="below"
+          role="button"
+          [attr.aria-label]="
+            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+          ">
+          <div class="tech-item">
+            <img
+              [src]="'assets/techs/' + tech.icon + '.svg'"
+              [alt]="tech.name"
+              class="tech-icon" />
+            <span class="tech-label">{{ tech.name }}</span>
+          </div>
         </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/javascript.svg" alt="JavaScript" class="tech-icon" matTooltip="JavaScript" />
-          <span class="tech-label">JavaScript</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/python.svg" alt="Python" class="tech-icon" matTooltip="Python" />
-          <span class="tech-label">Python</span>
-        </div>
-      </div>
-
-      <!-- Frontend Frameworks & Libraries -->
-
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/bootstrap.svg" alt="Bootstrap" class="tech-icon" matTooltip="Bootstrap" />
-          <span class="tech-label">Bootstrap</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/materialui.svg" alt="Material UI" class="tech-icon" matTooltip="Material UI" />
-          <span class="tech-label">Material UI</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/preact.svg" alt="Preact" class="tech-icon" matTooltip="Preact" />
-          <span class="tech-label">Preact</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/svelte.svg" alt="Svelte" class="tech-icon" matTooltip="Svelte" />
-          <span class="tech-label">Svelte</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="2">
-        <div class="tech-item">
-          <img src="assets/techs/sveltekit.svg" alt="SvelteKit" class="tech-icon" matTooltip="SvelteKit" />
-          <span class="tech-label">SvelteKit</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/vue.svg" alt="Vue" class="tech-icon" matTooltip="Vue" />
-          <span class="tech-label">Vue</span>
-        </div>
-      </div>
-
-      <!-- Backend & APIs -->
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/blazor.svg" alt="Blazor" class="tech-icon" matTooltip="Blazor" />
-          <span class="tech-label">Blazor</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/fresh.svg" alt="Fresh" class="tech-icon" matTooltip="Fresh" />
-          <span class="tech-label">Fresh</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/graphql.svg" alt="GraphQL" class="tech-icon" matTooltip="GraphQL" />
-          <span class="tech-label">GraphQL</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="2">
-        <div class="tech-item">
-          <img src="assets/techs/nestjs.svg" alt="NestJS" class="tech-icon" matTooltip="NestJS" />
-          <span class="tech-label">NestJS</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/nodejs.svg" alt="Node.js" class="tech-icon" matTooltip="Node.js" />
-          <span class="tech-label">Node.js</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/pocketbase.svg" alt="PocketBase" class="tech-icon" matTooltip="PocketBase" />
-          <span class="tech-label">PocketBase</span>
-        </div>
-      </div>
-
-      <!-- Databases & Storage -->
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/mongodb.svg" alt="MongoDB" class="tech-icon" matTooltip="MongoDB" />
-          <span class="tech-label">MongoDB</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/redis.svg" alt="Redis" class="tech-icon" matTooltip="Redis" />
-          <span class="tech-label">Redis</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="2">
-        <div class="tech-item">
-          <img src="assets/techs/rethinkdb.svg" alt="RethinkDB" class="tech-icon" matTooltip="RethinkDB" />
-          <span class="tech-label">RethinkDB</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/sqlite.svg" alt="SQLite" class="tech-icon" matTooltip="SQLite" />
-          <span class="tech-label">SQLite</span>
-        </div>
-      </div>
-
-      <!-- DevOps & Infrastructure -->
-
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/bash_dark.svg" alt="Bash" class="tech-icon" matTooltip="Bash" />
-          <span class="tech-label">Bash</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="3">
-        <div class="tech-item">
-          <img src="assets/techs/digitalocean.svg" alt="DigitalOcean" class="tech-icon" matTooltip="DigitalOcean" />
-          <span class="tech-label">DigitalOcean</span>
-        </div>
-      </div>
-
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/linux.svg" alt="Linux" class="tech-icon" matTooltip="Linux" />
-          <span class="tech-label">Linux</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/ubuntu.svg" alt="Ubuntu" class="tech-icon" matTooltip="Ubuntu" />
-          <span class="tech-label">Ubuntu</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="4">
-        <div class="tech-item">
-          <img src="assets/techs/vite.svg" alt="Vite" class="tech-icon" matTooltip="Vite" />
-          <span class="tech-label">Vite</span>
-        </div>
-      </div>
-
-      <!-- Development Tools & IDEs -->
-
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/github_copilot_dark.svg" alt="GitHub Copilot" class="tech-icon" matTooltip="GitHub Copilot" />
-          <span class="tech-label">GitHub Copilot</span>
-        </div>
-      </div>
-      <div class="item" [matBadge]="5">
-        <div class="tech-item">
-          <img src="assets/techs/github_dark.svg" alt="GitHub" class="tech-icon" matTooltip="GitHub" />
-          <span class="tech-label">GitHub</span>
-        </div>
-      </div>
+      }
     </div>
-    <p class="tech-list-title" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
-      Others like Editors, Socials, etc.
+    <p
+      class="tech-list-title"
+      style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+      Tools, Editors, Socials, etc...
     </p>
     <div class="non-tech-icons-container">
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/swagger.svg" alt="Swagger" class="tech-icon" matTooltip="Swagger" />
-          <span class="tech-label">Swagger</span>
+      @for (tech of sortedOtherTechs(); track tech.name) {
+        <div
+          class="item"
+          [class.non-badged-item]="tech.isNonBadged"
+          [matBadge]="tech.score"
+          [matBadgeHidden]="tech.isNonBadged"
+          (click)="tech.url && navigateTo(tech.url)"
+          (keydown.enter)="tech.url && navigateTo(tech.url)"
+          (keydown.space)="tech.url && navigateTo(tech.url)"
+          [tabindex]="tech.url ? 0 : -1"
+          [style.cursor]="tech.url ? 'pointer' : 'default'"
+          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+          matTooltipPosition="below"
+          role="button"
+          [attr.aria-label]="
+            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+          ">
+          <div class="tech-item">
+            <img
+              [src]="'assets/techs/' + tech.icon + '.svg'"
+              [alt]="tech.name"
+              class="tech-icon" />
+            <span class="tech-label">{{ tech.name }}</span>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/postman.svg" alt="Postman" class="tech-icon" matTooltip="Postman" />
-          <span class="tech-label">Postman</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="tech-item">
-          <img src="assets/techs/raspberry_pi.svg" alt="Raspberry Pi" class="tech-icon" matTooltip="Raspberry Pi" />
-          <span class="tech-label">Raspberry Pi</span>
-        </div>
-      </div>
-      <div class="item non-badged-item">
-        <div class="tech-item">
-          <img src="assets/techs/daily_dev_dark.svg" alt="daily.dev" class="tech-icon" matTooltip="daily.dev" />
-          <span class="tech-label">daily.dev</span>
-        </div>
-      </div>
-      <div class="item non-badged-item">
-        <div class="tech-item">
-          <img src="assets/techs/discord.svg" alt="Discord" class="tech-icon" matTooltip="Discord" />
-          <span class="tech-label">Discord</span>
-        </div>
-      </div>
-      <div class="item non-badged-item">
-        <div class="tech-item">
-          <img src="assets/techs/zen_browser_dark.svg" alt="Zen Browser" class="tech-icon" matTooltip="Zen Browser" />
-          <span class="tech-label">Zen Browser</span>
-        </div>
-      </div>
+      }
     </div>
+  </div>
+
+  <div class="archive-section">
+    <mat-expansion-panel
+      [expanded]="archiveExpanded"
+      (opened)="archiveExpanded = true"
+      (closed)="archiveExpanded = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>archive</mat-icon>
+          Archive
+        </mat-panel-title>
+        <mat-panel-description>
+          Technologies and tools I've used in the past but are no longer
+          relevant or used by me.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p
+        class="tech-list-title"
+        style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+        Archived Technologies
+      </p>
+      <div class="tech-icons-container-archive">
+        @for (tech of sortedArchiveTechs(); track tech.name) {
+          <div
+            class="item non-badged-item"
+            (click)="tech.url && navigateTo(tech.url)"
+            (keydown.enter)="tech.url && navigateTo(tech.url)"
+            (keydown.space)="tech.url && navigateTo(tech.url)"
+            [tabindex]="tech.url ? 0 : -1"
+            [style.cursor]="tech.url ? 'pointer' : 'default'"
+            [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+            matTooltipPosition="below"
+            role="button"
+            [attr.aria-label]="
+              tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+            ">
+            <div class="tech-item">
+              <img
+                [src]="'assets/techs/' + tech.icon + '.svg'"
+                [alt]="tech.name"
+                class="tech-icon" />
+              <span class="tech-label">{{ tech.name }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </mat-expansion-panel>
   </div>
 
   <div class="weather-section">
@@ -416,7 +308,13 @@
     </div>
   </div>
   <div>
-    <div style="display: flex; justify-content: center; align-items: center; min-height: 5em">
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+      ">
       <button mat-button (click)="moveTo('chevron2')">
         <fa-icon id="chevron1" [icon]="faChevronDown" size="3x"></fa-icon>
       </button>
@@ -439,37 +337,30 @@
             align-items: center;
             gap: 1em;
             margin-top: 0.5rem;
-          "
-        >
+          ">
           <a
             href="https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml/badge.svg"
-              alt="Build Check"
-            />
+              alt="Build Check" />
           </a>
           <a
             href="https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml/badge.svg"
-              alt="Deploy new Docker Image version"
-            />
+              alt="Deploy new Docker Image version" />
           </a>
           <a
             href="https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg"
-              alt="Refresh Data and Commit"
-            />
+              alt="Refresh Data and Commit" />
           </a>
         </div>
       </div>
@@ -483,36 +374,35 @@
             subtitle="A secure runtime for JavaScript and TypeScript"
             imagePath="deno"
             url="https://deno.com/"
-            rippleColor="#86efac"
-          ></app-tech-card>
+            rippleColor="#86efac"></app-tech-card>
           <app-tech-card
             title="Fresh Deno"
             subtitle="The next-gen web framework"
             imagePath="fresh"
             url="https://fresh.deno.com/"
-            rippleColor="#FFD80D"
-          ></app-tech-card>
+            rippleColor="#FFD80D"></app-tech-card>
           <app-tech-card
             title="PicoCSS"
             subtitle="Minimal CSS Framework for semantic HTML"
             imagePath="pico"
             url="https://picocss.com/"
-            rippleColor="#FF9502"
-          ></app-tech-card>
+            rippleColor="#FF9502"></app-tech-card>
           <app-tech-card
             title="PocketBase"
             subtitle="Backend in 1 file, for when you need a quick backend"
             imagePath="pocketbase"
             url="https://pocketbase.io/"
-            rippleColor="#FFFFFF40"
-          >
-          </app-tech-card>
+            rippleColor="#FFFFFF40"></app-tech-card>
         </div>
       </div>
       <div
         id="chevron2"
-        style="display: flex; justify-content: center; align-items: center; padding: 1em"
-      >
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1em;
+        ">
         <button mat-button (click)="moveTo('chevron3')">
           <fa-icon [icon]="faChevronDown" size="3x"></fa-icon>
         </button>
@@ -522,9 +412,12 @@
     <div class="tovedem section">
       <div class="section-title">
         <h2>
-          <a href="https://tovedem.nergy.space" data-tooltip="Go to Tovedem github" target="_blank"
-            >Tovedem</a
-          >
+          <a
+            href="https://tovedem.nergy.space"
+            data-tooltip="Go to Tovedem github"
+            target="_blank">
+            Tovedem
+          </a>
         </h2>
         <sub>Local Theater & Play Management Software.</sub>
         <div
@@ -535,38 +428,31 @@
             gap: 1em;
             margin-top: 0.5rem;
             flex-wrap: wrap;
-          "
-        >
+          ">
           <a
             href="https://github.com/Nergy101/tovedem/actions/workflows/build.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/tovedem/actions/workflows/build.yml/badge.svg"
-              alt="Build Angular WebApp Check Pipeline"
-            />
+              alt="Build Angular WebApp Check Pipeline" />
           </a>
           <a
             href="https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml/badge.svg"
-              alt="Deploy new Docker Image version"
-            />
+              alt="Deploy new Docker Image version" />
           </a>
 
           <a
             href="https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <img
               src="https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml/badge.svg"
-              alt="Replace hooks folder with latest"
-            />
+              alt="Replace hooks folder with latest" />
           </a>
         </div>
       </div>
@@ -580,23 +466,23 @@
             subtitle="Backend in 1 file, for when you need a quick backend"
             imagePath="pocketbase"
             url="https://pocketbase.io/"
-            rippleColor="#FFFFFF40"
-          >
-          </app-tech-card>
+            rippleColor="#FFFFFF40"></app-tech-card>
           <app-tech-card
             title="Angular"
             subtitle="Google's Frontend Framework"
             imagePath="angular"
             url="https://www.angular.io/"
-            rippleColor="#bc114220"
-          >
-          </app-tech-card>
+            rippleColor="#bc114220"></app-tech-card>
         </div>
       </div>
       <div
         id="chevron3"
-        style="display: flex; justify-content: center; align-items: center; padding: 1em"
-      >
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1em;
+        ">
         <button mat-button (click)="moveTo('top-text')">
           <fa-icon [icon]="faChevronUp" size="3x"></fa-icon>
         </button>

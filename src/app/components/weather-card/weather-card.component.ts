@@ -1,18 +1,29 @@
-import { Component, input, Input, OnInit } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
   styleUrls: ['./weather-card.component.scss'],
-  standalone: false
+  standalone: true,
+  imports: [
+    MatCardModule,
+    MatTooltipModule,
+  ],
 })
 export class WeatherCardComponent {
-
   weatherInfo = input.required<Record<string, unknown>>();
 
-  weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-  constructor() { }
+  weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
 
   get dayName(): string {
     const date = new Date(this.weatherInfo()['datetime'] as string);

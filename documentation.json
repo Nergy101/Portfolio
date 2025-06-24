@@ -516,7 +516,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component, OnInit } from '@angular/core';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  title = 'Nergy.space';\n\n  constructor() {}\n\n  async ngOnInit() {}\n}\n",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  title = 'Nergy.space';\n\n  \n\n  async ngOnInit() {}\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -776,7 +776,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { faShare } from '@fortawesome/free-solid-svg-icons';\nimport {\n  faGithub,\n  faDigitalOcean,\n  faLinkedin,\n} from '@fortawesome/free-brands-svg-icons';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  faShare = faShare;\n  faLinkedin = faLinkedin;\n  faGithub = faGithub;\n  faDigitalOcean = faDigitalOcean;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  navigateTo(url: string){\n    window.open(url, \"blank\")\n  }\n}\n",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { faShare } from '@fortawesome/free-solid-svg-icons';\nimport {\n  faGithub,\n  faDigitalOcean,\n  faLinkedin,\n} from '@fortawesome/free-brands-svg-icons';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  faShare = faShare;\n  faLinkedin = faLinkedin;\n  faGithub = faGithub;\n  faDigitalOcean = faDigitalOcean;\n\n  \n\n  ngOnInit(): void {}\n\n  navigateTo(url: string){\n    window.open(url, \"blank\")\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -2118,7 +2118,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-weather-card',\n  templateUrl: './weather-card.component.html',\n  styleUrls: ['./weather-card.component.scss'],\n})\nexport class WeatherCardComponent implements OnInit {\n  @Input() weatherInfo: any = {};\n\n  weekdays = [\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  get dayName(): string {\n    return this.weekdays[new Date(this.weatherInfo.datetime).getDay()];\n  }\n}\n",
+      "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-weather-card',\n  templateUrl: './weather-card.component.html',\n  styleUrls: ['./weather-card.component.scss'],\n})\nexport class WeatherCardComponent implements OnInit {\n  @Input() weatherInfo: any = {};\n\n  weekdays = [\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ];\n\n  \n\n  ngOnInit(): void {}\n\n  get dayName(): string {\n    return this.weekdays[new Date(this.weatherInfo.datetime).getDay()];\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {

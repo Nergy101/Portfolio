@@ -51,7 +51,7 @@ jobs:
           name: github-actions
           known_hosts: ${{ env.KNOWN_HOSTS }}
           if_key_exists: replace
-          
+
       - name: Pull and start docker image on VM
         uses: appleboy/ssh-action@v1.2.2
         with:

@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faDigitalOcean, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faGithub,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    standalone: false
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+  standalone: true,
+  imports: [
+    FontAwesomeModule,
+    MatCardModule,
+    MatTooltipModule,
+  ],
 })
 export class FooterComponent {
-  faShare = faShare;
   faLinkedin = faLinkedin;
   faGithub = faGithub;
-  faDigitalOcean = faDigitalOcean;
-
-  constructor() {}
 
   navigateTo(url: string) {
     window.open(url, 'blank');

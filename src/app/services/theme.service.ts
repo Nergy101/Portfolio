@@ -1,22 +1,24 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Option } from '../components/material/option.model';
+
 import { StyleManagerService } from './style-manager.service';
 
 @Injectable()
 export class ThemeService {
-  constructor(
-    private http: HttpClient,
-    private styleManager: StyleManagerService,
-  ) {}
+  private http = inject(HttpClient);
+  private styleManager = inject(StyleManagerService);
 
   getThemeOptions(): Observable<Array<Option>> {
     return this.http.get<Array<Option>>('assets/options.json');
   }
 
   setTheme(themeToSet: string) {
-    this.styleManager.setStyle('theme', `assets/prebuilt-themes/${themeToSet}.css`);
+    this.styleManager.setStyle(
+      'theme',
+      `assets/prebuilt-themes/${themeToSet}.css`,
+    );
   }
 }
