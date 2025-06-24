@@ -38,7 +38,7 @@ interface TechItem {
     MatProgressSpinnerModule,
     MatTooltipModule,
     TechCardComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
   ],
 })
 export class LandingComponent implements OnInit {
@@ -59,103 +59,438 @@ export class LandingComponent implements OnInit {
 
   // Tech data
   professionalTechs = signal<TechItem[]>([
-    { name: 'Azure', icon: 'azure', isNonBadged: true, url: 'https://azure.microsoft.com/' },
-    { name: 'Azure DevOps', icon: 'azure_devops', isNonBadged: true, url: 'https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops' },
-    { name: 'C#', icon: 'csharp', isNonBadged: true, url: 'https://dotnet.microsoft.com/en-us/languages/csharp' },
-    { name: 'TypeScript', icon: 'typescript', isNonBadged: true, url: 'https://www.typescriptlang.org/' },
-    { name: 'REST', icon: 'restapi', isNonBadged: true, url: 'https://restfulapi.net/' },
-    { name: 'Docker', icon: 'docker', isNonBadged: true, url: 'https://www.docker.com/' },
-    { name: 'MSSQL', icon: 'azure_sql', isNonBadged: true, url: 'https://www.microsoft.com/en-us/sql-server' },
-    { name: 'SQLite', icon: 'sqlite', isNonBadged: true, url: 'https://www.sqlite.org/' },
-    { name: 'RabbitMQ', icon: 'rabbitmq', isNonBadged: true, url: 'https://www.rabbitmq.com/' },
-    { name: 'Angular', icon: 'angular', isNonBadged: true, url: 'https://angular.io/' },
+    {
+      name: 'Azure',
+      icon: 'azure',
+      isNonBadged: true,
+      url: 'https://azure.microsoft.com/',
+    },
+    {
+      name: 'Azure DevOps',
+      icon: 'azure_devops',
+      isNonBadged: true,
+      url: 'https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops',
+    },
+    {
+      name: 'C#',
+      icon: 'csharp',
+      isNonBadged: true,
+      url: 'https://dotnet.microsoft.com/en-us/languages/csharp',
+    },
+    {
+      name: 'TypeScript',
+      icon: 'typescript',
+      isNonBadged: true,
+      url: 'https://www.typescriptlang.org/',
+    },
+    {
+      name: 'REST',
+      icon: 'restapi',
+      isNonBadged: true,
+      url: 'https://restfulapi.net/',
+    },
+    {
+      name: 'Docker',
+      icon: 'docker',
+      isNonBadged: true,
+      url: 'https://www.docker.com/',
+    },
+    {
+      name: 'MSSQL',
+      icon: 'azure_sql',
+      isNonBadged: true,
+      url: 'https://www.microsoft.com/en-us/sql-server',
+    },
+    {
+      name: 'SQLite',
+      icon: 'sqlite',
+      isNonBadged: true,
+      url: 'https://www.sqlite.org/',
+    },
+    {
+      name: 'RabbitMQ',
+      icon: 'rabbitmq',
+      isNonBadged: true,
+      url: 'https://www.rabbitmq.com/',
+    },
+    {
+      name: 'Angular',
+      icon: 'angular',
+      isNonBadged: true,
+      url: 'https://angular.io/',
+    },
     { name: 'Nx', icon: 'nx_dark', isNonBadged: true, url: 'https://nx.dev/' },
     { name: 'RxJS', icon: 'rxjs', isNonBadged: true, url: 'https://rxjs.dev/' },
-    { name: 'Git', icon: 'git', isNonBadged: true, url: 'https://git-scm.com/' },
-    { name: 'GitHub', icon: 'github_dark', isNonBadged: true, url: 'https://github.com/' },
+    {
+      name: 'Git',
+      icon: 'git',
+      isNonBadged: true,
+      url: 'https://git-scm.com/',
+    },
+    {
+      name: 'GitHub',
+      icon: 'github_dark',
+      isNonBadged: true,
+      url: 'https://github.com/',
+    },
     { name: 'YAML', icon: 'yaml', isNonBadged: true, url: 'https://yaml.org/' },
-    { name: 'Bicep', icon: 'bicep', isNonBadged: true, url: 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep' },
+    {
+      name: 'Bicep',
+      icon: 'bicep',
+      isNonBadged: true,
+      url: 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep',
+    },
   ]);
 
   hobbyTechs = signal<TechItem[]>([
-    { name: 'Deno', icon: 'deno_dark', isNonBadged: true, url: 'https://deno.com/' },
-    { name: 'Node.js', icon: 'nodejs', isNonBadged: true, url: 'https://nodejs.org/' },
+    {
+      name: 'Deno',
+      icon: 'deno_dark',
+      isNonBadged: true,
+      url: 'https://deno.com/',
+    },
+    {
+      name: 'Node.js',
+      icon: 'nodejs',
+      isNonBadged: true,
+      url: 'https://nodejs.org/',
+    },
 
-    { name: 'Fresh', icon: 'fresh', isNonBadged: true, url: 'https://fresh.deno.dev/' },
-    { name: 'Preact', icon: 'preact', isNonBadged: true, url: 'https://preactjs.com/' },
+    {
+      name: 'Fresh',
+      icon: 'fresh',
+      isNonBadged: true,
+      url: 'https://fresh.deno.dev/',
+    },
+    {
+      name: 'Preact',
+      icon: 'preact',
+      isNonBadged: true,
+      url: 'https://preactjs.com/',
+    },
     { name: 'Vue', icon: 'vue', isNonBadged: true, url: 'https://vuejs.org/' },
 
-    { name: 'PocketBase', icon: 'pocketbase', isNonBadged: true, url: 'https://pocketbase.io/' },
-    { name: 'MongoDB', icon: 'mongodb', isNonBadged: true, url: 'https://www.mongodb.com/' },
-    { name: 'Redis', icon: 'redis', isNonBadged: true, url: 'https://redis.io/' },
+    {
+      name: 'PocketBase',
+      icon: 'pocketbase',
+      isNonBadged: true,
+      url: 'https://pocketbase.io/',
+    },
+    {
+      name: 'MongoDB',
+      icon: 'mongodb',
+      isNonBadged: true,
+      url: 'https://www.mongodb.com/',
+    },
+    {
+      name: 'Redis',
+      icon: 'redis',
+      isNonBadged: true,
+      url: 'https://redis.io/',
+    },
 
+    {
+      name: 'Python',
+      icon: 'python',
+      isNonBadged: true,
+      url: 'https://www.python.org/',
+    },
+    {
+      name: 'GraphQL',
+      icon: 'graphql',
+      isNonBadged: true,
+      url: 'https://graphql.org/',
+    },
 
-    { name: 'Python', icon: 'python', isNonBadged: true, url: 'https://www.python.org/' },
-    { name: 'GraphQL', icon: 'graphql', isNonBadged: true, url: 'https://graphql.org/' },
+    {
+      name: 'Linux',
+      icon: 'linux',
+      isNonBadged: true,
+      url: 'https://www.linux.org/',
+    },
+    {
+      name: 'Ubuntu',
+      icon: 'ubuntu',
+      isNonBadged: true,
+      url: 'https://ubuntu.com/',
+    },
+    {
+      name: 'Bash',
+      icon: 'bash_dark',
+      isNonBadged: true,
+      url: 'https://www.gnu.org/software/bash/',
+    },
+    {
+      name: 'OTel',
+      icon: 'otel',
+      isNonBadged: true,
+      url: 'https://opentelemetry.io/',
+    },
 
-    { name: 'Linux', icon: 'linux', isNonBadged: true, url: 'https://www.linux.org/' },
-    { name: 'Ubuntu', icon: 'ubuntu', isNonBadged: true, url: 'https://ubuntu.com/' },
-    { name: 'Bash', icon: 'bash_dark', isNonBadged: true, url: 'https://www.gnu.org/software/bash/' },
-    { name: 'OTel', icon: 'otel', isNonBadged: true, url: 'https://opentelemetry.io/' },
-
-    { name: 'Vite', icon: 'vite', isNonBadged: true, url: 'https://vitejs.dev/' },
-    { name: 'Chart.js', icon: 'chartjs', isNonBadged: true, url: 'https://www.chartjs.org/' },
-    { name: 'PicoCSS', icon: 'pico', isNonBadged: true, url: 'https://picocss.com/' },
-    { name: 'Bootstrap', icon: 'bootstrap', isNonBadged: true, url: 'https://getbootstrap.com/' },
-    { name: 'Material UI', icon: 'materialui', isNonBadged: true, url: 'https://material.angular.dev/' },
-    { name: 'JavaScript', icon: 'javascript', isNonBadged: true, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-    { name: 'CSS', icon: 'css_old', isNonBadged: true, url: 'https://www.w3.org/Style/CSS/Overview.en.html' },
-    { name: 'HTML', icon: 'html5', isNonBadged: true, url: 'https://www.w3.org/html/' },
+    {
+      name: 'Vite',
+      icon: 'vite',
+      isNonBadged: true,
+      url: 'https://vitejs.dev/',
+    },
+    {
+      name: 'Chart.js',
+      icon: 'chartjs',
+      isNonBadged: true,
+      url: 'https://www.chartjs.org/',
+    },
+    {
+      name: 'PicoCSS',
+      icon: 'pico',
+      isNonBadged: true,
+      url: 'https://picocss.com/',
+    },
+    {
+      name: 'Bootstrap',
+      icon: 'bootstrap',
+      isNonBadged: true,
+      url: 'https://getbootstrap.com/',
+    },
+    {
+      name: 'Material UI',
+      icon: 'materialui',
+      isNonBadged: true,
+      url: 'https://material.angular.dev/',
+    },
+    {
+      name: 'JavaScript',
+      icon: 'javascript',
+      isNonBadged: true,
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      name: 'CSS',
+      icon: 'css_old',
+      isNonBadged: true,
+      url: 'https://www.w3.org/Style/CSS/Overview.en.html',
+    },
+    {
+      name: 'HTML',
+      icon: 'html5',
+      isNonBadged: true,
+      url: 'https://www.w3.org/html/',
+    },
   ]);
 
   otherTechs = signal<TechItem[]>([
-    { name: 'Scalar', icon: 'scalar', isNonBadged: true, url: 'https://www.scalar.com/' },
-    { name: 'Bruno', icon: 'bruno', isNonBadged: true, url: 'https://www.usebruno.com/' },
+    {
+      name: 'Scalar',
+      icon: 'scalar',
+      isNonBadged: true,
+      url: 'https://www.scalar.com/',
+    },
+    {
+      name: 'Bruno',
+      icon: 'bruno',
+      isNonBadged: true,
+      url: 'https://www.usebruno.com/',
+    },
 
-    { name: 'daily.dev', icon: 'daily_dev_dark', isNonBadged: true, url: 'https://daily.dev/' },
-    { name: 'Discord', icon: 'discord', isNonBadged: true, url: 'https://discord.com/' },
-    { name: 'Bluesky', icon: 'bluesky', isNonBadged: true, url: 'https://bsky.app/' },
-    { name: 'LinkedIn', icon: 'linkedin', isNonBadged: true, url: 'https://www.linkedin.com/' },
+    {
+      name: 'daily.dev',
+      icon: 'daily_dev_dark',
+      isNonBadged: true,
+      url: 'https://daily.dev/',
+    },
+    {
+      name: 'Discord',
+      icon: 'discord',
+      isNonBadged: true,
+      url: 'https://discord.com/',
+    },
+    {
+      name: 'Bluesky',
+      icon: 'bluesky',
+      isNonBadged: true,
+      url: 'https://bsky.app/',
+    },
+    {
+      name: 'LinkedIn',
+      icon: 'linkedin',
+      isNonBadged: true,
+      url: 'https://www.linkedin.com/',
+    },
 
-    { name: 'SigmaOS', icon: 'sigmaos', isNonBadged: true, url: 'https://sigmaos.com/' },
+    {
+      name: 'SigmaOS',
+      icon: 'sigmaos',
+      isNonBadged: true,
+      url: 'https://sigmaos.com/',
+    },
 
-    { name: 'Visual Studio', icon: 'visual-studio', isNonBadged: true, url: 'https://visualstudio.microsoft.com/' },
-    { name: 'Zed', icon: 'zed_dark', isNonBadged: true, url: 'https://zed.dev/' },
-    { name: 'Cursor', icon: 'cursor_dark', isNonBadged: true, url: 'https://www.cursor.com/' },
-    { name: 'GitHub Copilot', icon: 'github_copilot_dark', isNonBadged: true, url: 'https://github.com/features/copilot' },
-    { name: 'VS Code', icon: 'vscode', isNonBadged: true, url: 'https://code.visualstudio.com/' },
-    { name: 'Rider', icon: 'rider', isNonBadged: true, url: 'https://www.jetbrains.com/rider/' },
-    { name: 'PyCharm', icon: 'pycharm', isNonBadged: true, url: 'https://www.jetbrains.com/pycharm/' },
+    {
+      name: 'Visual Studio',
+      icon: 'visual-studio',
+      isNonBadged: true,
+      url: 'https://visualstudio.microsoft.com/',
+    },
+    {
+      name: 'Zed',
+      icon: 'zed_dark',
+      isNonBadged: true,
+      url: 'https://zed.dev/',
+    },
+    {
+      name: 'Cursor',
+      icon: 'cursor_dark',
+      isNonBadged: true,
+      url: 'https://www.cursor.com/',
+    },
+    {
+      name: 'GitHub Copilot',
+      icon: 'github_copilot_dark',
+      isNonBadged: true,
+      url: 'https://github.com/features/copilot',
+    },
+    {
+      name: 'VS Code',
+      icon: 'vscode',
+      isNonBadged: true,
+      url: 'https://code.visualstudio.com/',
+    },
+    {
+      name: 'Rider',
+      icon: 'rider',
+      isNonBadged: true,
+      url: 'https://www.jetbrains.com/rider/',
+    },
+    {
+      name: 'PyCharm',
+      icon: 'pycharm',
+      isNonBadged: true,
+      url: 'https://www.jetbrains.com/pycharm/',
+    },
 
-    { name: 'Prettier', icon: 'prettier_dark', isNonBadged: true, url: 'https://prettier.io/' },
+    {
+      name: 'Prettier',
+      icon: 'prettier_dark',
+      isNonBadged: true,
+      url: 'https://prettier.io/',
+    },
 
-    { name: 'npm', icon: 'npm', isNonBadged: true, url: 'https://www.npmjs.com/' },
-    { name: 'NuGet', icon: 'nuget', isNonBadged: true, url: 'https://www.nuget.org/' },
-    { name: 'Homebrew', icon: 'homebrew', isNonBadged: true, url: 'https://brew.sh/' },
+    {
+      name: 'npm',
+      icon: 'npm',
+      isNonBadged: true,
+      url: 'https://www.npmjs.com/',
+    },
+    {
+      name: 'NuGet',
+      icon: 'nuget',
+      isNonBadged: true,
+      url: 'https://www.nuget.org/',
+    },
+    {
+      name: 'Homebrew',
+      icon: 'homebrew',
+      isNonBadged: true,
+      url: 'https://brew.sh/',
+    },
 
-
-    { name: 'Affinity Designer', icon: 'affinity_designer', isNonBadged: true, url: 'https://affinity.serif.com/en-gb/designer/' },
-    { name: 'Affinity Photo', icon: 'affinity_photo', isNonBadged: true, url: 'https://affinity.serif.com/en-gb/photo/' },
-    { name: 'Hetzner', icon: 'hetzner', isNonBadged: true, url: 'https://www.hetzner.com/' },
+    {
+      name: 'Affinity Designer',
+      icon: 'affinity_designer',
+      isNonBadged: true,
+      url: 'https://affinity.serif.com/en-gb/designer/',
+    },
+    {
+      name: 'Affinity Photo',
+      icon: 'affinity_photo',
+      isNonBadged: true,
+      url: 'https://affinity.serif.com/en-gb/photo/',
+    },
+    {
+      name: 'Hetzner',
+      icon: 'hetzner',
+      isNonBadged: true,
+      url: 'https://www.hetzner.com/',
+    },
   ]);
 
   archiveTechs = signal<TechItem[]>([
-    { name: 'Podman', icon: 'podman', isNonBadged: true, url: 'https://podman.io/' },
-    { name: 'NestJS', icon: 'nestjs', isNonBadged: true, url: 'https://nestjs.com/' },
-    { name: 'RethinkDB', icon: 'rethinkdb', isNonBadged: true, url: 'https://rethinkdb.com/' },
-    { name: 'DigitalOcean', icon: 'digitalocean', isNonBadged: true, url: 'https://www.digitalocean.com/' },
-    { name: 'Postman', icon: 'postman', isNonBadged: true, url: 'https://www.postman.com/' },
-    { name: 'Raspberry Pi', icon: 'raspberry_pi', isNonBadged: true, url: 'https://www.raspberrypi.org/' },
-    { name: 'Zen Browser', icon: 'zen_browser_dark', isNonBadged: true, url: 'https://zenbrowser.com/' },
-    { name: 'Swagger', icon: 'swagger', isNonBadged: true, url: 'https://swagger.io/' },
-    { name: 'Kubernetes', icon: 'kubernetes', isNonBadged: true, url: 'https://kubernetes.io/' },
-    { name: 'Svelte', icon: 'svelte', isNonBadged: true, url: 'https://svelte.dev/' },
-    { name: 'SvelteKit', icon: 'sveltekit', isNonBadged: true, url: 'https://kit.svelte.dev/' },
-    { name: 'Blazor', icon: 'blazor', isNonBadged: true, url: 'https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor' },
+    {
+      name: 'Podman',
+      icon: 'podman',
+      isNonBadged: true,
+      url: 'https://podman.io/',
+    },
+    {
+      name: 'NestJS',
+      icon: 'nestjs',
+      isNonBadged: true,
+      url: 'https://nestjs.com/',
+    },
+    {
+      name: 'RethinkDB',
+      icon: 'rethinkdb',
+      isNonBadged: true,
+      url: 'https://rethinkdb.com/',
+    },
+    {
+      name: 'DigitalOcean',
+      icon: 'digitalocean',
+      isNonBadged: true,
+      url: 'https://www.digitalocean.com/',
+    },
+    {
+      name: 'Postman',
+      icon: 'postman',
+      isNonBadged: true,
+      url: 'https://www.postman.com/',
+    },
+    {
+      name: 'Raspberry Pi',
+      icon: 'raspberry_pi',
+      isNonBadged: true,
+      url: 'https://www.raspberrypi.org/',
+    },
+    {
+      name: 'Zen Browser',
+      icon: 'zen_browser_dark',
+      isNonBadged: true,
+      url: 'https://zenbrowser.com/',
+    },
+    {
+      name: 'Swagger',
+      icon: 'swagger',
+      isNonBadged: true,
+      url: 'https://swagger.io/',
+    },
+    {
+      name: 'Kubernetes',
+      icon: 'kubernetes',
+      isNonBadged: true,
+      url: 'https://kubernetes.io/',
+    },
+    {
+      name: 'Svelte',
+      icon: 'svelte',
+      isNonBadged: true,
+      url: 'https://svelte.dev/',
+    },
+    {
+      name: 'SvelteKit',
+      icon: 'sveltekit',
+      isNonBadged: true,
+      url: 'https://kit.svelte.dev/',
+    },
+    {
+      name: 'Blazor',
+      icon: 'blazor',
+      isNonBadged: true,
+      url: 'https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor',
+    },
   ]);
 
   // Computed sorted techs
-  sortedProfessionalTechs = computed(() => this.sortTechs(this.professionalTechs()));
+  sortedProfessionalTechs = computed(() =>
+    this.sortTechs(this.professionalTechs()),
+  );
   sortedHobbyTechs = computed(() => this.sortTechs(this.hobbyTechs()));
   sortedOtherTechs = computed(() => this.sortTechs(this.otherTechs()));
   sortedArchiveTechs = computed(() => this.sortTechs(this.archiveTechs()));
@@ -177,7 +512,9 @@ export class LandingComponent implements OnInit {
   }
 
   toggleSort(): void {
-    this.sortBy.update(current => current === 'alphabet' ? 'custom' : 'alphabet');
+    this.sortBy.update((current) =>
+      current === 'alphabet' ? 'custom' : 'alphabet',
+    );
   }
 
   async doWeatherCall(): Promise<void> {

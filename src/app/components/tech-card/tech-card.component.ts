@@ -8,11 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   templateUrl: './tech-card.component.html',
   styleUrls: ['./tech-card.component.scss'],
   standalone: true,
-  imports: [
-    MatCardModule,
-    MatRippleModule,
-    MatTooltipModule,
-  ],
+  imports: [MatCardModule, MatRippleModule, MatTooltipModule],
 })
 export class TechCardComponent {
   @Input()

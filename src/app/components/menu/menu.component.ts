@@ -13,12 +13,7 @@ import { LoginChoiceDialogComponent } from '../dialogs/login-choice-dialog/login
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   standalone: true,
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule
-  ],
+  imports: [MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule],
 })
 export class MenuComponent {
   private readonly pocketbaseService = inject(PocketbaseService);

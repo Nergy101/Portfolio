@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./kofi-dialog.component.scss'],
   standalone: true,
 })
-export class KofiDialogComponent { }
+export class KofiDialogComponent {}

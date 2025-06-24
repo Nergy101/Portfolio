@@ -7,10 +7,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   templateUrl: './weather-card.component.html',
   styleUrls: ['./weather-card.component.scss'],
   standalone: true,
-  imports: [
-    MatCardModule,
-    MatTooltipModule,
-  ],
+  imports: [MatCardModule, MatTooltipModule],
 })
 export class WeatherCardComponent {
   weatherInfo = input.required<Record<string, unknown>>();

@@ -9,11 +9,7 @@ import { TechCardComponent } from '../../tech-card/tech-card.component';
   templateUrl: './login-choice-dialog.component.html',
   styleUrls: ['./login-choice-dialog.component.scss'],
   standalone: true,
-  imports: [
-    MatDialogModule,
-    MatButtonModule,
-    TechCardComponent,
-  ],
+  imports: [MatDialogModule, MatButtonModule, TechCardComponent],
 })
 export class LoginChoiceDialogComponent {
   private dialogRef =

@@ -8,10 +8,6 @@ import { MenuComponent } from '../menu/menu.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [
-    MatToolbarModule,
-    MenuComponent,
-  ],
+  imports: [MatToolbarModule, MenuComponent],
 })
-export class HeaderComponent {
-}
+export class HeaderComponent {}
