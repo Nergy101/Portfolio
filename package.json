@@ -8,9 +8,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "storybook": "ng run portfolio:storybook",
-    "storybook:devcontainer": "ng run portfolio:storybook --host 0.0.0.0",
-    "build-storybook": "ng run portfolio:build-storybook",
     "lint": "npx eslint 'src/**/*.ts' --ext .ts --fix",
     "format": "prettier --write .",
     "check": "npm run format && npm run lint"
