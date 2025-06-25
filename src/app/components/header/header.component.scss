@@ -3,8 +3,18 @@
 }
 
 mat-toolbar {
-  height: 5vh;
+  height: auto;
   background-color: var(--sys-surface-container-highest);
+}
+
+.main-row {
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
 }
 
 .header-buttons {
@@ -13,4 +23,47 @@ mat-toolbar {
   gap: 1rem;
   align-items: baseline;
   justify-content: center;
+}
+
+.mobile-buttons-row {
+  justify-content: center;
+  min-height: 56px;
+}
+
+.mobile-buttons {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-row {
+    min-height: 56px;
+  }
+
+  .header-buttons button {
+    font-size: 0.875rem;
+  }
+
+  .badge-container img {
+    max-height: 20px;
+  }
 }
