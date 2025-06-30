@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { TranslatePipe } from '../../pipes/translate.pipe';
+
 interface TechItem {
   name: string;
   icon: string;
@@ -17,7 +19,13 @@ interface TechItem {
   templateUrl: './tech-grid.component.html',
   styleUrls: ['./tech-grid.component.scss'],
   standalone: true,
-  imports: [MatBadgeModule, MatButtonModule, MatIconModule, MatTooltipModule],
+  imports: [
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    TranslatePipe,
+  ],
 })
 export class TechGridComponent {
   @Input() title = '';

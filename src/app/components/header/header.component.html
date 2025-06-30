@@ -5,7 +5,10 @@
         src="/assets/nemic-logos/Logo_Nemic-40.png"
         alt="Logo"
         style="height: 2rem; margin-right: 1rem" />
-      <span>Nergy</span>
+      <span>{{ 'header.brand' | translate }}</span>
+      <app-language-switcher
+        class="mobile-language-switcher"
+        [showOnlyFlag]="true"></app-language-switcher>
     </div>
     <span class="spacer desktop-only"></span>
     <div class="header-buttons desktop-only">
@@ -16,17 +19,25 @@
           rel="noopener">
           <img
             src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="Deploy new Docker Image version" />
+            alt="{{ 'header.deploy-badge-alt' | translate }}" />
         </a>
       </div>
 
       <button mat-flat-button (click)="openKofiDialog()">
-        <mat-icon matSuffix aria-hidden="false" aria-label="donate">
+        <mat-icon
+          matSuffix
+          aria-hidden="false"
+          [attr.aria-label]="'aria.donate' | translate">
           volunteer_activism
         </mat-icon>
-        Buy me a coffee (Ko-fi)
-        <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
+        {{ 'header.buy-me-coffee' | translate }}
+        <mat-icon
+          aria-hidden="false"
+          [attr.aria-label]="'aria.coffee' | translate">
+          coffee
+        </mat-icon>
       </button>
+      <app-language-switcher></app-language-switcher>
     </div>
     <app-menu></app-menu>
   </mat-toolbar-row>
@@ -40,16 +51,23 @@
           rel="noopener">
           <img
             src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="Deploy new Docker Image version" />
+            alt="{{ 'header.deploy-badge-alt' | translate }}" />
         </a>
       </div>
 
       <button mat-flat-button (click)="openKofiDialog()">
-        <mat-icon matSuffix aria-hidden="false" aria-label="donate">
+        <mat-icon
+          matSuffix
+          aria-hidden="false"
+          [attr.aria-label]="'aria.donate' | translate">
           volunteer_activism
         </mat-icon>
-        Ko-fi
-        <mat-icon aria-hidden="false" aria-label="coffee">coffee</mat-icon>
+        {{ 'header.buy-me-coffee-short' | translate }}
+        <mat-icon
+          aria-hidden="false"
+          [attr.aria-label]="'aria.coffee' | translate">
+          coffee
+        </mat-icon>
       </button>
     </div>
   </mat-toolbar-row>

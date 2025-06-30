@@ -17,11 +17,15 @@ mat-toolbar {
   align-items: center;
 }
 
+.mobile-language-switcher {
+  display: none;
+}
+
 .header-buttons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
 }
 
@@ -57,6 +61,25 @@ mat-toolbar {
 
   .main-row {
     min-height: 56px;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-section {
+    gap: 0.5rem;
+  }
+
+  .mobile-language-switcher {
+    display: flex;
+    margin-left: 0.5rem;
+  }
+
+  .mobile-buttons-row {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .mobile-buttons {
+    gap: 1.5rem;
   }
 
   .header-buttons button {

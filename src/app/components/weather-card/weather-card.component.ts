@@ -1,6 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
+import { TolgeeService } from '../../services/tolgee.service';
 
 @Component({
   selector: 'app-weather-card',
@@ -11,24 +13,25 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class WeatherCardComponent {
   weatherInfo = input.required<Record<string, unknown>>();
-
-  weekdays = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+  private tolgeeService = inject(TolgeeService);
 
   get dayName(): string {
     const date = new Date(this.weatherInfo()['datetime'] as string);
 
     if (date.toDateString() === new Date().toDateString()) {
-      return 'Today';
+      return this.tolgeeService.translate('weather.today');
     }
 
-    return this.weekdays[date.getDay()];
+    const weekdays = [
+      'weather.sunday',
+      'weather.monday',
+      'weather.tuesday',
+      'weather.wednesday',
+      'weather.thursday',
+      'weather.friday',
+      'weather.saturday',
+    ];
+
+    return this.tolgeeService.translate(weekdays[date.getDay()]);
   }
 }

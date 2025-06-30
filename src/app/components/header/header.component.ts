@@ -4,7 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { TranslatePipe } from '../../pipes/translate.pipe';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { MenuComponent } from '../menu/menu.component';
 
 @Component({
@@ -12,7 +14,14 @@ import { MenuComponent } from '../menu/menu.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [MatToolbarModule, MenuComponent, MatButton, MatIcon],
+  imports: [
+    MatToolbarModule,
+    MenuComponent,
+    MatButton,
+    MatIcon,
+    LanguageSwitcherComponent,
+    TranslatePipe,
+  ],
 })
 export class HeaderComponent {
   private readonly dialog = inject(MatDialog);

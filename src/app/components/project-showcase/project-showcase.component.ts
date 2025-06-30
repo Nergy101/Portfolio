@@ -2,6 +2,7 @@ import { Component, inject, input, computed } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
+import { TolgeeService } from '../../services/tolgee.service';
 import { TechCardComponent } from '../tech-card/tech-card.component';
 
 export interface ProjectTech {
@@ -21,6 +22,7 @@ export interface ProjectTech {
 })
 export class ProjectShowcaseComponent {
   private readonly sanitizer = inject(DomSanitizer);
+  private readonly tolgeeService = inject(TolgeeService);
 
   title = input('');
   subtitle = input('');
@@ -33,4 +35,16 @@ export class ProjectShowcaseComponent {
     const src = this.iframeSrc();
     return src ? this.sanitizer.bypassSecurityTrustResourceUrl(src) : null;
   });
+
+  getTranslatedTitle(title: string): string {
+    return this.tolgeeService.translate(title);
+  }
+
+  getTranslatedSubtitle(subtitle: string): string {
+    return this.tolgeeService.translate(subtitle);
+  }
+
+  getTranslatedAlt(alt: string): string {
+    return this.tolgeeService.translate(alt);
+  }
 }

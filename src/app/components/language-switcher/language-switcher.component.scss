@@ -1,0 +1,82 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+button[mat-button] {
+  min-width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+  color: inherit;
+}
+
+mat-menu {
+  .active {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  button[mat-menu-item] {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    &.active:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  mat-menu {
+    .active {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    button[mat-menu-item] {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+
+      &.active:hover {
+        background-color: rgba(255, 255, 255, 0.16);
+      }
+    }
+  }
+}
+
+.language-select {
+  min-width: 150px;
+
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
+  &.flag-only {
+    min-width: 60px;
+    max-width: 60px;
+
+    ::ng-deep .mat-mdc-form-field-infix {
+      padding: 8px 0;
+      min-height: auto;
+    }
+
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      padding: 0 8px;
+    }
+
+    ::ng-deep .mat-mdc-form-field-flex {
+      min-height: 36px;
+    }
+  }
+}
+
+.flag {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.label {
+  font-size: 14px;
+}

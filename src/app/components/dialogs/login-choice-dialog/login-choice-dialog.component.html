@@ -1,26 +1,26 @@
 <div class="darker">
-  <h1 mat-dialog-title>Choose your login provider</h1>
+  <h1 mat-dialog-title>{{ 'dialogs.login-choice.title' | translate }}</h1>
   <p>
-    These will open a pop-up to the chosen provider...
-    <br />
-    If nothing happens, make sure you allow pop-ups on this site!
+    {{ 'dialogs.login-choice.description' | translate }}
   </p>
   <div mat-dialog-content>
     <div class="options">
       <app-tech-card
         (click)="choose('github')"
-        description="GitHub"
+        description="{{ 'dialogs.login-choice.github' | translate }}"
         imagePath="logins/github"
         rippleColor="#00000020"></app-tech-card>
 
       <app-tech-card
         (click)="choose('google')"
-        description="Google"
+        description="{{ 'dialogs.login-choice.google' | translate }}"
         imagePath="logins/google"
         rippleColor="#3f7de780"></app-tech-card>
     </div>
   </div>
   <div mat-dialog-actions class="center">
-    <button mat-stroked-button mat-dialog-close>Return</button>
+    <button mat-stroked-button mat-dialog-close>
+      {{ 'common.return' | translate }}
+    </button>
   </div>
 </div>

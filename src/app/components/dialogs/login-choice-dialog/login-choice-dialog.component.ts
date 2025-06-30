@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
+import { TranslatePipe } from '../../../pipes/translate.pipe';
 import { TechCardComponent } from '../../tech-card/tech-card.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { TechCardComponent } from '../../tech-card/tech-card.component';
   templateUrl: './login-choice-dialog.component.html',
   styleUrls: ['./login-choice-dialog.component.scss'],
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, TechCardComponent],
+  imports: [MatDialogModule, MatButtonModule, TechCardComponent, TranslatePipe],
 })
 export class LoginChoiceDialogComponent {
   private dialogRef =

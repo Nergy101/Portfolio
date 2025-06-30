@@ -4,6 +4,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { TranslatePipe } from '../../pipes/translate.pipe';
+
 interface TechItem {
   name: string;
   icon: string;
@@ -22,6 +24,7 @@ interface TechItem {
     MatExpansionModule,
     MatIconModule,
     MatTooltipModule,
+    TranslatePipe,
   ],
 })
 export class ArchiveSectionComponent {

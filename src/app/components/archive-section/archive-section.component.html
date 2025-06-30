@@ -5,16 +5,17 @@
     (closed)="archiveExpanded = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <mat-icon>archive</mat-icon>
-        Archive
+        <mat-icon>{{ 'aria.archive-icon' | translate }}</mat-icon>
+        {{ 'archive.title' | translate }}
       </mat-panel-title>
       <mat-panel-description>
-        Technologies and tools I've used in the past but are no longer relevant
-        or used by me.
+        {{ 'archive.description' | translate }}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <p class="tech-list-title">Archived Technologies</p>
+    <p class="tech-list-title">
+      {{ 'archive.archived-technologies' | translate }}
+    </p>
     <div class="tech-icons-container-archive">
       @for (tech of sortedArchiveTechs(); track tech.name) {
         <div
@@ -24,11 +25,17 @@
           (keydown.space)="tech.url && navigateTo(tech.url)"
           [tabindex]="tech.url ? 0 : -1"
           [style.cursor]="tech.url ? 'pointer' : 'default'"
-          [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+          [matTooltip]="
+            tech.url
+              ? ('landing.go-to-website' | translate: { name: tech.name })
+              : ''
+          "
           matTooltipPosition="below"
           role="button"
           [attr.aria-label]="
-            tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+            tech.url
+              ? ('landing.go-to-website' | translate: { name: tech.name })
+              : tech.name
           ">
           <div class="tech-item">
             <img

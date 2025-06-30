@@ -11,6 +11,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { TolgeeService } from '../../services/tolgee.service';
 import { ArchiveSectionComponent } from '../archive-section/archive-section.component';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 import { ProfileComponent } from '../profile/profile.component';
@@ -48,11 +50,13 @@ interface TechItem {
     ProjectShowcaseComponent,
     TechGridComponent,
     WeatherSectionComponent,
+    TranslatePipe,
   ],
 })
 export class LandingComponent implements OnInit {
   private readonly snackBar = inject(MatSnackBar);
   private readonly dialog = inject(MatDialog);
+  private readonly tolgeeService = inject(TolgeeService);
 
   faGithubAlt = faGithubAlt;
 
@@ -510,43 +514,43 @@ export class LandingComponent implements OnInit {
   retrorankerBadges = [
     {
       url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml/badge.svg',
-      alt: 'Build Check',
+      alt: 'badges.build-check',
     },
     {
       url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml/badge.svg',
-      alt: 'Deploy new Docker Image version',
+      alt: 'badges.deploy-docker-image',
     },
     {
       url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg',
-      alt: 'Refresh Data and Commit',
+      alt: 'badges.refresh-data',
     },
   ];
 
   retrorankerTechs: ProjectTech[] = [
     {
-      title: 'Deno',
-      subtitle: 'A secure runtime for JavaScript and TypeScript',
+      title: 'tech-cards.deno.title',
+      subtitle: 'tech-cards.deno.subtitle',
       imagePath: 'deno',
       url: 'https://deno.com/',
       rippleColor: '#86efac',
     },
     {
-      title: 'Fresh Deno',
-      subtitle: 'The next-gen web framework',
+      title: 'tech-cards.fresh.title',
+      subtitle: 'tech-cards.fresh.subtitle',
       imagePath: 'fresh',
       url: 'https://fresh.deno.com/',
       rippleColor: '#FFD80D',
     },
     {
-      title: 'PicoCSS',
-      subtitle: 'Minimal CSS Framework for semantic HTML',
+      title: 'tech-cards.pico.title',
+      subtitle: 'tech-cards.pico.subtitle',
       imagePath: 'pico',
       url: 'https://picocss.com/',
       rippleColor: '#FF9502',
     },
     {
-      title: 'PocketBase',
-      subtitle: 'Backend in 1 file, for when you need a quick backend',
+      title: 'tech-cards.pocketbase.title',
+      subtitle: 'tech-cards.pocketbase.subtitle',
       imagePath: 'pocketbase',
       url: 'https://pocketbase.io/',
       rippleColor: '#FFFFFF40',
@@ -556,29 +560,29 @@ export class LandingComponent implements OnInit {
   tovedemBadges = [
     {
       url: 'https://github.com/Nergy101/tovedem/actions/workflows/build.yml/badge.svg',
-      alt: 'Build Angular WebApp Check Pipeline',
+      alt: 'badges.build-angular-webapp',
     },
     {
       url: 'https://github.com/Nergy101/tovedem/actions/workflows/pipeline.yml/badge.svg',
-      alt: 'Deploy new Docker Image version',
+      alt: 'badges.deploy-docker-image',
     },
     {
       url: 'https://github.com/Nergy101/tovedem/actions/workflows/replace_pbhooks.yml/badge.svg',
-      alt: 'Replace hooks folder with latest',
+      alt: 'badges.replace-hooks',
     },
   ];
 
   tovedemTechs: ProjectTech[] = [
     {
-      title: 'PocketBase',
-      subtitle: 'Backend in 1 file, for when you need a quick backend',
+      title: 'tech-cards.pocketbase.title',
+      subtitle: 'tech-cards.pocketbase.subtitle',
       imagePath: 'pocketbase',
       url: 'https://pocketbase.io/',
       rippleColor: '#FFFFFF40',
     },
     {
-      title: 'Angular',
-      subtitle: "Google's Frontend Framework",
+      title: 'tech-cards.angular.title',
+      subtitle: 'tech-cards.angular.subtitle',
       imagePath: 'angular',
       url: 'https://www.angular.io/',
       rippleColor: '#bc114220',
@@ -617,9 +621,13 @@ export class LandingComponent implements OnInit {
       }
     } catch (e) {
       console.error(e);
-      this.snackBar.open('Error while fetching weather data', 'Close', {
-        duration: 3000,
-      });
+      this.snackBar.open(
+        this.tolgeeService.translate('weather.error-fetching-data'),
+        this.tolgeeService.translate('common.close'),
+        {
+          duration: 3000,
+        },
+      );
     } finally {
       this.loading = false;
     }

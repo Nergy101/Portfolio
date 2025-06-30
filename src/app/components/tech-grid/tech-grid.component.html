@@ -4,9 +4,13 @@
   @if (showSortButton) {
     <div class="sort-button-container">
       <button mat-stroked-button (click)="toggleSort()">
-        <mat-icon>sort</mat-icon>
-        Sort by:
-        {{ sortBy() === 'alphabet' ? 'Alphabetical' : 'Custom Order' }}
+        <mat-icon>{{ 'aria.sort-icon' | translate }}</mat-icon>
+        {{ 'landing.sort-by-label' | translate }}
+        {{
+          sortBy() === 'alphabet'
+            ? ('landing.sort-by-alphabetical' | translate)
+            : ('landing.sort-by-custom-order' | translate)
+        }}
       </button>
     </div>
   }
@@ -22,11 +26,17 @@
         (keydown.space)="tech.url && navigateTo(tech.url)"
         [tabindex]="tech.url ? 0 : -1"
         [style.cursor]="tech.url ? 'pointer' : 'default'"
-        [matTooltip]="tech.url ? 'Go to ' + tech.name + '\'s website' : ''"
+        [matTooltip]="
+          tech.url
+            ? ('landing.go-to-website' | translate: { name: tech.name })
+            : ''
+        "
         matTooltipPosition="below"
         role="button"
         [attr.aria-label]="
-          tech.url ? 'Go to ' + tech.name + '\'s website' : tech.name
+          tech.url
+            ? ('landing.go-to-website' | translate: { name: tech.name })
+            : tech.name
         ">
         <div class="tech-item">
           <img

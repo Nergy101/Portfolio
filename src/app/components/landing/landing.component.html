@@ -3,24 +3,23 @@
 
   <div class="all-techs-section">
     <p class="tech-list-title">
-      Here's a list of technologies and tools I've worked with in hobby or
-      professional projects.
+      {{ 'landing.tech-list-title' | translate }}
     </p>
 
     <app-tech-grid
-      title="Professional"
+      [title]="'landing.professional' | translate"
       [techs]="professionalTechs()"
       [sortBy]="sortBy"
       [showSortButton]="true"></app-tech-grid>
 
     <app-tech-grid
-      title="Hobby"
+      [title]="'landing.hobby' | translate"
       [techs]="hobbyTechs()"
       [sortBy]="sortBy"
       [showSortButton]="false"></app-tech-grid>
 
     <app-tech-grid
-      title="Tools, Editors, Socials, etc..."
+      [title]="'landing.other-tools' | translate"
       [techs]="otherTechs()"
       [sortBy]="sortBy"
       [showSortButton]="false"></app-tech-grid>
@@ -37,16 +36,16 @@
 
   <div>
     <app-project-showcase
-      title="Retro Ranker"
-      subtitle="Find the perfect device for your gaming needs."
+      [title]="'projects.retro-ranker.title' | translate"
+      [subtitle]="'projects.retro-ranker.subtitle' | translate"
       url="https://retroranker.site"
       iframeSrc="https://retroranker.site"
       [badges]="retrorankerBadges"
       [techs]="retrorankerTechs"></app-project-showcase>
 
     <app-project-showcase
-      title="Tovedem"
-      subtitle="Local Theater & Play Management Software."
+      [title]="'projects.tovedem.title' | translate"
+      [subtitle]="'projects.tovedem.subtitle' | translate"
       url="https://tovedem.nergy.space"
       iframeSrc="https://tovedem.nergy.space"
       [badges]="tovedemBadges"

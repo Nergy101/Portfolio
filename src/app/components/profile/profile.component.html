@@ -7,23 +7,11 @@
       justify-content: center;
       gap: 1rem;
     ">
-    <h1>Well, hello there!</h1>
+    <h1>{{ 'profile.greeting' | translate }}</h1>
   </mat-card-title>
   <mat-card-content class="pad">
     <p style="line-height: 1.6; text-align: justify">
-      Professionally, I've always been invested in
-      <strong>C#</strong>
-      and anything
-      <strong>.NET</strong>
-      related. Every day I work with Azure, DevOps, dotNET, and TypeScript. I
-      like fiddling with different architectures like Clean Architecture and
-      Micro Services, along with CI/CD tools including Azure Pipelines, Github
-      Actions, and Bicep - and the list goes on. As a hobby, I mostly try out
-      different frameworks, languages, databases and libraries. Check out
-      <a href="https://retroranker.site" target="_blank" rel="noopener">
-        RetroRanker
-      </a>
-      for my latest hobby project.
+      {{ 'profile.intro' | translate }}
     </p>
 
     <div class="split">
@@ -31,14 +19,14 @@
         <ul class="profile-list">
           <li>
             🚀
-            <strong>Currently working on:</strong>
+            <strong>{{ 'profile.currently-working-on' | translate }}</strong>
             <a href="https://retroranker.site" target="_blank" rel="noopener">
               RetroRanker
             </a>
           </li>
           <li>
             💾
-            <strong>Github:</strong>
+            <strong>{{ 'profile.github' | translate }}</strong>
             <a
               href="https://github.com/Nergy101"
               target="_blank"
@@ -48,14 +36,14 @@
           </li>
           <li>
             📕
-            <strong>Blog:</strong>
+            <strong>{{ 'profile.blog' | translate }}</strong>
             <a href="https://blog.nergy.space" target="_blank" rel="noopener">
               blog.nergy.space
             </a>
           </li>
           <li>
             🌐
-            <strong>Service Uptime:</strong>
+            <strong>{{ 'profile.service-uptime' | translate }}</strong>
             <a
               href="https://kuma.nergy.space/status/all"
               target="_blank"
@@ -69,23 +57,25 @@
         <ul class="profile-list">
           <li>
             🌍
-            <strong>Based in:</strong>
-            Utrecht, NL
+            <strong>{{ 'profile.based-in' | translate }}</strong>
+            {{ 'profile.location' | translate }}
           </li>
           <li>
             ✉️
-            <strong>Contact:&nbsp;</strong>
-            <a href="mailto:cdijk4@gmail.com">cdijk4&#64;gmail.com</a>
+            <strong>{{ 'profile.contact' | translate }}</strong>
+            <a href="mailto:cdijk4@gmail.com">
+              {{ 'profile.email' | translate }}
+            </a>
           </li>
           <li>
             🧠
-            <strong>Learning about:</strong>
-            MassTransit and Nx
+            <strong>{{ 'profile.learning-about' | translate }}</strong>
+            {{ 'profile.learning-topics' | translate }}
           </li>
           <li>
             🎂
-            <strong>Been here since:</strong>
-            1999
+            <strong>{{ 'profile.been-here-since' | translate }}</strong>
+            {{ 'profile.birth-year' | translate }}
           </li>
         </ul>
       </div>

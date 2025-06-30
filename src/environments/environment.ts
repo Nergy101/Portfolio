@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  enableTodo: true,
+  // for local use, uncomment and fill in the following lines
+  // tolgeeApiUrl: '',
+  // tolgeeApiKey: '',
 };
 
 /*

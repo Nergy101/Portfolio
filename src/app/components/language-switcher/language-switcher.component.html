@@ -1,0 +1,27 @@
+@if (showOnlyFlag) {
+  <mat-form-field appearance="outline" class="language-select flag-only">
+    <mat-select
+      [value]="selectedLanguage"
+      (selectionChange)="onLanguageChange($event)">
+      @for (language of languages; track language.value) {
+        <mat-option [value]="language.value">
+          <span class="flag">{{ language.flag }}</span>
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+} @else {
+  <mat-form-field appearance="outline" class="language-select">
+    <mat-label>{{ 'common.language' | translate }}</mat-label>
+    <mat-select
+      [value]="selectedLanguage"
+      (selectionChange)="onLanguageChange($event)">
+      @for (language of languages; track language.value) {
+        <mat-option [value]="language.value">
+          <span class="flag">{{ language.flag }}</span>
+          <span class="label">{{ language.label }}</span>
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+}
