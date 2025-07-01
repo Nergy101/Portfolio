@@ -2,7 +2,7 @@ import { Component, inject, input, computed } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { TolgeeService } from '../../services/tolgee.service';
+import { TranslationsService } from '../../services/translations.service';
 import { TechCardComponent } from '../tech-card/tech-card.component';
 
 export interface ProjectTech {
@@ -22,7 +22,7 @@ export interface ProjectTech {
 })
 export class ProjectShowcaseComponent {
   private readonly sanitizer = inject(DomSanitizer);
-  private readonly tolgeeService = inject(TolgeeService);
+  private readonly translationsService = inject(TranslationsService);
 
   title = input('');
   subtitle = input('');
@@ -37,14 +37,14 @@ export class ProjectShowcaseComponent {
   });
 
   getTranslatedTitle(title: string): string {
-    return this.tolgeeService.translate(title);
+    return this.translationsService.translate(title);
   }
 
   getTranslatedSubtitle(subtitle: string): string {
-    return this.tolgeeService.translate(subtitle);
+    return this.translationsService.translate(subtitle);
   }
 
   getTranslatedAlt(alt: string): string {
-    return this.tolgeeService.translate(alt);
+    return this.translationsService.translate(alt);
   }
 }

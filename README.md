@@ -236,7 +236,7 @@ The project uses a `.tolgeerc` configuration file to manage translations:
 - Translation keys are automatically detected in your code
 - Use the `| translate` pipe in templates: `{{ 'key.name' | translate }}`
 - The custom `TranslatePipe` handles translation resolution
-- Language switching is managed through the `TolgeeService`
+- Language switching is managed through the `TranslationsService`
 
 ---
 

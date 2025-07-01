@@ -12,7 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 import { TranslatePipe } from '../../pipes/translate.pipe';
-import { TolgeeService } from '../../services/tolgee.service';
+import { TranslationsService } from '../../services/translations.service';
 import { ArchiveSectionComponent } from '../archive-section/archive-section.component';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 import { ProfileComponent } from '../profile/profile.component';
@@ -56,7 +56,7 @@ interface TechItem {
 export class LandingComponent implements OnInit {
   private readonly snackBar = inject(MatSnackBar);
   private readonly dialog = inject(MatDialog);
-  private readonly tolgeeService = inject(TolgeeService);
+  private readonly translationsService = inject(TranslationsService);
 
   faGithubAlt = faGithubAlt;
 
@@ -622,8 +622,8 @@ export class LandingComponent implements OnInit {
     } catch (e) {
       console.error(e);
       this.snackBar.open(
-        this.tolgeeService.translate('weather.error-fetching-data'),
-        this.tolgeeService.translate('common.close'),
+        this.translationsService.translate('weather.error-fetching-data'),
+        this.translationsService.translate('common.close'),
         {
           duration: 3000,
         },

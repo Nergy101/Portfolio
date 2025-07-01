@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class TolgeeService {
+export class TranslationsService {
   private translations: Record<string, Record<string, string>> = {
     'en-US': {},
     'en-GB': {},

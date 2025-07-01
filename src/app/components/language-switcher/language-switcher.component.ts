@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule, MatSelectChange } from '@angular/material/select';
 
 import { TranslatePipe } from '../../pipes/translate.pipe';
-import { TolgeeService } from '../../services/tolgee.service';
+import { TranslationsService } from '../../services/translations.service';
 
 interface LanguageOption {
   value: string;
@@ -21,7 +21,7 @@ interface LanguageOption {
 export class LanguageSwitcherComponent implements OnInit {
   @Input() showOnlyFlag = false;
 
-  private tolgeeService = inject(TolgeeService);
+  private translationsService = inject(TranslationsService);
 
   languages: LanguageOption[] = [
     { value: 'en-US', label: 'English (US)', flag: '🇺🇸' },
@@ -34,19 +34,19 @@ export class LanguageSwitcherComponent implements OnInit {
 
   ngOnInit(): void {
     // Translations are already loaded in main.ts, so we can directly get the current language
-    this.selectedLanguage = this.tolgeeService.getCurrentLanguage();
+    this.selectedLanguage = this.translationsService.getCurrentLanguage();
   }
 
   onLanguageChange(event: MatSelectChange<string>): void {
     const newLanguage = event.value;
     console.log('Language switcher: Changing language to:', newLanguage);
 
-    this.tolgeeService.setLanguage(newLanguage);
+    this.translationsService.setLanguage(newLanguage);
     this.selectedLanguage = newLanguage;
 
     console.log(
       'Language switcher: Language changed, current language is now:',
-      this.tolgeeService.getCurrentLanguage(),
+      this.translationsService.getCurrentLanguage(),
     );
 
     // Trigger change detection to update all translated text

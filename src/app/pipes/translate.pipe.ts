@@ -1,19 +1,15 @@
-import {
-  inject,
-  Pipe,
-  PipeTransform,
-} from '@angular/core';
+import { inject, Pipe, PipeTransform } from '@angular/core';
 
-import { TolgeeService } from '../services/tolgee.service';
+import { TranslationsService } from '../services/translations.service';
 
 @Pipe({
   name: 'translate',
   standalone: true,
 })
 export class TranslatePipe implements PipeTransform {
-  private tolgeeService = inject(TolgeeService);
+  private translationsService = inject(TranslationsService);
 
   transform(key: string, params?: Record<string, string>): string {
-    return this.tolgeeService.translate(key, params);
+    return this.translationsService.translate(key, params);
   }
 }
