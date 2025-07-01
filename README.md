@@ -194,6 +194,52 @@ Portfolio/
 
 ---
 
+## 🌐 Internationalization (i18n)
+
+This project uses Tolgee for internationalization management. The configuration is set up to pull translations from a Tolgee instance and store them locally.
+
+### Tolgee Configuration
+
+The project uses a `.tolgeerc` configuration file to manage translations:
+
+```json
+{
+  "apiKey": "<add-key-here>",
+  "apiUrl": "<add-url-here>>",
+  "pull": {
+    "path": "./src/assets/translations",
+    "format": "JSON_ICU",
+    "delimiter": ""
+  },
+  "patterns": ["src/**/*.ts", "src/**/*.html"]
+}
+```
+
+### Translation Management
+
+- **Translation Files**: Stored in `src/assets/translations/`
+- **Supported Languages**: English (US/GB), Dutch (NL), German (DE)
+- **Format**: JSON with ICU message format support
+- **Patterns**: Scans TypeScript and HTML files for translation keys
+
+### Adding New Translations
+
+1. Add translation keys to your components using the `| translate` pipe
+2. Run Tolgee CLI to pull latest translations:
+   ```bash
+   npx @tolgee/cli pull
+   ```
+3. The translations will be automatically updated in `src/assets/translations/`
+
+### Development Workflow
+
+- Translation keys are automatically detected in your code
+- Use the `| translate` pipe in templates: `{{ 'key.name' | translate }}`
+- The custom `TranslatePipe` handles translation resolution
+- Language switching is managed through the `TolgeeService`
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
