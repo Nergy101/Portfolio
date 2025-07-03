@@ -77,11 +77,14 @@ document.body.appendChild(spinner);
 async function initializeTranslations(): Promise<void> {
   try {
     // Load all translation files
-    const [enUS, nlNL, enGB, deDE] = await Promise.all([
+    const [enUS, nlNL, enGB, deDE, esES, frFR, ptPT] = await Promise.all([
       import('./assets/translations/en-US.json'),
       import('./assets/translations/nl-NL.json'),
       import('./assets/translations/en-GB.json'),
       import('./assets/translations/de-DE.json'),
+      import('./assets/translations/es-ES.json'),
+      import('./assets/translations/fr-FR.json'),
+      import('./assets/translations/pt-PT.json'),
     ]);
 
     // Store translations in a global object for the service to access
@@ -90,6 +93,9 @@ async function initializeTranslations(): Promise<void> {
       'nl-NL': nlNL.default,
       'en-GB': enGB.default,
       'de-DE': deDE.default,
+      'es-ES': esES.default,
+      'fr-FR': frFR.default,
+      'pt-PT': ptPT.default,
     };
 
     console.log('Translations loaded successfully:', window.__TRANSLATIONS__);

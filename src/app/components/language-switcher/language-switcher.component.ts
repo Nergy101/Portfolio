@@ -25,9 +25,12 @@ export class LanguageSwitcherComponent implements OnInit {
 
   languages: LanguageOption[] = [
     { value: 'en-US', label: 'English (US)', flag: '🇺🇸' },
-    { value: 'nl-NL', label: 'Nederlands', flag: '🇳🇱' },
     { value: 'en-GB', label: 'English (GB)', flag: '🇬🇧' },
+    { value: 'nl-NL', label: 'Nederlands', flag: '🇳🇱' },
     { value: 'de-DE', label: 'Deutsch', flag: '🇩🇪' },
+    { value: 'fr-FR', label: 'Français', flag: '🇫🇷' },
+    { value: 'es-ES', label: 'Español', flag: '🇪🇸' },
+    { value: 'pt-PT', label: 'Português', flag: '🇵🇹' },
   ];
 
   selectedLanguage: string = 'en-US';

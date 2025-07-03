@@ -5,8 +5,12 @@ This directory contains translation files compatible with [Tolgee](https://tolge
 ## File Structure
 
 - `en-US.json` - English (US) translations (default language)
+- `en-GB.json` - English (GB) translations
 - `de-DE.json` - German (DE) translations
-- `nl.json` - Dutch translations
+- `nl-NL.json` - Dutch (NL) translations
+- `es-ES.json` - Spanish (ES) translations
+- `fr-FR.json` - French (FR) translations
+- `pt-PT.json` - Portuguese (PT) translations
 - `README.md` - This documentation file
 
 ## Translation Structure

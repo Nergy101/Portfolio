@@ -9,6 +9,9 @@ export class TranslationsService {
     'en-GB': {},
     'de-DE': {},
     'nl-NL': {},
+    'es-ES': {},
+    'fr-FR': {},
+    'pt-PT': {},
   };
 
   private currentLanguage = this.getStoredLanguage() || 'en-US';
