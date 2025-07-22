@@ -28,15 +28,8 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'playwright/package-lock.json'
 
-      - name: Install Playwright dependencies
-        working-directory: ./playwright
-        run: npm ci
-
-      - name: Install Playwright browsers
-        working-directory: ./playwright
-        run: npx playwright install --with-deps
-
       - name: Cache Playwright browsers
+        id: cache-playwright
         uses: actions/cache@v4
         with:
           path: |
@@ -45,6 +38,15 @@ jobs:
           key: playwright-browsers-${{ runner.os }}-${{ hashFiles('playwright/package-lock.json') }}
           restore-keys: |
             playwright-browsers-${{ runner.os }}-
+
+      - name: Install Playwright dependencies
+        working-directory: ./playwright
+        run: npm ci
+
+      - name: Install Playwright browsers
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        working-directory: ./playwright
+        run: npx playwright install --with-deps
 
       - name: Run E2E tests against production
         working-directory: ./playwright
