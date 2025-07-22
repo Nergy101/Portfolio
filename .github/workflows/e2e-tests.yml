@@ -1,12 +1,15 @@
 name: 🧪 E2E Tests
 
 on:
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
   workflow_run:
     workflows: ['🚀 Deploy Angular App']
     types:
       - completed
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   e2e-tests:
