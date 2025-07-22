@@ -37,6 +37,16 @@ jobs:
         working-directory: ./playwright
         run: npx playwright install --with-deps
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+            ~/.cache/ms-playwright-github
+          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('playwright/package-lock.json') }}
+          restore-keys: |
+            playwright-browsers-${{ runner.os }}-
+
       - name: Run E2E tests
         working-directory: ./playwright
         run: npx playwright test --project="${{ matrix.browser }}"
