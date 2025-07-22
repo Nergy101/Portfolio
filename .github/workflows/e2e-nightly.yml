@@ -49,6 +49,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Install WebKit dependencies
+        if: matrix.browser == 'webkit' || matrix.browser == 'Mobile Safari'
         run: |
           sudo apt-get update
           sudo apt-get install -y libwoff1 libwoff-dev
