@@ -46,3 +46,10 @@ testem.log
 Thumbs.db
 
 .tolgeerc
+
+# Playwright
+/playwright/test-results/
+/playwright/playwright-report/
+/playwright/node_modules/
+playwright/test-results.xml
+playwright/test-results.json

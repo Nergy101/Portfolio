@@ -7,7 +7,6 @@
     "start:devcontainer": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "lint": "npx eslint 'src/**/*.ts' --ext .ts --fix",
     "format": "prettier --write .",
     "check": "npm run format && npm run lint"
@@ -33,7 +32,8 @@
     "pocketbase": "^0.14.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "zone.js": "~0.15.1",
+    "dotenv": "^17.2.0"
   },
   "devDependencies": {
     "@angular-eslint/builder": "^20.0.0",
@@ -45,10 +45,11 @@
     "@angular/cli": "~20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/node": "^22.15.24",
+    "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.11.0",
     "eslint": "^8.57.1",
+    "@playwright/test": "^1.40.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.1.3",

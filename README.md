@@ -240,6 +240,23 @@ The project uses a `.tolgeerc` configuration file to manage translations:
 
 ---
 
+## Playwright End-to-End Testing
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end browser testing. To get started:
+
+```sh
+cd playwright
+npm install
+npm run install-browsers
+npm test
+```
+
+- Tests are located in `playwright/tests/`.
+- Configuration is in `playwright/playwright.config.ts`.
+- See `playwright/README.md` for more details.
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

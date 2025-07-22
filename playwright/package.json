@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for Portfolio application",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:chromium": "playwright test --project=chromium",
+    "install-browsers": "playwright install",
+    "codegen": "playwright codegen http://localhost:4200"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0"
+  }
+}
