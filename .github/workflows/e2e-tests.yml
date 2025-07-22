@@ -39,7 +39,7 @@ jobs:
 
       - name: Run E2E tests
         working-directory: ./playwright
-        run: npx playwright test --project=${{ matrix.browser }}
+        run: npx playwright test --project="${{ matrix.browser }}"
         env:
           CI: true
 
