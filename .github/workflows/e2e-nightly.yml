@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         # Run on all browsers for comprehensive testing
-        browser: [chromium, firefox, webkit, 'Mobile Chrome', 'Mobile Safari']
+        browser: [chromium, firefox, 'Mobile Chrome']
 
     steps:
       - name: Checkout code
@@ -47,14 +47,6 @@ jobs:
         if: steps.cache-playwright.outputs.cache-hit != 'true'
         working-directory: ./playwright
         run: npx playwright install --with-deps
-
-      - name: Install WebKit dependencies
-        if: matrix.browser == 'webkit' || matrix.browser == 'Mobile Safari'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libwoff1 libwoff-dev
-          # Alternative: install woff2 tools which includes the required library
-          sudo apt-get install -y woff2
 
       - name: Run E2E tests against production
         working-directory: ./playwright

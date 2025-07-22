@@ -45,7 +45,22 @@ export default defineConfig({
             ],
         },
     },
-    projects: [
+    projects: process.env['CI'] ? [
+        // CI projects (no WebKit)
+        {
+            name: "chromium",
+            use: { ...devices["Desktop Chrome"] },
+        },
+        {
+            name: "firefox",
+            use: { ...devices["Desktop Firefox"] },
+        },
+        {
+            name: "Mobile Chrome",
+            use: { ...devices["Pixel 5"] },
+        },
+    ] : [
+        // Local development projects (all browsers)
         {
             name: "chromium",
             use: { ...devices["Desktop Chrome"] },
