@@ -1,6 +1,7 @@
+import path from "node:path";
+
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
-import path from "node:path";
 
 // Load environment variables from .env file
 dotenv.config({ path: path.join(__dirname, ".env"), quiet: true });
@@ -78,10 +79,12 @@ export default defineConfig({
             },
         ],
     outputDir: "test-results",
-    webServer: {
-        command: "npm run start",
-        cwd: path.join(__dirname, ".."),
-        url: "http://localhost:4200",
-        reuseExistingServer: !process.env['CI'],
-    },
+    ...(process.env['CI'] ? {} : {
+        webServer: {
+            command: "npm run start",
+            cwd: path.join(__dirname, ".."),
+            url: "http://localhost:4200",
+            reuseExistingServer: true,
+        },
+    }),
 }); 
