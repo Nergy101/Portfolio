@@ -1,9 +1,10 @@
 name: 🧪 E2E Tests
 
 on:
-  pull_request:
-    branches: [main]
-  push:
+  workflow_run:
+    workflows: ['🚀 Deploy Angular App']
+    types:
+      - completed
     branches: [main]
   workflow_dispatch:
 
@@ -12,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Run E2E Tests
     timeout-minutes: 20
+    # Only run if the triggering workflow succeeded
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     strategy:
       matrix:
