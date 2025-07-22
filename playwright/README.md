@@ -38,6 +38,37 @@ This directory contains Playwright tests for the Portfolio Angular application.
 - All tests are in the `tests/` folder.
 - Configuration is in `playwright.config.ts`.
 
+## GitHub Actions Workflows
+
+### 🧪 E2E Tests (`e2e-tests.yml`)
+
+- **Triggers**: Pull requests, pushes to main, manual dispatch
+- **Purpose**: Comprehensive testing on multiple browsers
+- **Environments**:
+  - Production (for main branch pushes)
+  - Local staging server (for pull requests)
+- **Browsers**: Chromium, Mobile Chrome
+
+### 🌙 Nightly E2E Tests (`e2e-nightly.yml`)
+
+- **Triggers**: Daily at 2:00 AM UTC, manual dispatch
+- **Purpose**: Continuous monitoring of production environment
+- **Environment**: Production (`https://portfolio.nergy.space`)
+- **Features**:
+  - Runs against live production site
+  - Uploads test artifacts for 30 days
+  - Automatic failure notifications
+  - Comprehensive browser testing
+
+## Test Configuration
+
+The tests automatically adapt based on the environment:
+
+- **Local Development**: Runs against `http://localhost:4200`
+- **CI/Production**: Runs against `https://portfolio.nergy.space`
+- **Staging**: Can be configured to run against local server in CI
+
 ## More Info
 
 - [Playwright Docs](https://playwright.dev/)
+- [GitHub Actions Workflows](../.github/workflows/)

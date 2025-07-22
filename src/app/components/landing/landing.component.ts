@@ -530,6 +530,10 @@ export class LandingComponent implements OnInit {
       url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg',
       alt: 'badges.refresh-data',
     },
+    {
+      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/nightly-tests.yml/badge.svg',
+      alt: 'badges.nightly-e2e',
+    }
   ];
 
   retrorankerTechs: ProjectTech[] = [
