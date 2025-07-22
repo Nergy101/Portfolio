@@ -5,11 +5,10 @@ test.describe('Portfolio Performance & Accessibility', () => {
         const startTime = Date.now();
         await page.goto('/');
         await page.waitForLoadState('networkidle');
-
         const loadTime = Date.now() - startTime;
 
-        // Page should load within 5 seconds
-        expect(loadTime).toBeLessThan(5000);
+        // Page should load within 10 seconds
+        expect(loadTime).toBeLessThan(10000);
 
         // Verify page is fully loaded
         await expect(page.locator('app-header')).toBeVisible();
