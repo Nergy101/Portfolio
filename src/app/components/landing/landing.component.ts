@@ -132,6 +132,12 @@ export class LandingComponent implements OnInit {
       isNonBadged: true,
       url: 'https://angular.io/',
     },
+    {
+      name: 'Playwright',
+      icon: 'playwright',
+      isNonBadged: true,
+      url: 'https://playwright.dev/',
+    },
     { name: 'Nx', icon: 'nx_dark', isNonBadged: true, url: 'https://nx.dev/' },
     { name: 'RxJS', icon: 'rxjs', isNonBadged: true, url: 'https://rxjs.dev/' },
     {
