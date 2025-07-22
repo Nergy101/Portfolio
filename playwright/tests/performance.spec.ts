@@ -4,6 +4,8 @@ test.describe('Portfolio Performance & Accessibility', () => {
     test('should load within acceptable time limits', async ({ page }) => {
         const startTime = Date.now();
         await page.goto('/');
+        await page.waitForLoadState('networkidle');
+
         const loadTime = Date.now() - startTime;
 
         // Page should load within 5 seconds
@@ -16,6 +18,7 @@ test.describe('Portfolio Performance & Accessibility', () => {
 
     test('should have proper accessibility attributes', async ({ page }) => {
         await page.goto('/');
+        await page.waitForLoadState('networkidle');
 
         // Check for proper heading structure
         const headings = await page.locator('h1, h2, h3, h4, h5, h6').all();
@@ -43,6 +46,7 @@ test.describe('Portfolio Performance & Accessibility', () => {
         });
 
         await page.goto('/');
+        await page.waitForLoadState('networkidle');
 
         // Wait for page to fully load
         await page.waitForLoadState('networkidle');
@@ -53,6 +57,7 @@ test.describe('Portfolio Performance & Accessibility', () => {
 
     test('should have proper meta tags', async ({ page }) => {
         await page.goto('/');
+        await page.waitForLoadState('networkidle');
 
         // Check for viewport meta tag
         const viewport = await page.locator('meta[name="viewport"]').count();
