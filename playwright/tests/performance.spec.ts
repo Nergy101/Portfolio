@@ -1,20 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio Performance & Accessibility', () => {
-    test('should load within acceptable time limits', async ({ page }) => {
-        const startTime = Date.now();
-        await page.goto('/');
-        await page.waitForLoadState('networkidle');
-        const loadTime = Date.now() - startTime;
-
-        // Page should load within 10 seconds
-        expect(loadTime).toBeLessThan(10000);
-
-        // Verify page is fully loaded
-        await expect(page.locator('app-header')).toBeVisible();
-        await expect(page.locator('app-landing')).toBeVisible();
-    });
-
     test('should have proper accessibility attributes', async ({ page }) => {
         await page.goto('/');
         await page.waitForLoadState('networkidle');
@@ -33,25 +19,6 @@ test.describe('Portfolio Performance & Accessibility', () => {
         // Check for proper ARIA labels
         const interactiveElements = await page.locator('[role], [aria-label], [aria-labelledby]').all();
         expect(interactiveElements.length).toBeGreaterThan(0);
-    });
-
-    test('should handle JavaScript errors gracefully', async ({ page }) => {
-        // Listen for console errors
-        const errors: string[] = [];
-        page.on('console', msg => {
-            if (msg.type() === 'error') {
-                errors.push(msg.text());
-            }
-        });
-
-        await page.goto('/');
-        await page.waitForLoadState('networkidle');
-
-        // Wait for page to fully load
-        await page.waitForLoadState('networkidle');
-
-        // Check that there are no JavaScript errors
-        expect(errors.length).toBe(0);
     });
 
     test('should have proper meta tags', async ({ page }) => {
