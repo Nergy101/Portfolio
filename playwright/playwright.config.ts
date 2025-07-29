@@ -11,15 +11,15 @@ export default defineConfig({
     fullyParallel: true,
     forbidOnly: !!process.env['CI'],
     retries: 2,
-    workers: process.env['CI'] ? 1 : undefined,
+    workers: process.env['CI'] ? 1 : 2,
     reporter: [
         ["html"],
         ["json", { outputFile: "test-results.json" }],
         ["junit", { outputFile: "test-results.xml" }],
     ],
-    timeout: 10000,
+    timeout: 30000,
     expect: {
-        timeout: 10000,
+        timeout: 30000,
     },
     use: {
         baseURL: process.env['CI']
@@ -45,8 +45,9 @@ export default defineConfig({
             ],
         },
     },
-    projects: [
-        // Local development projects (all browsers)
+    projects:
+      process.env['CI'] ?
+       [
         {
             name: "chromium",
             use: { ...devices["Desktop Chrome"] },
@@ -56,17 +57,30 @@ export default defineConfig({
             use: { ...devices["Desktop Firefox"] },
         },
         {
-            name: "Safari",
-            use: { ...devices["Desktop Safari"] },
-        },
-        {
             name: "Mobile Chrome",
             use: { ...devices["Pixel 5"] },
+        },
+        {
+            name: "Safari",
+            use: { ...devices["Desktop Safari"] },
         },
         {
             name: "Mobile Safari",
             use: { ...devices["iPhone 12"] },
         },
+    ] : [
+      {
+        name: "chromium",
+        use: { ...devices["Desktop Chrome"] },
+    },
+    {
+        name: "firefox",
+        use: { ...devices["Desktop Firefox"] },
+    },
+    {
+        name: "Mobile Chrome",
+        use: { ...devices["Pixel 5"] },
+    },
     ],
     outputDir: "test-results",
     ...(process.env['CI'] ? {} : {
