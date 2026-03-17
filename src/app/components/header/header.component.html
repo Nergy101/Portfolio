@@ -1,17 +1,36 @@
-<mat-toolbar>
+<mat-toolbar class="app-toolbar">
   <mat-toolbar-row class="main-row">
     <div class="logo-section">
       <img
+        class="brand-logo"
         src="/assets/nemic-logos/Logo_Nemic-40.png"
-        alt="Logo"
-        style="height: 2rem; margin-right: 1rem" />
-      <span>{{ 'header.brand' | translate }}</span>
+        alt="Logo" />
+      <span class="brand-text">{{ 'header.brand' | translate }}</span>
       <app-language-switcher
         class="mobile-language-switcher"
         [showOnlyFlag]="true"></app-language-switcher>
     </div>
-    <span class="spacer desktop-only"></span>
-    <div class="header-buttons desktop-only">
+
+    <div
+      class="quick-links desktop-only"
+      [attr.aria-label]="'sidebar.navigation' | translate">
+      <button
+        mat-button
+        class="quick-link"
+        type="button"
+        (click)="navigateToFragment('techs-and-tools')">
+        {{ 'header.quick-techs' | translate }}
+      </button>
+      <button
+        mat-button
+        class="quick-link"
+        type="button"
+        (click)="navigateToFragment('projects')">
+        {{ 'header.quick-projects' | translate }}
+      </button>
+    </div>
+
+    <div class="right-actions desktop-only">
       <div class="badge-container">
         <a
           href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
@@ -31,7 +50,7 @@
         </a>
       </div>
 
-      <button mat-flat-button (click)="openKofiDialog()">
+      <button mat-flat-button class="coffee-button" (click)="openKofiDialog()">
         <mat-icon
           matSuffix
           aria-hidden="false"
@@ -47,11 +66,27 @@
       </button>
       <app-language-switcher></app-language-switcher>
     </div>
-    <app-menu></app-menu>
   </mat-toolbar-row>
 
   <mat-toolbar-row class="mobile-buttons-row mobile-only">
     <div class="header-buttons mobile-buttons">
+      <div class="mobile-quick-links">
+        <button
+          mat-button
+          class="quick-link"
+          type="button"
+          (click)="navigateToFragment('techs-and-tools')">
+          {{ 'header.quick-techs' | translate }}
+        </button>
+        <button
+          mat-button
+          class="quick-link"
+          type="button"
+          (click)="navigateToFragment('projects')">
+          {{ 'header.quick-projects' | translate }}
+        </button>
+      </div>
+
       <div class="badge-container">
         <a
           href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
@@ -63,7 +98,7 @@
         </a>
       </div>
 
-      <button mat-flat-button (click)="openKofiDialog()">
+      <button mat-flat-button class="coffee-button" (click)="openKofiDialog()">
         <mat-icon
           matSuffix
           aria-hidden="false"

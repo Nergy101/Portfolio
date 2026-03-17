@@ -1,43 +1,59 @@
 .tech-section {
   max-width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .tech-list-title {
+  font-family: var(--font-heading);
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--sys-on-surface);
 }
 
 .sort-button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .tech-icons-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
   background-color: var(--sys-surface-container);
-  border-radius: 1em;
-  padding: 2em 1em;
+  border-radius: var(--radius-md);
+  padding: 2em 1.25em;
+  border: var(--border-subtle);
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: rgba(125, 208, 224, 0.15);
+  }
 
   @media (max-width: 1024px) {
-    margin: 0 2%;
-    padding: 1em 0.5em;
+    margin: 0;
+    padding: 1.25em 0.75em;
   }
 
   @media (max-width: 480px) {
-    margin: 0 1%;
-    padding: 0.5em;
+    margin: 0;
+    padding: 0.75em 0.5em;
+    gap: 1rem;
   }
 }
 
 .item {
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,16 +64,24 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+
+.tech-item:hover {
+  background: rgba(125, 208, 224, 0.06);
 }
 
 .tech-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
 
   @media (max-width: 480px) {
@@ -67,11 +91,13 @@
 }
 
 .tech-label {
-  font-size: 0.75rem;
-  color: var(--sys-on-surface);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--sys-on-surface-variant);
   text-align: center;
   max-width: 5rem;
   word-wrap: break-word;
+  line-height: 1.3;
 
   @media (max-width: 480px) {
     font-size: 0.65rem;

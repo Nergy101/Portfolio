@@ -1,0 +1,13 @@
+<div class="sidebar-container">
+  <mat-nav-list class="sidebar-list">
+    @for (item of navItems; track item.fragment) {
+      <mat-list-item
+        class="sidebar-item"
+        (click)="navigateToFragment(item.fragment)"
+        [matTooltip]="item.label | translate"
+        matTooltipPosition="right">
+        <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+      </mat-list-item>
+    }
+  </mat-nav-list>
+</div>
