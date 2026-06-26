@@ -1,3 +1,39 @@
 .container {
-  flex-flow: column wrap;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--sys-background);
+  color: var(--sys-on-background);
+  font-family: var(--font-body);
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(125, 208, 224, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 50%,
+      rgba(176, 192, 255, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 30% at 0% 80%,
+      rgba(125, 208, 224, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
 }

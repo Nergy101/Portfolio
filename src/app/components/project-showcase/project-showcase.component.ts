@@ -27,13 +27,35 @@ export class ProjectShowcaseComponent {
   title = input('');
   subtitle = input('');
   url = input('');
+  logoSrc = input('');
   iframeSrc = input('');
+  imageSrc = input('');
   badges = input<{ url: string; alt: string }[]>([]);
   techs = input<ProjectTech[]>([]);
 
   safeIframeSrc = computed(() => {
     const src = this.iframeSrc();
     return src ? this.sanitizer.bypassSecurityTrustResourceUrl(src) : null;
+  });
+
+  get safeImageSrc() {
+    return this.imageSrc();
+  }
+
+  get safeLogoSrc() {
+    return this.logoSrc();
+  }
+
+  shouldShowLogo = computed(() => {
+    return !!this.logoSrc();
+  });
+
+  shouldShowIframe = computed(() => {
+    return !!this.iframeSrc() && !this.imageSrc();
+  });
+
+  shouldShowImage = computed(() => {
+    return !!this.imageSrc();
   });
 
   getTranslatedTitle(title: string): string {

@@ -7,7 +7,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
-import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +15,6 @@ import { MenuComponent } from '../menu/menu.component';
   standalone: true,
   imports: [
     MatToolbarModule,
-    MenuComponent,
     MatButton,
     MatIcon,
     LanguageSwitcherComponent,
@@ -30,5 +28,11 @@ export class HeaderComponent {
     this.dialog.open(KofiDialogComponent, {
       width: '400px',
     });
+  }
+
+  navigateToFragment(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (!element) return;
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
