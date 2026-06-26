@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -13,7 +13,6 @@ import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { TranslationsService } from '../../services/translations.service';
-import { ArchiveSectionComponent } from '../archive-section/archive-section.component';
 import { KofiDialogComponent } from '../dialogs/kofi-dialog/kofi-dialog.component';
 import { ProfileComponent } from '../profile/profile.component';
 import {
@@ -21,7 +20,6 @@ import {
   ProjectTech,
 } from '../project-showcase/project-showcase.component';
 import { TechGridComponent } from '../tech-grid/tech-grid.component';
-import { WeatherSectionComponent } from '../weather-section/weather-section.component';
 
 interface TechItem {
   name: string;
@@ -37,7 +35,6 @@ interface TechItem {
   styleUrls: ['./landing.component.scss'],
   standalone: true,
   imports: [
-    ArchiveSectionComponent,
     FontAwesomeModule,
     MatBadgeModule,
     MatButtonModule,
@@ -49,11 +46,10 @@ interface TechItem {
     ProfileComponent,
     ProjectShowcaseComponent,
     TechGridComponent,
-    WeatherSectionComponent,
     TranslatePipe,
   ],
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent {
   private readonly snackBar = inject(MatSnackBar);
   private readonly dialog = inject(MatDialog);
   private readonly translationsService = inject(TranslationsService);
@@ -61,14 +57,7 @@ export class LandingComponent implements OnInit {
   faGithubAlt = faGithubAlt;
 
   loading = false;
-  archiveExpanded = false;
   sortBy = signal<'custom' | 'alphabet'>('custom');
-
-  weatherUrl =
-    'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-f15a95c0-61fb-478f-a954-1aa21586e126/cloud/getWeather';
-
-  weatherResult = signal<Record<string, unknown>[]>([]);
-  weatherResultAsArray = computed(() => Object.values(this.weatherResult()));
 
   // Tech data
   professionalTechs = signal<TechItem[]>([
@@ -431,80 +420,7 @@ export class LandingComponent implements OnInit {
     },
   ]);
 
-  archiveTechs = signal<TechItem[]>([
-    {
-      name: 'Podman',
-      icon: 'podman',
-      isNonBadged: true,
-      url: 'https://podman.io/',
-    },
-    {
-      name: 'NestJS',
-      icon: 'nestjs',
-      isNonBadged: true,
-      url: 'https://nestjs.com/',
-    },
-    {
-      name: 'RethinkDB',
-      icon: 'rethinkdb',
-      isNonBadged: true,
-      url: 'https://rethinkdb.com/',
-    },
-    {
-      name: 'DigitalOcean',
-      icon: 'digitalocean',
-      isNonBadged: true,
-      url: 'https://www.digitalocean.com/',
-    },
-    {
-      name: 'Postman',
-      icon: 'postman',
-      isNonBadged: true,
-      url: 'https://www.postman.com/',
-    },
-    {
-      name: 'Raspberry Pi',
-      icon: 'raspberry_pi',
-      isNonBadged: true,
-      url: 'https://www.raspberrypi.org/',
-    },
-    {
-      name: 'Zen Browser',
-      icon: 'zen_browser_dark',
-      isNonBadged: true,
-      url: 'https://zenbrowser.com/',
-    },
-    {
-      name: 'Swagger',
-      icon: 'swagger',
-      isNonBadged: true,
-      url: 'https://swagger.io/',
-    },
-    {
-      name: 'Kubernetes',
-      icon: 'kubernetes',
-      isNonBadged: true,
-      url: 'https://kubernetes.io/',
-    },
-    {
-      name: 'Svelte',
-      icon: 'svelte',
-      isNonBadged: true,
-      url: 'https://svelte.dev/',
-    },
-    {
-      name: 'SvelteKit',
-      icon: 'sveltekit',
-      isNonBadged: true,
-      url: 'https://kit.svelte.dev/',
-    },
-    {
-      name: 'Blazor',
-      icon: 'blazor',
-      isNonBadged: true,
-      url: 'https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor',
-    },
-  ]);
+  // Archived technologies section removed from template.
 
   // Computed sorted techs
   sortedProfessionalTechs = computed(() =>
@@ -512,28 +428,54 @@ export class LandingComponent implements OnInit {
   );
   sortedHobbyTechs = computed(() => this.sortTechs(this.hobbyTechs()));
   sortedOtherTechs = computed(() => this.sortTechs(this.otherTechs()));
-  sortedArchiveTechs = computed(() => this.sortTechs(this.archiveTechs()));
-
-  query? = '?city=Utrecht';
 
   // Project showcase data
-  retrorankerBadges = [
+  muorgTechs: ProjectTech[] = [
     {
-      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/build.yml/badge.svg',
-      alt: 'badges.build-check',
+      title: 'tech-cards.vue.title',
+      subtitle: 'tech-cards.vue.subtitle',
+      imagePath: 'vue',
+      url: 'https://vuejs.org/',
+      rippleColor: '#42b88333',
     },
     {
-      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/deploy-app.yml/badge.svg',
-      alt: 'badges.deploy-docker-image',
+      title: 'tech-cards.tauri.title',
+      subtitle: 'tech-cards.tauri.subtitle',
+      imagePath: 'tauri',
+      url: 'https://tauri.app/',
+      rippleColor: '#FFC13133',
     },
     {
-      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/refresh-data.yml/badge.svg',
-      alt: 'badges.refresh-data',
+      title: 'tech-cards.typescript.title',
+      subtitle: 'tech-cards.typescript.subtitle',
+      imagePath: 'typescript',
+      url: 'https://www.typescriptlang.org/',
+      rippleColor: '#3178c633',
     },
     {
-      url: 'https://github.com/Nergy101/retro-ranker/actions/workflows/nightly-tests.yml/badge.svg',
-      alt: 'badges.nightly-e2e',
-    }
+      title: 'tech-cards.sqlite.title',
+      subtitle: 'tech-cards.sqlite.subtitle',
+      imagePath: 'sqlite',
+      url: 'https://www.sqlite.org/',
+      rippleColor: '#003B5733',
+    },
+  ];
+
+  astrodonTechs: ProjectTech[] = [
+    {
+      title: 'tech-cards.deno.title',
+      subtitle: 'tech-cards.deno.subtitle',
+      imagePath: 'deno',
+      url: 'https://blog.nergy.space',
+      rippleColor: '#86efac',
+    },
+    {
+      title: 'tech-cards.typescript.title',
+      subtitle: 'tech-cards.typescript.subtitle',
+      imagePath: 'typescript',
+      url: 'https://www.typescriptlang.org/',
+      rippleColor: '#3178c633',
+    },
   ];
 
   retrorankerTechs: ProjectTech[] = [
@@ -599,10 +541,6 @@ export class LandingComponent implements OnInit {
     },
   ];
 
-  async ngOnInit(): Promise<void> {
-    await this.doWeatherCall();
-  }
-
   private sortTechs(techs: TechItem[]): TechItem[] {
     const sorted = [...techs];
     if (this.sortBy() === 'alphabet') {
@@ -617,30 +555,6 @@ export class LandingComponent implements OnInit {
     this.sortBy.update((current) =>
       current === 'alphabet' ? 'custom' : 'alphabet',
     );
-  }
-
-  async doWeatherCall(): Promise<void> {
-    this.loading = true;
-    try {
-      const response = await fetch(encodeURI(this.weatherUrl + this.query));
-      const result = await response.json();
-      if (result) {
-        this.weatherResult.set(
-          result.data.days.slice(0, 7) as Record<string, unknown>[],
-        );
-      }
-    } catch (e) {
-      console.error(e);
-      this.snackBar.open(
-        this.translationsService.translate('weather.error-fetching-data'),
-        this.translationsService.translate('common.close'),
-        {
-          duration: 3000,
-        },
-      );
-    } finally {
-      this.loading = false;
-    }
   }
 
   openKofiDialog(): void {
