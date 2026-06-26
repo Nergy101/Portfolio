@@ -1,12 +1,34 @@
 #kofiframe {
   border: none;
-  border-radius: 0;
+  border-radius: var(--radius-lg);
   width: 100%;
-  background: #f9f9f9;
+  background: transparent;
+  height: 612px;
+  display: block;
 }
 
 :host {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+
   ::ng-deep .mat-mdc-dialog-surface {
     overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: var(--radius-lg) !important;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 20, 22, 0.98) 0%,
+      rgba(20, 26, 28, 0.98) 100%
+    );
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      0 0 80px rgba(125, 208, 224, 0.06);
+  }
+
+  ::ng-deep .mat-mdc-dialog-container {
+    border-radius: var(--radius-lg) !important;
   }
 }
+

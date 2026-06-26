@@ -1,54 +1,63 @@
-<div class="container mat-drawer-container">
-  <app-profile></app-profile>
+<div class="landing-container">
+  <div class="main-content">
+    <app-profile></app-profile>
 
-  <div class="all-techs-section">
-    <h1 class="tech-list-title">
-      {{ 'landing.tech-list-title' | translate }}
-    </h1>
+    <div id="techs-and-tools" class="content-section">
+      <h1 class="section-title">
+        {{ 'landing.tech-list-title' | translate }}
+      </h1>
 
-    <app-tech-grid
-      [title]="'landing.professional' | translate"
-      [techs]="professionalTechs()"
-      [sortBy]="sortBy"
-      [showSortButton]="true"></app-tech-grid>
+      <app-tech-grid
+        [title]="'landing.professional' | translate"
+        [techs]="professionalTechs()"
+        [sortBy]="sortBy"
+        [showSortButton]="true"></app-tech-grid>
 
-    <app-tech-grid
-      [title]="'landing.hobby' | translate"
-      [techs]="hobbyTechs()"
-      [sortBy]="sortBy"
-      [showSortButton]="false"></app-tech-grid>
+      <app-tech-grid
+        [title]="'landing.hobby' | translate"
+        [techs]="hobbyTechs()"
+        [sortBy]="sortBy"
+        [showSortButton]="false"></app-tech-grid>
 
-    <app-tech-grid
-      [title]="'landing.other-tools' | translate"
-      [techs]="otherTechs()"
-      [sortBy]="sortBy"
-      [showSortButton]="false"></app-tech-grid>
-  </div>
+      <app-tech-grid
+        [title]="'landing.other-tools' | translate"
+        [techs]="otherTechs()"
+        [sortBy]="sortBy"
+        [showSortButton]="false"></app-tech-grid>
+    </div>
 
-  <app-archive-section
-    [archiveTechs]="archiveTechs()"
-    [sortBy]="sortBy"
-    [archiveExpanded]="archiveExpanded"></app-archive-section>
+    <div id="projects" class="content-section">
+      <h2 class="section-title">{{ 'sidebar.projects' | translate }}</h2>
 
-  <app-weather-section
-    [loading]="loading"
-    [weatherResultAsArray]="weatherResultAsArray"></app-weather-section>
+      <app-project-showcase
+        [title]="'projects.muorg.title' | translate"
+        [subtitle]="'projects.muorg.subtitle' | translate"
+        url="https://github.com/Nergy101/Muorg"
+        logoSrc="assets/muorg-logo.svg"
+        imageSrc="assets/muorg-library.png"
+        [techs]="muorgTechs"></app-project-showcase>
 
-  <div>
-    <app-project-showcase
-      [title]="'projects.retro-ranker.title' | translate"
-      [subtitle]="'projects.retro-ranker.subtitle' | translate"
-      url="https://retroranker.site"
-      iframeSrc="https://retroranker.site"
-      [badges]="retrorankerBadges"
-      [techs]="retrorankerTechs"></app-project-showcase>
+      <app-project-showcase
+        [title]="'projects.astrodon.title' | translate"
+        [subtitle]="'projects.astrodon.subtitle' | translate"
+        url="https://blog.nergy.space"
+        iframeSrc="https://blog.nergy.space"
+        [techs]="astrodonTechs"></app-project-showcase>
 
-    <app-project-showcase
-      [title]="'projects.tovedem.title' | translate"
-      [subtitle]="'projects.tovedem.subtitle' | translate"
-      url="https://tovedem.nergy.space"
-      iframeSrc="https://tovedem.nergy.space"
-      [badges]="tovedemBadges"
-      [techs]="tovedemTechs"></app-project-showcase>
+      <app-project-showcase
+        [title]="'projects.retro-ranker.title' | translate"
+        [subtitle]="'projects.retro-ranker.subtitle' | translate"
+        url="https://retroranker.site"
+        iframeSrc="https://retroranker.site"
+        [techs]="retrorankerTechs"></app-project-showcase>
+
+      <app-project-showcase
+        [title]="'projects.tovedem.title' | translate"
+        [subtitle]="'projects.tovedem.subtitle' | translate"
+        url="https://tovedem.nergy.space"
+        iframeSrc="https://tovedem.nergy.space"
+        [badges]="tovedemBadges"
+        [techs]="tovedemTechs"></app-project-showcase>
+    </div>
   </div>
 </div>
