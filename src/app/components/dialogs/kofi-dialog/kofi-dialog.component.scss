@@ -37,7 +37,8 @@
   content: '';
   display: block;
   height: 4px;
-  background: linear-gradient(90deg, #ff5e5b 0%, #d83838 50%, #b8202a 100%);
+  background: linear-gradient(90deg, #2e4a5c 0%, #1a3040 50%, #0f1f2a 100%);
+  border-bottom: 1px solid rgba(125, 208, 224, 0.2);
   position: relative;
   z-index: 10;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
