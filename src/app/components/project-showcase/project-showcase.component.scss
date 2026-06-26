@@ -2,29 +2,94 @@
   display: flex;
   width: 100%;
   max-width: 100%;
-  flex-flow: column wrap;
-  justify-content: space-around;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
   overflow-x: hidden;
+  background: var(--sys-surface-container);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem auto;
+  border: var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.section:hover {
+  box-shadow: var(--shadow-medium), var(--shadow-glow);
+  transform: translateY(-3px);
+  border-color: rgba(125, 208, 224, 0.18);
 }
 
 .section-title {
-  margin-top: 2em;
+  margin-top: 0.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  padding-bottom: 0.75rem;
 
   a {
-    color: #6dcb94;
+    font-family: var(--font-heading);
+    color: var(--sys-primary);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: color 0.25s ease;
     &:visited,
     &:link {
-      color: #6dcb94;
+      color: var(--sys-primary);
     }
     &:hover {
-      color: #59b981;
+      color: var(--sys-on-primary-container);
     }
   }
+
+  sub {
+    font-size: 0.95rem;
+    color: var(--sys-on-surface-variant);
+    margin-top: 0.25rem;
+    font-weight: 400;
+  }
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--sys-primary) 0%,
+    var(--sys-secondary) 100%
+  );
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+.title-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .badge-container {
@@ -32,56 +97,75 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  margin-top: 0.5rem;
+  gap: 0.75em;
+  margin-top: 0.75rem;
+}
 
-  @media (max-width: 425px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    margin-top: 0.5rem;
-  }
+.badge-container img {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.badge-container a:hover img {
+  opacity: 1;
 }
 
 .preview {
   margin: 0 auto;
-  width: 90%;
-  max-width: 800px;
-  height: 50em;
-  padding-bottom: 1em;
+  width: 100%;
+  max-width: 780px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 1em;
-  }
+.preview iframe,
+.preview .project-image {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(125, 208, 224, 0.1);
+}
 
-  @media (max-width: 1024px) {
-    width: 95%;
-    height: 40em;
-  }
+.preview .project-image {
+  object-fit: contain;
+  background-color: var(--sys-surface-container-low);
+}
 
-  @media (max-width: 768px) {
-    width: 98%;
-    height: 30em;
+.preview iframe {
+  background: var(--sys-surface-container-lowest);
+}
+
+@media (max-width: 768px) {
+  .preview {
+    aspect-ratio: 4 / 3;
   }
 }
 
 .tech-cards {
-  flex-basis: 50%;
+  width: 100%;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  gap: 1rem;
+  margin-top: 1.25rem;
+  box-sizing: border-box;
+  max-width: 100%;
+}
 
-  .group {
-    padding: 0 1em 0 1em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 1em;
+.tech-cards .group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .tech-cards .group {
+    grid-template-columns: 1fr;
   }
 }
