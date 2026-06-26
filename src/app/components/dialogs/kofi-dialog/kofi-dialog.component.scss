@@ -32,13 +32,3 @@
   }
 }
 
-/* Kofi branding bar at top */
-:host::before {
-  content: '';
-  display: block;
-  height: 4px;
-  background: linear-gradient(90deg, #ff5e5b 0%, #d83838 50%, #b8202a 100%);
-  position: relative;
-  z-index: 10;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-}
