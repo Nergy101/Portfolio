@@ -144,8 +144,136 @@
 }
 
 .coffee-button {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius-md);
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #ff5e5b 0%, #d83838 50%, #b8202a 100%) !important;
+  color: #fff !important;
+  border: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 16px rgba(255, 94, 91, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.coffee-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff7675 0%, #e74c3c 50%, #c0392b 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: inherit;
+}
+
+.coffee-button .mat-icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff !important;
+}
+
+.coffee-button .button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.coffee-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 8px 28px rgba(255, 94, 91, 0.4),
+    0 0 60px rgba(255, 94, 91, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.coffee-button:hover::before {
+  opacity: 1;
+}
+
+.coffee-button:hover .mat-icon:last-child {
+  transform: rotate(-12deg) scale(1.15);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.coffee-button:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow:
+    0 2px 8px rgba(255, 94, 91, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Steam animation for coffee icon on hover */
+.coffee-button .coffee-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.coffee-button:hover .coffee-icon::after {
+  content: '☕';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  animation: steamRise 1.2s ease-out infinite;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+@keyframes steamRise {
+  0% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(-8px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-14px) scale(0.8);
+  }
+}
+
+/* Gentle pulse when not hovered */
+.coffee-button:not(:hover) {
+  animation: coffeePulse 3s ease-in-out infinite;
+}
+
+@keyframes coffeePulse {
+  0%, 100% {
+    box-shadow:
+      0 4px 16px rgba(255, 94, 91, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 4px 24px rgba(255, 94, 91, 0.35),
+      0 0 40px rgba(255, 94, 91, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coffee-button:not(:hover) {
+    animation: none;
+  }
+  .coffee-button:hover .coffee-icon::after {
+    animation: none;
+    display: none;
+  }
+  .coffee-button:hover .mat-icon:last-child {
+    transform: none;
+  }
 }
 
 @media (max-width: 425px) {

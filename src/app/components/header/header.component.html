@@ -52,13 +52,13 @@
 
       <button mat-flat-button class="coffee-button" (click)="openKofiDialog()">
         <mat-icon
-          matSuffix
           aria-hidden="false"
           [attr.aria-label]="'aria.donate' | translate">
           volunteer_activism
         </mat-icon>
-        {{ 'header.buy-me-coffee' | translate }}
+        <span class="button-text">{{ 'header.buy-me-coffee' | translate }}</span>
         <mat-icon
+          class="coffee-icon"
           aria-hidden="false"
           [attr.aria-label]="'aria.coffee' | translate">
           coffee
@@ -100,13 +100,13 @@
 
       <button mat-flat-button class="coffee-button" (click)="openKofiDialog()">
         <mat-icon
-          matSuffix
           aria-hidden="false"
           [attr.aria-label]="'aria.donate' | translate">
           volunteer_activism
         </mat-icon>
-        {{ 'header.buy-me-coffee-short' | translate }}
+        <span class="button-text">{{ 'header.buy-me-coffee-short' | translate }}</span>
         <mat-icon
+          class="coffee-icon"
           aria-hidden="false"
           [attr.aria-label]="'aria.coffee' | translate">
           coffee
