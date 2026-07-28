@@ -14,7 +14,7 @@
     "codegen": "playwright codegen http://localhost:4200"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
+    "@playwright/test": "^1.62.0",
     "@types/node": "^20.0.0"
   },
   "engines": {
