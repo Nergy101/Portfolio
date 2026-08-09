@@ -42,18 +42,8 @@ export class LanguageSwitcherComponent implements OnInit {
 
   onLanguageChange(event: MatSelectChange<string>): void {
     const newLanguage = event.value;
-    console.log('Language switcher: Changing language to:', newLanguage);
-
     this.translationsService.setLanguage(newLanguage);
     this.selectedLanguage = newLanguage;
-
-    console.log(
-      'Language switcher: Language changed, current language is now:',
-      this.translationsService.getCurrentLanguage(),
-    );
-
-    // Trigger change detection to update all translated text
-    // The page will automatically update with new translations
   }
 
   getSelectedLanguageFlag(): string {

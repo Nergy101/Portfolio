@@ -155,6 +155,45 @@
   max-width: 100%;
 }
 
+.screenshot-gallery {
+  width: 100%;
+  max-width: 780px;
+  margin: 1.25rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.screenshot-item {
+  margin: 0;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--sys-surface-container-low);
+  border: 1px solid rgba(125, 208, 224, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .screenshot-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .screenshot-item {
+    aspect-ratio: 9 / 16;
+  }
+}
+
 .tech-cards .group {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

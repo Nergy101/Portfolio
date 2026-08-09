@@ -1,3 +1,6 @@
+// Prevent browser from restoring scroll position on refresh — must run before anything else
+history.scrollRestoration = 'manual';
+
 import { provideHttpClient } from '@angular/common/http';
 import { enableProdMode } from '@angular/core';
 import {
@@ -97,10 +100,8 @@ async function initializeTranslations(): Promise<void> {
       'fr-FR': frFR.default,
       'pt-PT': ptPT.default,
     };
-
-    console.log('Translations loaded successfully:', window.__TRANSLATIONS__);
   } catch (error) {
-    console.error('Failed to load translations:', error);
+    void error;
   }
 }
 
@@ -128,7 +129,9 @@ async function bootstrapApp(): Promise<void> {
         } as MatDialogConfig,
       },
     ],
-  }).catch((err) => console.error(err));
+  })
+    .then(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }))
+    .catch(() => {});
 }
 
 // Start the initialization process
