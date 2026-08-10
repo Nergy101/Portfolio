@@ -28,7 +28,7 @@ export class TranslationsService {
     try {
       return localStorage.getItem('tolgee-language');
     } catch (error) {
-      console.warn('Could not access localStorage:', error);
+      void error;
       return null;
     }
   }
@@ -40,7 +40,7 @@ export class TranslationsService {
     try {
       localStorage.setItem('tolgee-language', language);
     } catch (error) {
-      console.warn('Could not save language to localStorage:', error);
+      void error;
     }
   }
 
@@ -58,9 +58,7 @@ export class TranslationsService {
     if (globalTranslations) {
       this.translations = globalTranslations;
       this.translationsLoaded = true;
-      console.log('Translations loaded from global object:', this.translations);
     } else {
-      console.warn('Global translations not found, using empty translations');
       this.translationsLoaded = true;
     }
   }
@@ -77,23 +75,13 @@ export class TranslationsService {
    */
   translate(key: string, params?: Record<string, string>): string {
     if (!this.translationsLoaded) {
-      console.warn('Translations not loaded yet, returning key:', key);
       return key;
     }
-
-    console.log('Translating key:', key);
-    console.log('Current language:', this.currentLanguage);
-    console.log(
-      'Available translations:',
-      this.translations[this.currentLanguage],
-    );
 
     const translation =
       this.translations[this.currentLanguage]?.[key] ||
       this.translations['en-US']?.[key] ||
       key;
-
-    console.log('Translation result:', translation);
 
     if (params) {
       return this.interpolate(translation, params);

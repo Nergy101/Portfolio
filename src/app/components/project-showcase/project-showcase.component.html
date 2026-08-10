@@ -24,7 +24,9 @@
     @if (shouldShowIframe()) {
       <iframe
         [src]="safeIframeSrc()"
-        [title]="getTranslatedTitle(title())"></iframe>
+        [title]="getTranslatedTitle(title())"
+        loading="lazy"
+        tabindex="-1"></iframe>
     }
     @if (shouldShowImage()) {
       <img
@@ -33,6 +35,18 @@
         class="project-image" />
     }
   </div>
+  @if (shouldShowScreenshots()) {
+    <div class="screenshot-gallery">
+      @for (screenshot of screenshots(); track screenshot.src) {
+        <figure class="screenshot-item">
+          <img
+            [src]="screenshot.src"
+            [alt]="getTranslatedAlt(screenshot.alt)"
+            loading="lazy" />
+        </figure>
+      }
+    </div>
+  }
   <div class="tech-cards">
     <div class="group">
       @for (tech of techs(); track tech.title) {

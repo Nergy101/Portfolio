@@ -1,4 +1,23 @@
 <mat-card class="footer" id="end">
+  <div class="badge-container">
+    <a
+      href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
+      target="_blank"
+      rel="noopener">
+      <img
+        src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
+        [alt]="'badges.deploy-docker-image' | translate" />
+    </a>
+    <a
+      href="https://github.com/Nergy101/Portfolio/actions/workflows/e2e-nightly.yml"
+      target="_blank"
+      rel="noopener">
+      <img
+        src="https://github.com/Nergy101/Portfolio/actions/workflows/e2e-nightly.yml/badge.svg"
+        [alt]="'badges.build-check' | translate" />
+    </a>
+  </div>
+
   <div class="icons">
     <button
       mat-button

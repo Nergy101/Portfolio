@@ -36,21 +36,15 @@ export class MenuComponent {
       .open(LoginChoiceDialogComponent)
       .afterClosed()
       .subscribe(async (chosenOption: string): Promise<void> => {
-        let authData;
-
         if (chosenOption == 'google') {
-          authData = await this.pocketbaseService.pocketbase
+          await this.pocketbaseService.pocketbase
             .collection('users')
             .authWithOAuth2({ provider: 'google' });
         } else if (chosenOption == 'github') {
-          authData = await this.pocketbaseService.pocketbase
+          await this.pocketbaseService.pocketbase
             .collection('users')
             .authWithOAuth2({ provider: 'github' });
-        } else {
-          console.error('Unknown login provider:', chosenOption);
         }
-
-        console.info(`Logged in using ${chosenOption}`, authData);
       });
   }
 }

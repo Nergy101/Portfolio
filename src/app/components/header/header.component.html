@@ -28,28 +28,18 @@
         (click)="navigateToFragment('projects')">
         {{ 'header.quick-projects' | translate }}
       </button>
+      <a
+        mat-button
+        class="quick-link blog-link"
+        href="https://blog.nergy.space"
+        target="_blank"
+        rel="noopener">
+        {{ 'header.quick-blog' | translate }}
+        <mat-icon class="external-icon">open_in_new</mat-icon>
+      </a>
     </div>
 
     <div class="right-actions desktop-only">
-      <div class="badge-container">
-        <a
-          href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
-          target="_blank"
-          rel="noopener">
-          <img
-            src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="{{ 'header.deploy-badge-alt' | translate }}" />
-        </a>
-        <a
-          href="https://github.com/Nergy101/Portfolio/actions/workflows/e2e-nightly.yml"
-          target="_blank"
-          rel="noopener">
-          <img
-            src="https://github.com/Nergy101/Portfolio/actions/workflows/e2e-nightly.yml/badge.svg"
-            alt="{{ 'header.e2e-nightly-badge-alt' | translate }}" />
-        </a>
-      </div>
-
       <button mat-flat-button class="coffee-button" (click)="openKofiDialog()">
         <mat-icon
           aria-hidden="false"
@@ -85,16 +75,14 @@
           (click)="navigateToFragment('projects')">
           {{ 'header.quick-projects' | translate }}
         </button>
-      </div>
-
-      <div class="badge-container">
         <a
-          href="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml"
+          mat-button
+          class="quick-link blog-link"
+          href="https://blog.nergy.space"
           target="_blank"
           rel="noopener">
-          <img
-            src="https://github.com/Nergy101/Portfolio/actions/workflows/pipeline.yml/badge.svg"
-            alt="{{ 'header.deploy-badge-alt' | translate }}" />
+          {{ 'header.quick-blog' | translate }}
+          <mat-icon class="external-icon">open_in_new</mat-icon>
         </a>
       </div>
 

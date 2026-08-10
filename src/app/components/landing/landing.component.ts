@@ -478,6 +478,86 @@ export class LandingComponent {
     },
   ];
 
+  fitnessTrackerTechs: ProjectTech[] = [
+    {
+      title: 'tech-cards.react.title',
+      subtitle: 'tech-cards.react.subtitle',
+      imagePath: 'react',
+      url: 'https://react.dev/',
+      rippleColor: '#61DAFB33',
+    },
+    {
+      title: 'tech-cards.typescript.title',
+      subtitle: 'tech-cards.typescript.subtitle',
+      imagePath: 'typescript',
+      url: 'https://www.typescriptlang.org/',
+      rippleColor: '#3178c633',
+    },
+    {
+      title: 'tech-cards.fastapi.title',
+      subtitle: 'tech-cards.fastapi.subtitle',
+      imagePath: 'fastapi',
+      url: 'https://fastapi.tiangolo.com/',
+      rippleColor: '#00968833',
+    },
+    {
+      title: 'tech-cards.tailwindcss.title',
+      subtitle: 'tech-cards.tailwindcss.subtitle',
+      imagePath: 'tailwindcss',
+      url: 'https://tailwindcss.com/',
+      rippleColor: '#38BDF833',
+    },
+    {
+      title: 'tech-cards.vite.title',
+      subtitle: 'tech-cards.vite.subtitle',
+      imagePath: 'vite',
+      url: 'https://vitejs.dev/',
+      rippleColor: '#646CFF33',
+    },
+    {
+      title: 'tech-cards.sqlite.title',
+      subtitle: 'tech-cards.sqlite.subtitle',
+      imagePath: 'sqlite',
+      url: 'https://www.sqlite.org/',
+      rippleColor: '#003B5733',
+    },
+  ];
+
+  // Screenshot galleries (additive — shown below the main preview)
+  muorgScreenshots = [
+    {
+      src: 'assets/desktop-web-home.jpg',
+      alt: 'projects.muorg.screenshot-desktop',
+    },
+    {
+      src: 'assets/desktop-web-library.jpg',
+      alt: 'projects.muorg.screenshot-desktop',
+    },
+    {
+      src: 'assets/mobile-web-home.jpg',
+      alt: 'projects.muorg.screenshot-mobile',
+    },
+    {
+      src: 'assets/mobile-web-library.jpg',
+      alt: 'projects.muorg.screenshot-mobile',
+    },
+  ];
+
+  fitnessScreenshots = [
+    {
+      src: 'assets/fitness-workout-mobile.jpg',
+      alt: 'projects.fitness-tracker.screenshot-mobile',
+    },
+    {
+      src: 'assets/fitness-health-mobile.png',
+      alt: 'projects.fitness-tracker.screenshot-mobile',
+    },
+    {
+      src: 'assets/fitness-stats-mobile.png',
+      alt: 'projects.fitness-tracker.screenshot-mobile',
+    },
+  ];
+
   retrorankerTechs: ProjectTech[] = [
     {
       title: 'tech-cards.deno.title',
@@ -506,6 +586,13 @@ export class LandingComponent {
       imagePath: 'pocketbase',
       url: 'https://pocketbase.io/',
       rippleColor: '#FFFFFF40',
+    },
+  ];
+
+  fitnessBadges = [
+    {
+      url: 'https://github.com/Nergy101/fitness-tracker/actions/workflows/docker-publish.yml/badge.svg',
+      alt: 'badges.fitness-ci',
     },
   ];
 
