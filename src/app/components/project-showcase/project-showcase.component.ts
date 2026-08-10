@@ -32,6 +32,7 @@ export class ProjectShowcaseComponent {
   imageSrc = input('');
   badges = input<{ url: string; alt: string }[]>([]);
   techs = input<ProjectTech[]>([]);
+  screenshots = input<{ src: string; alt: string }[]>([]);
 
   safeIframeSrc = computed(() => {
     const src = this.iframeSrc();
@@ -56,6 +57,10 @@ export class ProjectShowcaseComponent {
 
   shouldShowImage = computed(() => {
     return !!this.imageSrc();
+  });
+
+  shouldShowScreenshots = computed(() => {
+    return this.screenshots().length > 0;
   });
 
   getTranslatedTitle(title: string): string {

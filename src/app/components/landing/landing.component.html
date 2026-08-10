@@ -32,10 +32,20 @@
       <app-project-showcase
         [title]="'projects.muorg.title' | translate"
         [subtitle]="'projects.muorg.subtitle' | translate"
-        url="https://github.com/Nergy101/Muorg"
+        url="https://muorg.nergy.space"
         logoSrc="assets/muorg-logo.svg"
         imageSrc="assets/muorg-library.png"
+        [screenshots]="muorgScreenshots"
         [techs]="muorgTechs"></app-project-showcase>
+
+      <app-project-showcase
+        [title]="'projects.fitness-tracker.title' | translate"
+        [subtitle]="'projects.fitness-tracker.subtitle' | translate"
+        url="https://fit.nergy.space"
+        imageSrc="assets/fitness-workouts-desktop.jpg"
+        [badges]="fitnessBadges"
+        [screenshots]="fitnessScreenshots"
+        [techs]="fitnessTrackerTechs"></app-project-showcase>
 
       <app-project-showcase
         [title]="'projects.astrodon.title' | translate"
