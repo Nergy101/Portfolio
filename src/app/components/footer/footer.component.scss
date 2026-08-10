@@ -6,7 +6,16 @@
 
 .footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   min-height: 5rem;
+  padding: 2rem;
   border-radius: 0;
+}
+
+.badge-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
