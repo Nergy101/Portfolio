@@ -20,6 +20,7 @@ import {
   ProjectTech,
 } from '../project-showcase/project-showcase.component';
 import { TechGridComponent } from '../tech-grid/tech-grid.component';
+import { WeatherSectionComponent } from '../weather-section/weather-section.component';
 
 interface TechItem {
   name: string;
@@ -45,6 +46,7 @@ interface TechItem {
     MatTooltipModule,
     ProfileComponent,
     ProjectShowcaseComponent,
+    WeatherSectionComponent,
     TechGridComponent,
     TranslatePipe,
   ],

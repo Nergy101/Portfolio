@@ -32,6 +32,7 @@ export class TechGridComponent {
   @Input() techs: TechItem[] = [];
   @Input() sortBy = signal<'alphabet' | 'custom'>('custom');
   @Input() showSortButton = false;
+  searchTerm = '';
 
   toggleSort(): void {
     this.sortBy.set(this.sortBy() === 'alphabet' ? 'custom' : 'alphabet');
@@ -42,6 +43,17 @@ export class TechGridComponent {
       return [...this.techs].sort((a, b) => a.name.localeCompare(b.name));
     }
     return this.techs;
+  }
+
+  filteredTechs(): TechItem[] {
+    const query = this.searchTerm.trim().toLocaleLowerCase();
+    return this.sortedTechs().filter((tech) =>
+      tech.name.toLocaleLowerCase().includes(query),
+    );
+  }
+
+  updateSearchTerm(event: Event): void {
+    this.searchTerm = (event.target as HTMLInputElement).value;
   }
 
   navigateTo(url: string): void {

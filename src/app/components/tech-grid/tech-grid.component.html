@@ -15,8 +15,22 @@
     </div>
   }
 
+  <label class="search-control">
+    <span>{{ 'landing.search-technologies' | translate }}</span>
+    <input
+      type="search"
+      [value]="searchTerm"
+      [attr.placeholder]="'landing.search-technologies' | translate"
+      (input)="updateSearchTerm($event)" />
+  </label>
+
   <div class="tech-icons-container">
-    @for (tech of sortedTechs(); track tech.name) {
+    @if (filteredTechs().length === 0) {
+      <p class="empty-state" role="status">
+        {{ 'landing.no-technologies-match' | translate }}
+      </p>
+    }
+    @for (tech of filteredTechs(); track tech.name) {
       <div
         class="item"
         [matBadge]="tech.score"

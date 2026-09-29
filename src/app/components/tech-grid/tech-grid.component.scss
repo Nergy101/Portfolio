@@ -21,6 +21,39 @@
   margin-bottom: 1.25rem;
 }
 
+.search-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: min(100%, 22rem);
+  margin: 0 auto 1rem;
+  color: var(--sys-on-surface-variant);
+  font-size: 0.875rem;
+
+  input {
+    box-sizing: border-box;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--sys-on-surface);
+    background: var(--sys-surface-container-low);
+    border: 1px solid var(--sys-outline);
+    border-radius: var(--radius-sm);
+    font: inherit;
+
+    &:focus-visible {
+      outline: 2px solid var(--sys-primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.empty-state {
+  width: 100%;
+  margin: 0;
+  color: var(--sys-on-surface-variant);
+  text-align: center;
+}
+
 .tech-icons-container {
   display: flex;
   flex-flow: row wrap;

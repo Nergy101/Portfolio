@@ -1,6 +1,7 @@
 <div class="landing-container">
   <div class="main-content">
     <app-profile></app-profile>
+    <app-weather-section></app-weather-section>
 
     <div id="techs-and-tools" class="content-section">
       <h1 class="section-title">
@@ -33,6 +34,7 @@
         [title]="'projects.muorg.title' | translate"
         [subtitle]="'projects.muorg.subtitle' | translate"
         url="https://muorg.nergy.space"
+        caseStudyOutcome="projects.muorg.outcome"
         logoSrc="assets/muorg-logo.svg"
         imageSrc="assets/muorg-library.png"
         [screenshots]="muorgScreenshots"
@@ -42,6 +44,7 @@
         [title]="'projects.fitness-tracker.title' | translate"
         [subtitle]="'projects.fitness-tracker.subtitle' | translate"
         url="https://fit.nergy.space"
+        caseStudyOutcome="projects.fitness-tracker.outcome"
         imageSrc="assets/fitness-workouts-desktop.jpg"
         [badges]="fitnessBadges"
         [screenshots]="fitnessScreenshots"
@@ -51,6 +54,7 @@
         [title]="'projects.astrodon.title' | translate"
         [subtitle]="'projects.astrodon.subtitle' | translate"
         url="https://blog.nergy.space"
+        caseStudyOutcome="projects.astrodon.outcome"
         iframeSrc="https://blog.nergy.space"
         [techs]="astrodonTechs"></app-project-showcase>
 
@@ -58,6 +62,7 @@
         [title]="'projects.retro-ranker.title' | translate"
         [subtitle]="'projects.retro-ranker.subtitle' | translate"
         url="https://retroranker.site"
+        caseStudyOutcome="projects.retro-ranker.outcome"
         iframeSrc="https://retroranker.site"
         [techs]="retrorankerTechs"></app-project-showcase>
 
@@ -65,6 +70,7 @@
         [title]="'projects.tovedem.title' | translate"
         [subtitle]="'projects.tovedem.subtitle' | translate"
         url="https://tovedem.nergy.space"
+        caseStudyOutcome="projects.tovedem.outcome"
         iframeSrc="https://tovedem.nergy.space"
         [badges]="tovedemBadges"
         [techs]="tovedemTechs"></app-project-showcase>

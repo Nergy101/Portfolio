@@ -7,6 +7,9 @@
     "start:devcontainer": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "test:translations": "node --test scripts/check-translations.test.mjs",
+    "translations:check": "node scripts/check-translations.mjs",
+    "translations:check:strict": "node scripts/check-translations.mjs --strict",
     "lint": "npx eslint 'src/**/*.ts' --ext .ts --fix",
     "format": "prettier --write .",
     "check": "npm run format && npm run lint"

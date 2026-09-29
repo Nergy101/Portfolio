@@ -8,7 +8,9 @@
           [alt]="getTranslatedTitle(title()) + ' logo'" />
       }
       <h2 style="margin: 0; padding: 0">
-        <a [href]="url()" target="_blank">{{ getTranslatedTitle(title()) }}</a>
+        <a [href]="url()" target="_blank" rel="noopener noreferrer">
+          {{ getTranslatedTitle(title()) }}
+        </a>
       </h2>
     </div>
     <sub>{{ getTranslatedSubtitle(subtitle()) }}</sub>
@@ -35,28 +37,47 @@
         class="project-image" />
     }
   </div>
-  @if (shouldShowScreenshots()) {
-    <div class="screenshot-gallery">
-      @for (screenshot of screenshots(); track screenshot.src) {
-        <figure class="screenshot-item">
-          <img
-            [src]="screenshot.src"
-            [alt]="getTranslatedAlt(screenshot.alt)"
-            loading="lazy" />
-        </figure>
-      }
-    </div>
+  @if (caseStudyOutcome()) {
+    <details class="case-study" (toggle)="updateCaseStudyExpanded($event)">
+      <summary role="button" [attr.aria-expanded]="caseStudyExpanded()">
+        {{ 'projects.case-study-label' | translate }}
+      </summary>
+      <div class="case-study-content">
+        <section class="case-study-section">
+          <h3>{{ 'projects.case-study-outcome' | translate }}</h3>
+          <p>{{ getTranslatedCaseStudyOutcome() }}</p>
+        </section>
+        <section class="case-study-section">
+          <h3>{{ 'projects.case-study-stack' | translate }}</h3>
+          <div class="tech-cards">
+            <div class="group">
+              @for (tech of techs(); track tech.title) {
+                <app-tech-card
+                  [title]="getTranslatedTitle(tech.title)"
+                  [subtitle]="getTranslatedSubtitle(tech.subtitle)"
+                  [imagePath]="tech.imagePath"
+                  [url]="tech.url"
+                  [rippleColor]="tech.rippleColor"></app-tech-card>
+              }
+            </div>
+          </div>
+        </section>
+        @if (shouldShowScreenshots()) {
+          <section class="case-study-section">
+            <h3>{{ 'projects.case-study-screenshots' | translate }}</h3>
+            <div class="screenshot-gallery">
+              @for (screenshot of screenshots(); track screenshot.src) {
+                <figure class="screenshot-item">
+                  <img
+                    [src]="screenshot.src"
+                    [alt]="getTranslatedAlt(screenshot.alt)"
+                    loading="lazy" />
+                </figure>
+              }
+            </div>
+          </section>
+        }
+      </div>
+    </details>
   }
-  <div class="tech-cards">
-    <div class="group">
-      @for (tech of techs(); track tech.title) {
-        <app-tech-card
-          [title]="getTranslatedTitle(tech.title)"
-          [subtitle]="getTranslatedSubtitle(tech.subtitle)"
-          [imagePath]="tech.imagePath"
-          [url]="tech.url"
-          [rippleColor]="tech.rippleColor"></app-tech-card>
-      }
-    </div>
-  </div>
 </div>

@@ -146,6 +146,47 @@
   }
 }
 
+.case-study {
+  width: 100%;
+  max-width: 780px;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--sys-outline-variant);
+  text-align: left;
+
+  summary {
+    display: list-item;
+    min-height: 2.75rem;
+    padding: 0.75rem 0.25rem;
+    color: var(--sys-primary);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--sys-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+  }
+}
+
+.case-study-content {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.case-study-section h3 {
+  margin: 0 0 0.5rem;
+  color: var(--sys-on-surface);
+  font-size: 1rem;
+}
+
+.case-study-section p {
+  margin: 0;
+  color: var(--sys-on-surface-variant);
+  line-height: 1.6;
+}
+
 .tech-cards {
   width: 100%;
   display: flex;

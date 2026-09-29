@@ -1,15 +1,57 @@
-<div class="weather-section">
-  <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem">
+<section class="weather-section" aria-labelledby="weather-heading">
+  <h2 id="weather-heading" class="section-heading">
     {{ 'weather.title' | translate }}
-  </p>
-  <div class="weather-cards">
-    @if (loading) {
-      <mat-spinner></mat-spinner>
+  </h2>
+
+  <form class="weather-preferences" (submit)="savePreferences($event)">
+    <label>
+      <span>{{ 'weather.location-label' | translate }}</span>
+      <input
+        type="text"
+        name="weather-location"
+        maxlength="80"
+        autocomplete="address-level2"
+        [value]="locationInput()"
+        (input)="updateLocation($event)" />
+    </label>
+    <label>
+      <span>{{ 'weather.unit-label' | translate }}</span>
+      <select
+        name="weather-unit"
+        [value]="selectedUnit()"
+        (change)="updateUnit($event)">
+        <option value="celsius">{{ 'weather.celsius' | translate }}</option>
+        <option value="fahrenheit">
+          {{ 'weather.fahrenheit' | translate }}
+        </option>
+      </select>
+    </label>
+    <button type="submit" [disabled]="loading()">
+      {{ 'weather.update' | translate }}
+    </button>
+  </form>
+
+  @if (forecast()) {
+    <h3 class="forecast-location">{{ forecastTitle }}</h3>
+    <p class="weather-freshness" role="status">{{ freshnessMessage }}</p>
+  }
+
+  @if (errorMessage()) {
+    <p class="weather-error" role="alert">{{ errorMessage() | translate }}</p>
+  }
+
+  <div class="weather-cards" [attr.aria-busy]="loading()">
+    @if (loading()) {
+      <mat-spinner
+        diameter="36"
+        [attr.aria-label]="'common.loading' | translate"></mat-spinner>
     }
-    @if (!loading && weatherResultAsArray().length > 0) {
-      @for (result of weatherResultAsArray(); track result) {
-        <app-weather-card [weatherInfo]="result"></app-weather-card>
+    @if (forecast(); as currentForecast) {
+      @for (day of currentForecast.days; track day.datetime) {
+        <app-weather-card
+          [weatherInfo]="day"
+          [unit]="currentForecast.unit"></app-weather-card>
       }
     }
   </div>
-</div>
+</section>
