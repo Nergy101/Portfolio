@@ -28,9 +28,17 @@ test.describe('Portfolio improvements', () => {
     page,
   }) => {
     await page.goto('/');
-    await expect(
-      page.locator('app-project-showcase details.case-study'),
-    ).toHaveCount(5);
+    const projectCards = page.locator('app-project-showcase');
+    await expect(projectCards.locator('details.case-study')).toHaveCount(5);
+    const screenshotCounts = await projectCards.evaluateAll((cards) =>
+      cards.map(
+        (card) =>
+          card.querySelectorAll('details.case-study .screenshot-gallery img')
+            .length,
+      ),
+    );
+    expect(screenshotCounts).toHaveLength(5);
+    expect(screenshotCounts.every((count) => count > 0)).toBe(true);
 
     const muorg = page
       .locator('app-project-showcase')
@@ -54,6 +62,28 @@ test.describe('Portfolio improvements', () => {
         .getByRole('img', { name: 'Muorg web client - desktop view' })
         .first(),
     ).toBeVisible();
+
+    for (const card of await projectCards.all()) {
+      await card.locator('details.case-study').evaluate((details) => {
+        (details as HTMLDetailsElement).open = true;
+      });
+      const images = card.locator('.screenshot-gallery img');
+      const imageCount = await images.count();
+      expect(imageCount).toBeGreaterThan(0);
+
+      for (let index = 0; index < imageCount; index += 1) {
+        const image = images.nth(index);
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).toHaveAttribute('alt', /\S/);
+        await expect
+          .poll(() =>
+            image.evaluate(
+              (element) => (element as HTMLImageElement).naturalWidth,
+            ),
+          )
+          .toBeGreaterThan(0);
+      }
+    }
   });
 
   test('saves weather location and units, fetches a forecast, and reuses fresh cached data', async ({

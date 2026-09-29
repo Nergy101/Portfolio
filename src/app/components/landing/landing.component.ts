@@ -560,6 +560,27 @@ export class LandingComponent {
     },
   ];
 
+  astrodonScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/astrodon-desktop.png',
+      alt: 'projects.astrodon.screenshot-desktop',
+    },
+  ];
+
+  retroRankerScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/retro-ranker-desktop.png',
+      alt: 'projects.retro-ranker.screenshot-desktop',
+    },
+  ];
+
+  tovedemScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/tovedem-desktop.png',
+      alt: 'projects.tovedem.screenshot-desktop',
+    },
+  ];
+
   retrorankerTechs: ProjectTech[] = [
     {
       title: 'tech-cards.deno.title',
