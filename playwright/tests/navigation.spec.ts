@@ -5,7 +5,6 @@ test.describe('Portfolio Navigation', () => {
     // Set mobile viewport
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
 
     // Check that mobile navigation elements are present
     await expect(page.locator('app-header')).toBeVisible();

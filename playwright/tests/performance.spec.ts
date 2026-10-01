@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio Performance & Accessibility', () => {
   test('should have proper accessibility attributes', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await expect(page.locator('h1').first()).toBeVisible();
 
     // Check for proper heading structure
     const headings = await page.locator('h1, h2, h3, h4, h5, h6').all();

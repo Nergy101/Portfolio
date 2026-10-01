@@ -5,7 +5,6 @@ test.describe('Portfolio Main Page', () => {
     page,
   }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
 
     // Check for header
     await expect(page.locator('app-header')).toBeVisible();
@@ -17,7 +16,6 @@ test.describe('Portfolio Main Page', () => {
 
   test('should have a valid page title', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
 
     await expect(page).toHaveTitle(/Nergy.space/i);
   });
