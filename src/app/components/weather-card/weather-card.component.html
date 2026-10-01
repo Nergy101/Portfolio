@@ -1,14 +1,14 @@
-<mat-card class="weather-card" matTooltip="{{ weatherInfo()['datetime'] }}">
+<mat-card class="weather-card" [matTooltip]="weatherInfo().datetime">
   <mat-card-title-group>
-    <mat-card-subtitle>
-      {{ dayName }}
-    </mat-card-subtitle>
+    <mat-card-subtitle>{{ dayName }}</mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
     <img
       mat-card-image
-      src="assets/weather-icons/{{ weatherInfo()['icon'] }}.svg"
-      alt="Weather icon {{ weatherInfo()['icon'] }} {{ dayName }}"
-      style="height: 36px" />
+      [src]="'assets/weather-icons/' + weatherInfo().icon + '.svg'"
+      [alt]="'Weather icon ' + weatherInfo().icon + ' ' + dayName"
+      class="weather-icon" />
+    <p class="high-temperature">{{ highTemperature }}</p>
+    <p class="low-temperature">{{ lowTemperature }}</p>
   </mat-card-content>
 </mat-card>

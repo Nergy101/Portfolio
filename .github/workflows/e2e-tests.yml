@@ -16,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Run E2E Tests
     timeout-minutes: 20
-    # Only run if the triggering workflow succeeded
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    env:
+      PORTFOLIO_BASE_URL: ${{ github.event_name == 'pull_request' && 'http://localhost:4200' || 'https://portfolio.nergy.space' }}
+    # Run for PRs and manual dispatch; post-deploy runs only after a successful deployment.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
 
     strategy:
       matrix:
@@ -33,7 +35,9 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: 'playwright/package-lock.json'
+          cache-dependency-path: |
+            package-lock.json
+            playwright/package-lock.json
 
       - name: Cache Playwright browsers
         id: cache-playwright
@@ -49,6 +53,9 @@ jobs:
       - name: Install Playwright dependencies
         working-directory: ./playwright
         run: npm ci
+      - name: Install Portfolio dependencies
+        if: github.event_name == 'pull_request'
+        run: npm ci --legacy-peer-deps
 
       - name: Install Playwright browsers
         if: steps.cache-playwright.outputs.cache-hit != 'true'

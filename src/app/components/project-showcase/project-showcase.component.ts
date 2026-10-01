@@ -1,7 +1,8 @@
-import { Component, inject, input, computed } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
+import { TranslatePipe } from '../../pipes/translate.pipe';
 import { TranslationsService } from '../../services/translations.service';
 import { TechCardComponent } from '../tech-card/tech-card.component';
 
@@ -18,7 +19,7 @@ export interface ProjectTech {
   templateUrl: './project-showcase.component.html',
   styleUrls: ['./project-showcase.component.scss'],
   standalone: true,
-  imports: [MatIconModule, TechCardComponent],
+  imports: [MatIconModule, TechCardComponent, TranslatePipe],
 })
 export class ProjectShowcaseComponent {
   private readonly sanitizer = inject(DomSanitizer);
@@ -33,6 +34,8 @@ export class ProjectShowcaseComponent {
   badges = input<{ url: string; alt: string }[]>([]);
   techs = input<ProjectTech[]>([]);
   screenshots = input<{ src: string; alt: string }[]>([]);
+  caseStudyOutcome = input('');
+  caseStudyExpanded = signal(false);
 
   safeIframeSrc = computed(() => {
     const src = this.iframeSrc();
@@ -62,6 +65,14 @@ export class ProjectShowcaseComponent {
   shouldShowScreenshots = computed(() => {
     return this.screenshots().length > 0;
   });
+
+  getTranslatedCaseStudyOutcome(): string {
+    return this.translationsService.translate(this.caseStudyOutcome());
+  }
+
+  updateCaseStudyExpanded(event: Event): void {
+    this.caseStudyExpanded.set((event.target as HTMLDetailsElement).open);
+  }
 
   getTranslatedTitle(title: string): string {
     return this.translationsService.translate(title);

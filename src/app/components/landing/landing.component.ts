@@ -20,6 +20,7 @@ import {
   ProjectTech,
 } from '../project-showcase/project-showcase.component';
 import { TechGridComponent } from '../tech-grid/tech-grid.component';
+import { WeatherSectionComponent } from '../weather-section/weather-section.component';
 
 interface TechItem {
   name: string;
@@ -45,6 +46,7 @@ interface TechItem {
     MatTooltipModule,
     ProfileComponent,
     ProjectShowcaseComponent,
+    WeatherSectionComponent,
     TechGridComponent,
     TranslatePipe,
   ],
@@ -555,6 +557,27 @@ export class LandingComponent {
     {
       src: 'assets/fitness-stats-mobile.png',
       alt: 'projects.fitness-tracker.screenshot-mobile',
+    },
+  ];
+
+  astrodonScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/astrodon-desktop.png',
+      alt: 'projects.astrodon.screenshot-desktop',
+    },
+  ];
+
+  retroRankerScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/retro-ranker-desktop.png',
+      alt: 'projects.retro-ranker.screenshot-desktop',
+    },
+  ];
+
+  tovedemScreenshots = [
+    {
+      src: 'assets/case-study-screenshots/tovedem-desktop.png',
+      alt: 'projects.tovedem.screenshot-desktop',
     },
   ];
 
