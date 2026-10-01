@@ -24,8 +24,7 @@ test.describe('Portfolio Performance & Accessibility', () => {
   });
 
   test('should have proper meta tags', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     // Check for viewport meta tag
     const viewport = await page.locator('meta[name="viewport"]').count();
