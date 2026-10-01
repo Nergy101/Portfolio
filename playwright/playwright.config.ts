@@ -6,6 +6,13 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config({ path: path.join(__dirname, '.env'), quiet: true });
 
+const baseURL =
+  process.env['PORTFOLIO_BASE_URL'] ??
+  (process.env['CI']
+    ? 'https://portfolio.nergy.space'
+    : 'http://localhost:4200');
+const useLocalServer = baseURL.startsWith('http://localhost:');
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -22,9 +29,7 @@ export default defineConfig({
     timeout: 30000,
   },
   use: {
-    baseURL: process.env['CI']
-      ? 'https://portfolio.nergy.space'
-      : 'http://localhost:4200',
+    baseURL,
     trace: 'on-first-retry',
     navigationTimeout: 10000,
     actionTimeout: 10000,
@@ -32,9 +37,7 @@ export default defineConfig({
       cookies: [],
       origins: [
         {
-          origin: process.env['CI']
-            ? 'https://portfolio.nergy.space'
-            : 'http://localhost:4200',
+          origin: baseURL,
           localStorage: [
             {
               name: 'umami.disabled',
@@ -83,14 +86,17 @@ export default defineConfig({
         },
       ],
   outputDir: 'test-results',
-  ...(process.env['CI']
-    ? {}
-    : {
+  ...(useLocalServer
+    ? {
         webServer: {
-          command: 'npm run start',
+          command: process.env['CI']
+            ? 'npm run start:devcontainer'
+            : 'npm run start',
           cwd: path.join(__dirname, '..'),
           url: 'http://localhost:4200',
-          reuseExistingServer: true,
+          reuseExistingServer: !process.env['CI'],
+          timeout: 120_000,
         },
-      }),
+      }
+    : {}),
 });
