@@ -422,6 +422,45 @@ export class LandingComponent {
     },
   ]);
 
+  aiToolingTechs = signal<TechItem[]>([
+    {
+      name: 'Vibe (Mistral)',
+      icon: 'vibe',
+      isNonBadged: true,
+      url: 'https://mistral.ai/vibe',
+    },
+    {
+      name: 'Claude',
+      icon: 'claude',
+      isNonBadged: true,
+      url: 'https://claude.ai/',
+    },
+    {
+      name: 'Hermes',
+      icon: 'hermes',
+      isNonBadged: true,
+      url: 'https://hermes.nousresearch.com/',
+    },
+    {
+      name: 'Herdr',
+      icon: 'herdr',
+      isNonBadged: true,
+      url: 'https://herdr.dev/',
+    },
+    {
+      name: 'Azure OpenAI',
+      icon: 'azure_openai',
+      isNonBadged: true,
+      url: 'https://azure.microsoft.com/en-us/products/ai-services/openai-service',
+    },
+    {
+      name: 'OpenUI (Generative UI)',
+      icon: 'openui',
+      isNonBadged: true,
+      url: 'https://www.openui.com/',
+    },
+  ]);
+
   // Archived technologies section removed from template.
 
   // Computed sorted techs
