@@ -22,7 +22,7 @@
       }
     </div>
   </div>
-  <div class="preview">
+  <div class="preview" [style.aspect-ratio]="previewAspectRatio()">
     @if (shouldShowIframe()) {
       <iframe
         [src]="safeIframeSrc()"

@@ -30,6 +30,7 @@ export class ProjectShowcaseComponent {
   url = input('');
   logoSrc = input('');
   iframeSrc = input('');
+  previewAspectRatio = input<string | null>(null);
   imageSrc = input('');
   badges = input<{ url: string; alt: string }[]>([]);
   techs = input<ProjectTech[]>([]);
