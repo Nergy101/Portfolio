@@ -567,19 +567,19 @@ export class LandingComponent {
   // Screenshot galleries (additive — shown below the main preview)
   muorgScreenshots = [
     {
-      src: 'assets/desktop-web-home.jpg',
+      src: 'assets/muorg-web-home.jpg',
       alt: 'projects.muorg.screenshot-desktop',
     },
     {
-      src: 'assets/desktop-web-library.jpg',
+      src: 'assets/muorg-web-library.jpg',
       alt: 'projects.muorg.screenshot-desktop',
     },
     {
-      src: 'assets/mobile-web-home.jpg',
+      src: 'assets/muorg-mobile-home.jpg',
       alt: 'projects.muorg.screenshot-mobile',
     },
     {
-      src: 'assets/mobile-web-library.jpg',
+      src: 'assets/muorg-mobile-library.jpg',
       alt: 'projects.muorg.screenshot-mobile',
     },
   ];
