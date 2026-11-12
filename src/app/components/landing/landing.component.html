@@ -9,6 +9,12 @@
       </h1>
 
       <app-tech-grid
+        [title]="'landing.ai-tooling' | translate"
+        [techs]="aiToolingTechs()"
+        [sortBy]="sortBy"
+        [showSortButton]="false"></app-tech-grid>
+
+      <app-tech-grid
         [title]="'landing.professional' | translate"
         [techs]="professionalTechs()"
         [sortBy]="sortBy"
@@ -23,12 +29,6 @@
       <app-tech-grid
         [title]="'landing.other-tools' | translate"
         [techs]="otherTechs()"
-        [sortBy]="sortBy"
-        [showSortButton]="false"></app-tech-grid>
-
-      <app-tech-grid
-        [title]="'landing.ai-tooling' | translate"
-        [techs]="aiToolingTechs()"
         [sortBy]="sortBy"
         [showSortButton]="false"></app-tech-grid>
     </div>
