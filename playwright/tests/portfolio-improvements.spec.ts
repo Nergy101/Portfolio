@@ -6,7 +6,16 @@ test.describe('Portfolio improvements', () => {
   }) => {
     await page.goto('/');
 
-    const professionalGroup = page.locator('app-tech-grid').first();
+    // The Professional grid is identified by its section title, not its DOM
+    // position (the AI Tooling grid is rendered above it).
+    const professionalGroup = page
+      .locator('app-tech-grid')
+      .filter({
+        has: page.locator('.tech-list-title', { hasText: 'Professional' }),
+      });
+    const hobbyGroup = page
+      .locator('app-tech-grid')
+      .filter({ has: page.locator('.tech-list-title', { hasText: 'Hobby' }) });
     const search = professionalGroup.getByRole('searchbox', {
       name: 'Search technologies',
     });
@@ -19,9 +28,7 @@ test.describe('Portfolio improvements', () => {
     await expect(
       professionalGroup.getByText('Azure', { exact: true }),
     ).toHaveCount(0);
-    await expect(
-      page.locator('app-tech-grid').nth(1).getByText('Deno'),
-    ).toBeVisible();
+    await expect(hobbyGroup.getByText('Deno')).toBeVisible();
   });
 
   test('opens a keyboard-accessible project case study with outcome, stack, and screenshots', async ({
